@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "part",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna laboris enim non est ea elit laboris. Mollit do deserunt labore eiusmod consequat do enim anim quis ad. Non laborum magna tempor qui minim tempor qui nisi nostrud."
+						}
+					}
+				]
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "attack",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

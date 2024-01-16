@@ -14,7 +14,7 @@
     "@prismicio/next": "^1.5.0",
     "@prismicio/react": "^2.7.3",
     "@superrb/next-addons": "^1.1.3",
-    "@superrb/react-addons": "^2.1.3",
+    "@superrb/react-addons": "link:../react-addons",
     "change-case": "^5.4.2",
     "next": "14.0.4",
     "prettier": "^3.2.2",

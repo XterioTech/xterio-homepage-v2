@@ -3,5 +3,6 @@
 import dynamic from 'next/dynamic'
 
 export const components = {
-    navigation_item: dynamic(() => import('./NavigationItem'))
+  contact_info: dynamic(() => import('./ContactInfo')),
+  navigation_item: dynamic(() => import('./NavigationItem')),
 }

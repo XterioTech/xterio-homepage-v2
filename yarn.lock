@@ -470,19 +470,9 @@
   dependencies:
     install-peers-cli "^2.2.0"
 
-"@superrb/react-addons@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@superrb/react-addons/-/react-addons-2.1.3.tgz#24cb84c3c00e543d13f3b086c581f8229ec6b9f3"
-  integrity sha512-xYL8la9s80LXS8X1lUKU4fnFSJm95aQ3hjm3DF5kf/8jAaWk0BqUA5HKqynZLn1jklFtEMc/egN9U4h2N89V5A==
-  dependencies:
-    "@hookform/resolvers" "^3.3.1"
-    change-case "^4.1.2"
-    install-peers-cli "^2.2.0"
-    js-cookie "^3.0.5"
-    react-google-recaptcha-v3 "^1.10.1"
-    react-hook-form "^7.46.1"
-    react-use-draggable-scroll "^0.4.7"
-    yup "^1.2.0"
+"@superrb/react-addons@link:../react-addons":
+  version "0.0.0"
+  uid ""
 
 "@swc/helpers@0.5.2":
   version "0.5.2"

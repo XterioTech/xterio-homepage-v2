@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import '@/stylesheets/style.sass'
 import Navigation from "@/components/navigation";
+import {CookieBanner} from "@superrb/react-addons/components";
+import Scripts from "@/components/scripts";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,6 +19,8 @@ export default function RootLayout({
       <body>
       <Navigation name={'main'}/>
       {children}
+      <CookieBanner />
+      <Scripts />
       </body>
     </html>
   )
