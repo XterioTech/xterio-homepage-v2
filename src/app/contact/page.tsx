@@ -3,6 +3,7 @@ import { components } from '@/slices'
 import { NotFoundError } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
+import ContactForm from "@/components/contact-form";
 
 export async function generateMetadata({
   params,
@@ -41,6 +42,7 @@ export default async function Page({ params }: { params: { lang: string } }) {
     return (
         <section className="contact-page">
           <SliceZone slices={page.data.slices} components={components} />
+          <ContactForm />
         </section>
     )
   } catch (error) {
