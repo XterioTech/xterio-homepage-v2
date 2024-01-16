@@ -1,0 +1,64 @@
+.cookie-banner
+  +cover
+  padding: $baseline 0
+  pointer-events: none
+  position: fixed
+  transition: opacity .5s ease
+
+  &--hide
+    opacity: 0
+    pointer-events: none
+
+  &__container
+    align-items: flex-end
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: flex-end
+
+  &__inner
+    background: $black
+    color: $white
+    max-width: 32em
+    padding: $baseline
+    pointer-events: all
+    z-index: 999
+
+  &__main
+    align-items: center
+    display: flex
+    gap: $baseline
+    justify-content: space-between
+
+  &__message
+    &[aria-hidden="true"]
+      display: none
+
+  &__text
+    margin: 0
+
+  &__form
+    display: flex
+    flex-direction: column
+    max-height: calc(100dvh - #{$baseline * 4})
+    overflow: hidden
+    transition: max-height .5s ease, opacity .5s ease
+
+    &[aria-hidden="true"]
+      max-height: 0
+      opacity: 0
+
+    .form__label
+      display: flex
+      gap: $baseline
+
+    .form__submit
+      margin-left: auto
+
+  &__buttons
+    align-items: center
+    display: flex
+    gap: ($baseline * .5)
+    justify-content: flex-end
+    white-space: nowrap
+    flex: 1 1

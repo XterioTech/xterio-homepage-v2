@@ -1,0 +1,43 @@
+{
+  "id": "site_config",
+  "label": "Site Config",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "linkedin_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn Profile URL",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "instagram_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Instagram Profile URL",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "facebook_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Facebook Profile URL",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "twitter_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Twitter Profile URL",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}
