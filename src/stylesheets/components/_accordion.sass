@@ -1,0 +1,22 @@
+.accordion
+  &__trigger
+    align-items: center
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+    &::after
+      content: '▸'
+      transition: transform .5s ease
+
+    &[aria-selected="true"]
+      & + .accordion__content
+        max-height: 100vh
+
+      &::after
+        transform: rotate(90deg)
+
+  &__content
+    max-height: 0
+    overflow: clip
+    transition: max-height .5s ease
