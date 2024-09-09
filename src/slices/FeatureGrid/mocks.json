@@ -1,0 +1,79 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"block": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "butter",
+									"type": "Text"
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "apart",
+									"type": "Text"
+								}
+							],
+							[
+								"button_1_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "tropical",
+									"type": "Text"
+								}
+							],
+							[
+								"button_1_url",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"button_2_text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "duty",
+									"type": "Text"
+								}
+							],
+							[
+								"button_2_url",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"width",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Half Width",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

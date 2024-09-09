@@ -1,0 +1,47 @@
+{
+  "id": "image_with_caption",
+  "type": "SharedSlice",
+  "name": "ImageWithCaption",
+  "description": "ImageWithCaption",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "caption": {
+          "type": "Text",
+          "config": {
+            "label": "Caption",
+            "placeholder": ""
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Width",
+            "placeholder": "",
+            "options": [
+              "Edge to Edge",
+              "Full Column Width",
+              "Inset (70% Column Width)"
+            ],
+            "default_value": "Edge to Edge"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

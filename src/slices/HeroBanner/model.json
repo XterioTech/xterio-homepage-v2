@@ -1,0 +1,124 @@
+{
+  "id": "hero_banner",
+  "type": "SharedSlice",
+  "name": "HeroBanner",
+  "description": "HeroBanner",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": "Building the future of gaming"
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "button_1_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button 1 Text",
+            "placeholder": ""
+          }
+        },
+        "button_1_url": {
+          "type": "Link",
+          "config": {
+            "label": "Button 1 URL",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "button_2_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button 2 Text",
+            "placeholder": ""
+          }
+        },
+        "button_2_url": {
+          "type": "Link",
+          "config": {
+            "label": "Button 2 URL",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "animation_direction": {
+          "type": "Select",
+          "config": {
+            "label": "Animation Direction",
+            "placeholder": "",
+            "options": [
+              "Vertical",
+              "Horizontal"
+            ],
+            "default_value": "Vertical"
+          }
+        },
+        "theme": {
+          "type": "Select",
+          "config": {
+            "label": "Theme",
+            "placeholder": "",
+            "options": [
+              "Light",
+              "Dark"
+            ],
+            "default_value": "Light"
+          }
+        },
+        "block": {
+          "type": "Group",
+          "config": {
+            "label": "Block",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "type": {
+                "type": "Text",
+                "config": {
+                  "label": "Type",
+                  "placeholder": ""
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "URL",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

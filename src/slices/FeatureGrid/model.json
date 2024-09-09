@@ -1,0 +1,88 @@
+{
+  "id": "feature_grid",
+  "type": "SharedSlice",
+  "name": "FeatureGrid",
+  "description": "FeatureGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "block": {
+          "type": "Group",
+          "config": {
+            "label": "Block",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              },
+              "button_1_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Button 1 Text",
+                  "placeholder": ""
+                }
+              },
+              "button_1_url": {
+                "type": "Link",
+                "config": {
+                  "label": "Button 1 URL",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "button_2_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Button 2 Text",
+                  "placeholder": ""
+                }
+              },
+              "button_2_url": {
+                "type": "Link",
+                "config": {
+                  "label": "Button 2 URL",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
+                }
+              },
+              "width": {
+                "type": "Select",
+                "config": {
+                  "label": "Width",
+                  "placeholder": "",
+                  "options": [
+                    "Full Width",
+                    "Half Width",
+                    "One Third",
+                    "Two Thirds"
+                  ],
+                  "default_value": "Full Width"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

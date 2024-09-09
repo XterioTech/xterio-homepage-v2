@@ -3,6 +3,24 @@
 import dynamic from 'next/dynamic'
 
 export const components = {
+  carousel: dynamic(() => import('./Carousel')),
   contact_info: dynamic(() => import('./ContactInfo')),
+  faqs: dynamic(() => import('./Faqs')),
+  feature_grid: dynamic(() => import('./FeatureGrid')),
+  four_col_grid: dynamic(() => import('./FourColGrid')),
+  games_feed: dynamic(() => import('./GamesFeed')),
+  hero_banner: dynamic(() => import('./HeroBanner')),
+  image: dynamic(() => import('./ParallaxImage')),
+  image_with_caption: dynamic(() => import('./ImageWithCaption')),
+  latest_news: dynamic(() => import('./LatestNews')),
+  logos: dynamic(() => import('./Logos')),
+  meet_the_team: dynamic(() => import('./MeetTheTeam')),
   navigation_item: dynamic(() => import('./NavigationItem')),
+  page_banner: dynamic(() => import('./PageBanner')),
+  section_intro: dynamic(() => import('./SectionIntro')),
+  stats: dynamic(() => import('./Stats')),
+  testimonials: dynamic(() => import('./Testimonials')),
+  text: dynamic(() => import('./Text')),
+  tip: dynamic(() => import('./Tip')),
+  two_col_cta: dynamic(() => import('./TwoColCta')),
 }
