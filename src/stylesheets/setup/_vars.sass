@@ -2,27 +2,48 @@ $fontStackSansSerif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, A
 $primaryFont: serif
 $secondaryFont: sans-serif
 
+$regularFontWeight: 400
+$boldFontWeight: 700
+$blackFontWeight: 800
+
 $fontSize: 100%
 $baseline: 1.5em
 
+$gutterMobile: 1.3125em // 21px
+$gutterDesktop: 4.625em // 74px
+
+$spacerMobile: 3.5em // 56px
+$spacerDesktop: 5.75em // 92px
+
 /* Browser widths */
 $largeMobile: 30em // 480px
+$maxLargeMobile: ($largeMobile - .0625em) // 479px
 $tablet: 45em // 720px
+$maxTablet: ($tablet - .0625em) // 719px
 $smallDesktop: 63.75em // 1020px
+$maxSmallDesktop: ($smallDesktop - .0625em) // 1019px
 $mediumDesktop: 75em // 1200px
+$maxMediumDesktop: ($mediumDesktop - .0625em) // 1199px
 $desktop: 87.5em // 1400px
 $largeDesktop: 100em // 1600px
-
-$containerWidth: 105em // 1680px
-
-$gutterMobile: .75em // 12px
-$gutterTablet: 1.5em // 24px
-$gutterDesktop: 4em // 64px
-
-$blockSpacerMobile: $gutterMobile
-$blockSpacerTablet: $gutterTablet
-$blockSpacerDesktop: $gutterDesktop
+$maxLargeDesktop: ($largeDesktop - .0625em) // 1599px
+$narrowContainerWidth: 57em // 912px
+$veryNarrowContainerWidth: 39.8125em // 637px
+$containerWidth: 59.25em // 948
+$maxCappedWidth: ($containerWidth - .0625em)
 
 $transitionDuration: .3s
 $transitionDurationLong: .5s
 $transitionTimingFunction: ease
+
+/* MISC values */
+$borderRadius: 1.5625rem // 25px borders such as containers
+$buttonBorderRadius: 2.3125rem // 37px
+$buttonBorderRadiusSquare: 0.5rem // 8px
+$formBorderRadius: $borderRadius // form inputs
+$imgBorderRadius: 0.8736875rem // 14px for images, used with the roundedImage mixin to stop safari issues
+$border: 0.0625rem solid $black // standard border style
+$formBorder: $border // form border style
+$minTouchSize: 2.75rem // 44px - min size for click areas
+$opacityHover: .6
+$textSpacer: 1.5rem // used for smaller margins and spacing

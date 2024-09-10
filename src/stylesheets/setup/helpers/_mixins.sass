@@ -29,45 +29,63 @@
   top: $padding
 
 =gutterLeft
-  padding-left: $gutterMobile
-
-  @media (min-width: $tablet)
-    padding-left: $gutterTablet
-
-  @media (min-width: $smallDesktop)
-    padding-left: $gutterDesktop
+  +clamp('padding-left', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
 
 =gutterRight
-  padding-right: $gutterMobile
-
-  @media (min-width: $tablet)
-    padding-right: $gutterTablet
-
-  @media (min-width: $smallDesktop)
-    padding-right: $gutterDesktop
+  +clamp('padding-right', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
 
 =gutters
   +gutterLeft
   +gutterRight
 
 =spacingTop
-  padding-top: $gutterMobile
-
-  @media (min-width: $tablet)
-    padding-top: $gutterTablet
-
-  @media (min-width: $smallDesktop)
-    padding-top: $gutterDesktop
+  +clamp('padding-top', $spacerMobile, $spacerDesktop, $largeMobile, $desktop)
 
 =spacingBottom
-  padding-bottom: $gutterMobile
+  +clamp('padding-bottom', $spacerMobile, $spacerDesktop, $largeMobile, $desktop)
 
-  @media (min-width: $tablet)
-    padding-bottom: $gutterTablet
+=spacingTopHalf
+  +clamp('padding-top', $spacerMobile , $spacerDesktop / 2, $largeMobile, $desktop)
 
-  @media (min-width: $smallDesktop)
-    padding-bottom: $gutterDesktop
+=spacingBottomHalf
+  +clamp('padding-bottom', $spacerMobile, $spacerDesktop / 2, $largeMobile, $desktop)
 
 =spacing
   +spacingTop
   +spacingBottom
+
+=spacingHalf
+  +spacingTopHalf
+  +spacingBottomHalf
+
+=unbutton
+  appearance: none
+  background: none
+  border: 0
+  color: inherit
+  font-family: inherit
+  font-size: inherit
+  padding: 0
+  text-align: inherit
+
+=pseudoBasics
+  content: ""
+  display: block
+  position: absolute
+
+=roundedImage
+  border-radius: $imgBorderRadius
+  mask-image: radial-gradient(white, black)
+
+%cappedWidth
+  margin-left: auto
+  margin-right: auto
+  max-width: $containerWidth
+  width: 100%
+
+=opacityHover
+  opacity: 1
+  transition: opacity $transitionDuration $transitionTimingFunction
+
+  &:hover
+    opacity: $opacityHover
