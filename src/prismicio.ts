@@ -24,12 +24,16 @@ const routes: prismic.ClientConfig["routes"] = [
     path: '/legal/:uid',
   },
   {
-    type: 'ecosystem_page',
-    path: '/ecosystem',
+    type: 'buy_page',
+    path: '/buy',
   },
   {
-    type: 'contact_page',
-    path: '/contact',
+    type: 'build_page',
+    path: '/build',
+  },
+  {
+    type: 'ecosystem_page',
+    path: '/ecosystem',
   }
 ];
 
