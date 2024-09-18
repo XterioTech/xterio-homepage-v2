@@ -449,16 +449,25 @@
     prettier "^3.0.3"
     prismic-ts-codegen "^0.1.21"
 
-"@superrb/next-addons@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@superrb/next-addons/-/next-addons-1.1.3.tgz#0926db48899d6fc3dcbf0765d2155bc456d6235f"
-  integrity sha512-LfxvdHfPPXIqe6QRW1h6fHRh+dfYkwi2Tss3sBUvJ/bnACQsdeEVCvCDXFnYgtvNeiF/lvnIikL0fkuW0WZyfw==
+"@superrb/next-addons@^4.0.0-6":
+  version "4.0.0-6"
+  resolved "https://registry.yarnpkg.com/@superrb/next-addons/-/next-addons-4.0.0-6.tgz#886e0ec49522ba73c69907d0254e2ccaa9adda9e"
+  integrity sha512-v8FymO2dbCVq08bQth4zl3WmZTALYbIDZZ2cqTBqA0yodJ/hQ7JUv2dbweLK8NcFCiteDS1J8fUOFMlCMKFtwQ==
   dependencies:
     install-peers-cli "^2.2.0"
 
-"@superrb/react-addons@link:../react-addons":
-  version "0.0.0"
-  uid ""
+"@superrb/react-addons@^3.0.0-16":
+  version "3.0.0-16"
+  resolved "https://registry.yarnpkg.com/@superrb/react-addons/-/react-addons-3.0.0-16.tgz#5dbb0d0cd5b951af0ae65f74831a3be3121e54b8"
+  integrity sha512-G0yAb00raj1pRa3a3KcYKkgoOWeEwgvg5+g1bKLr2nyndoluK11MBXDrCML5uLiIqbasscgZAYbLLf7UH/QF4g==
+  dependencies:
+    "@hookform/resolvers" "^3.3.1"
+    change-case "^4.1.2"
+    install-peers-cli "^2.2.0"
+    js-cookie "^3.0.5"
+    react-google-recaptcha-v3 "^1.10.1"
+    react-hook-form "^7.46.1"
+    react-use-draggable-scroll "^0.4.7"
 
 "@swc/helpers@0.5.2":
   version "0.5.2"
@@ -3619,6 +3628,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-sync-external-store@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
+  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
+
 util-deprecate@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -3742,12 +3756,19 @@ yocto-queue@^1.0.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
 
-yup@^1.2.0:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-1.3.3.tgz#d2f6020ad1679754c5f8178a29243d5447dead04"
-  integrity sha512-v8QwZSsHH2K3/G9WSkp6mZKO+hugKT1EmnMqLNUcfu51HU9MDyhlETT/JgtzprnrnQHPWsjc6MUDMBp/l9fNnw==
+yup@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-1.4.0.tgz#898dcd660f9fb97c41f181839d3d65c3ee15a43e"
+  integrity sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==
   dependencies:
     property-expr "^2.0.5"
     tiny-case "^1.0.3"
     toposort "^2.0.2"
     type-fest "^2.19.0"
+
+zustand@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.5.5.tgz#f8c713041543715ec81a2adda0610e1dc82d4ad1"
+  integrity sha512-+0PALYNJNgK6hldkgDq2vLrw5f6g/jCInz52n9RTpropGgeAf/ioFUCdtsjCqu4gNhW9D01rUQBROoRjdzyn2Q==
+  dependencies:
+    use-sync-external-store "1.2.2"
