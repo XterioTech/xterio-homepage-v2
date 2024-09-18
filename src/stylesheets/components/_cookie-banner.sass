@@ -3,7 +3,7 @@
   padding: $baseline 0
   pointer-events: none
   position: fixed
-  transition: opacity .5s ease
+  transition: opacity $transitionDurationLong $transitionTimingFunction
 
   &--hide
     opacity: 0
@@ -42,7 +42,7 @@
     flex-direction: column
     max-height: calc(100dvh - #{$baseline * 4})
     overflow: hidden
-    transition: max-height .5s ease, opacity .5s ease
+    transition: max-height $transitionDurationLong $transitionTimingFunction, opacity $transitionDurationLong $transitionTimingFunction
 
     &[aria-hidden="true"]
       max-height: 0

@@ -7,7 +7,7 @@
 
     &::after
       content: '▸'
-      transition: transform .5s ease
+      transition: transform $transitionDurationLong $transitionTimingFunction
 
     &[aria-selected="true"]
       & + .accordion__content
@@ -19,4 +19,4 @@
   &__content
     max-height: 0
     overflow: clip
-    transition: max-height .5s ease
+    transition: max-height $transitionDurationLong $transitionTimingFunction
