@@ -58,14 +58,6 @@
 								}
 							],
 							[
-								"type",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "cheese",
-									"type": "Text"
-								}
-							],
-							[
 								"url",
 								{
 									"__TYPE__": "LinkContent",
@@ -74,10 +66,23 @@
 										"url": "https://prismic.io"
 									}
 								}
+							],
+							[
+								"type",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "wealth",
+									"type": "Text"
+								}
 							]
 						]
 					}
 				]
+			},
+			"game_block_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "dirt",
+				"type": "Text"
 			},
 			"text": {
 				"__TYPE__": "StructuredTextContent",

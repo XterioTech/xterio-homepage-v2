@@ -56,6 +56,13 @@
             "default_value": "Light"
           }
         },
+        "game_block_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Game Block Button Text",
+            "placeholder": "Learn more"
+          }
+        },
         "block": {
           "type": "Group",
           "config": {
