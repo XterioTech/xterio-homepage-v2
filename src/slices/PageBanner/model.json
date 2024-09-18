@@ -51,6 +51,15 @@
             "placeholder": ""
           }
         },
+        "button_2_url": {
+          "type": "Link",
+          "config": {
+            "label": "Button 2 URL",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
