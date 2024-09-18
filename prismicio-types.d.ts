@@ -1252,6 +1252,16 @@ export interface GamesFeedSliceDefaultPrimary {
   theme: prismic.SelectField<'Light' | 'Dark', 'filled'>
 
   /**
+   * Game Block Button Text field in *GamesFeed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Learn more
+   * - **API ID Path**: games_feed.default.primary.game_block_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  game_block_button_text: prismic.KeyTextField
+
+  /**
    * Block field in *GamesFeed → Default → Primary*
    *
    * - **Field Type**: Group
