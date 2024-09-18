@@ -4,139 +4,6 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type BuildDocumentDataSlicesSlice =
-  | LogosSlice
-  | MeetTheTeamSlice
-  | TestimonialsSlice
-  | ImageSlice
-  | FeatureGridSlice
-  | SectionIntroSlice
-  | PageBannerSlice
-
-/**
- * Content for Build With Xterio documents
- */
-interface BuildDocumentData {
-  /**
-   * Slice Zone field in *Build With Xterio*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: build.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<BuildDocumentDataSlicesSlice> /**
-   * Meta Title field in *Build With Xterio*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: build.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField
-
-  /**
-   * Meta Description field in *Build With Xterio*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: build.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField
-
-  /**
-   * Meta Image field in *Build With Xterio*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: build.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>
-}
-
-/**
- * Build With Xterio document from Prismic
- *
- * - **API ID**: `build`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type BuildDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<BuildDocumentData>, 'build', Lang>
-
-type BuyDocumentDataSlicesSlice =
-  | TipSlice
-  | ImageWithCaptionSlice
-  | TextSlice
-  | PageBannerSlice
-
-/**
- * Content for Buy documents
- */
-interface BuyDocumentData {
-  /**
-   * Slice Zone field in *Buy*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: buy.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<BuyDocumentDataSlicesSlice> /**
-   * Meta Title field in *Buy*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: buy.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField
-
-  /**
-   * Meta Description field in *Buy*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: buy.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField
-
-  /**
-   * Meta Image field in *Buy*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: buy.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>
-}
-
-/**
- * Buy document from Prismic
- *
- * - **API ID**: `buy`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type BuyDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<BuyDocumentData>, 'buy', Lang>
-
 type ContactPageDocumentDataSlicesSlice = ContactInfoSlice
 
 /**
@@ -202,53 +69,54 @@ export type ContactPageDocument<Lang extends string = string> =
     Lang
   >
 
-type EcosystemDocumentDataSlicesSlice =
-  | FourColGridSlice
+type EcosystemPageDocumentDataSlicesSlice =
   | SectionIntroSlice
   | LogosSlice
   | HeroBannerSlice
+  | LatestNewsSlice
+  | FourColGridSlice
 
 /**
- * Content for Ecosystem documents
+ * Content for Ecosystem Page documents
  */
-interface EcosystemDocumentData {
+interface EcosystemPageDocumentData {
   /**
-   * Slice Zone field in *Ecosystem*
+   * Slice Zone field in *Ecosystem Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: ecosystem.slices[]
+   * - **API ID Path**: ecosystem_page.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<EcosystemDocumentDataSlicesSlice> /**
-   * Meta Title field in *Ecosystem*
+  slices: prismic.SliceZone<EcosystemPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Ecosystem Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: ecosystem.meta_title
+   * - **API ID Path**: ecosystem_page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_title: prismic.KeyTextField
 
   /**
-   * Meta Description field in *Ecosystem*
+   * Meta Description field in *Ecosystem Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: ecosystem.meta_description
+   * - **API ID Path**: ecosystem_page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField
 
   /**
-   * Meta Image field in *Ecosystem*
+   * Meta Image field in *Ecosystem Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: ecosystem.meta_image
+   * - **API ID Path**: ecosystem_page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
@@ -256,18 +124,18 @@ interface EcosystemDocumentData {
 }
 
 /**
- * Ecosystem document from Prismic
+ * Ecosystem Page document from Prismic
  *
- * - **API ID**: `ecosystem`
+ * - **API ID**: `ecosystem_page`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type EcosystemDocument<Lang extends string = string> =
+export type EcosystemPageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<EcosystemDocumentData>,
-    'ecosystem',
+    Simplify<EcosystemPageDocumentData>,
+    'ecosystem_page',
     Lang
   >
 
@@ -715,10 +583,8 @@ export type SiteConfigDocument<Lang extends string = string> =
   >
 
 export type AllDocumentTypes =
-  | BuildDocument
-  | BuyDocument
   | ContactPageDocument
-  | EcosystemDocument
+  | EcosystemPageDocument
   | HomepageDocument
   | LegalPageDocument
   | NavigationDocument
@@ -2506,18 +2372,12 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
-      BuildDocument,
-      BuildDocumentData,
-      BuildDocumentDataSlicesSlice,
-      BuyDocument,
-      BuyDocumentData,
-      BuyDocumentDataSlicesSlice,
       ContactPageDocument,
       ContactPageDocumentData,
       ContactPageDocumentDataSlicesSlice,
-      EcosystemDocument,
-      EcosystemDocumentData,
-      EcosystemDocumentDataSlicesSlice,
+      EcosystemPageDocument,
+      EcosystemPageDocumentData,
+      EcosystemPageDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
