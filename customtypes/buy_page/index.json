@@ -1,7 +1,7 @@
 {
-  "id": "contact_page",
-  "label": "Contact Page",
   "format": "page",
+  "id": "buy_page",
+  "label": "Buy Page",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,7 +11,16 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "contact_info": {
+            "latest_news": {
+              "type": "SharedSlice"
+            },
+            "tip": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "page_banner": {
               "type": "SharedSlice"
             }
           }
@@ -19,6 +28,13 @@
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -36,13 +52,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }

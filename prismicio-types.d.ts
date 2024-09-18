@@ -4,68 +4,145 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type ContactPageDocumentDataSlicesSlice = ContactInfoSlice
+type BuildPageDocumentDataSlicesSlice =
+  | PageBannerSlice
+  | LatestNewsSlice
+  | LogosSlice
+  | MeetTheTeamSlice
+  | TestimonialsSlice
+  | ImageSlice
+  | FeatureGridSlice
+  | SectionIntroSlice
 
 /**
- * Content for Contact Page documents
+ * Content for Build Page documents
  */
-interface ContactPageDocumentData {
+interface BuildPageDocumentData {
   /**
-   * Slice Zone field in *Contact Page*
+   * Slice Zone field in *Build Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact_page.slices[]
+   * - **API ID Path**: build_page.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<ContactPageDocumentDataSlicesSlice> /**
-   * Meta Description field in *Contact Page*
+  slices: prismic.SliceZone<BuildPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Build Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: build_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+
+  /**
+   * Meta Description field in *Build Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: contact_page.meta_description
+   * - **API ID Path**: build_page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField
 
   /**
-   * Meta Image field in *Contact Page*
+   * Meta Image field in *Build Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact_page.meta_image
+   * - **API ID Path**: build_page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>
-
-  /**
-   * Meta Title field in *Contact Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: contact_page.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField
 }
 
 /**
- * Contact Page document from Prismic
+ * Build Page document from Prismic
  *
- * - **API ID**: `contact_page`
+ * - **API ID**: `build_page`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ContactPageDocument<Lang extends string = string> =
+export type BuildPageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<ContactPageDocumentData>,
-    'contact_page',
+    Simplify<BuildPageDocumentData>,
+    'build_page',
+    Lang
+  >
+
+type BuyPageDocumentDataSlicesSlice =
+  | LatestNewsSlice
+  | TipSlice
+  | TextSlice
+  | PageBannerSlice
+
+/**
+ * Content for Buy Page documents
+ */
+interface BuyPageDocumentData {
+  /**
+   * Slice Zone field in *Buy Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buy_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BuyPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Buy Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: buy_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+
+  /**
+   * Meta Description field in *Buy Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: buy_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *Buy Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buy_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+}
+
+/**
+ * Buy Page document from Prismic
+ *
+ * - **API ID**: `buy_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BuyPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BuyPageDocumentData>,
+    'buy_page',
     Lang
   >
 
@@ -583,7 +660,8 @@ export type SiteConfigDocument<Lang extends string = string> =
   >
 
 export type AllDocumentTypes =
-  | ContactPageDocument
+  | BuildPageDocument
+  | BuyPageDocument
   | EcosystemPageDocument
   | HomepageDocument
   | LegalPageDocument
@@ -1859,6 +1937,16 @@ export interface PageBannerSliceDefaultPrimary {
   button_2_text: prismic.KeyTextField
 
   /**
+   * Button 2 URL field in *PageBanner → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.default.primary.button_2_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_2_url: prismic.LinkField
+
+  /**
    * Image field in *PageBanner → Default → Primary*
    *
    * - **Field Type**: Image
@@ -2372,9 +2460,12 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
-      ContactPageDocument,
-      ContactPageDocumentData,
-      ContactPageDocumentDataSlicesSlice,
+      BuildPageDocument,
+      BuildPageDocumentData,
+      BuildPageDocumentDataSlicesSlice,
+      BuyPageDocument,
+      BuyPageDocumentData,
+      BuyPageDocumentDataSlicesSlice,
       EcosystemPageDocument,
       EcosystemPageDocumentData,
       EcosystemPageDocumentDataSlicesSlice,
