@@ -26,10 +26,12 @@
                 }
               },
               "text": {
-                "type": "Text",
+                "type": "StructuredText",
                 "config": {
                   "label": "Text",
-                  "placeholder": ""
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
                 }
               },
               "button_1_text": {

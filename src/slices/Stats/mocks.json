@@ -25,9 +25,15 @@
 							[
 								"text",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "camera",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sunt non irure aliquip esse. Voluptate anim Lorem dolore irure ut voluptate exercitation minim aliqua dolor exercitation."
+											}
+										}
+									]
 								}
 							]
 						]

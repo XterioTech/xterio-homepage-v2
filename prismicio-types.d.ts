@@ -887,12 +887,12 @@ export interface FaqsSliceDefaultPrimaryFaqItem {
   /**
    * Answer field in *Faqs → Default → Primary → FAQ*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: faqs.default.primary.faq[].answer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  answer: prismic.KeyTextField
+  answer: prismic.RichTextField
 }
 
 /**
@@ -964,12 +964,12 @@ export interface FeatureGridSliceDefaultPrimaryBlockItem {
   /**
    * Text field in *FeatureGrid → Default → Primary → Block*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: feature_grid.default.primary.block[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button 1 Text field in *FeatureGrid → Default → Primary → Block*
@@ -1098,12 +1098,12 @@ export interface FourColGridSliceDefaultPrimaryBlockItem {
   /**
    * Text field in *FourColGrid → Default → Primary → Block*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: four_col_grid.default.primary.block[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button URL field in *FourColGrid → Default → Primary → Block*
@@ -1213,12 +1213,12 @@ export interface GamesFeedSliceDefaultPrimary {
   /**
    * Text field in *GamesFeed → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: games_feed.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button 1 Text field in *GamesFeed → Default → Primary*
@@ -1945,12 +1945,12 @@ export interface PageBannerSliceDefaultPrimary {
   /**
    * Text field in *PageBanner → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: page_banner.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button 1 Text field in *PageBanner → Default → Primary*
@@ -2040,12 +2040,12 @@ export interface SectionIntroSliceDefaultPrimary {
   /**
    * Text field in *SectionIntro → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: section_intro.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button Text field in *SectionIntro → Default → Primary*
@@ -2135,12 +2135,12 @@ export interface StatsSliceDefaultPrimaryStatsItem {
   /**
    * Text field in *Stats → Default → Primary → Stat*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: stats.default.primary.stats[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 }
 
 /**
@@ -2408,12 +2408,12 @@ export interface TwoColCtaSliceDefaultPrimary {
   /**
    * Text field in *TwoColCta → Default → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: two_col_cta.default.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField
+  text: prismic.RichTextField
 
   /**
    * Button Text field in *TwoColCta → Default → Primary*

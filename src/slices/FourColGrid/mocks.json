@@ -56,9 +56,15 @@
 							[
 								"text",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "broad",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ea nulla laborum duis consequat in proident in reprehenderit ex culpa proident nostrud deserunt."
+											}
+										}
+									]
 								}
 							]
 						]

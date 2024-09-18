@@ -25,9 +25,15 @@
 							[
 								"answer",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "friend",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lorem officia sit eiusmod non ullamco qui pariatur."
+											}
+										}
+									]
 								}
 							]
 						]

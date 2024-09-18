@@ -8,11 +8,6 @@
 				"value": "mood",
 				"type": "Text"
 			},
-			"text": {
-				"__TYPE__": "FieldContent",
-				"value": "cowboy",
-				"type": "Text"
-			},
 			"button_1_text": {
 				"__TYPE__": "FieldContent",
 				"value": "honor",
@@ -52,6 +47,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis occaecat exercitation cupidatat cupidatat culpa tempor. Ex nulla voluptate esse aliquip reprehenderit consequat minim do ad consequat mollit culpa. Dolor irure do ipsum nisi ea laboris."
+						}
+					}
+				]
 			}
 		},
 		"items": []

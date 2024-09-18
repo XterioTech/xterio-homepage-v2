@@ -8,11 +8,6 @@
 				"value": "small",
 				"type": "Text"
 			},
-			"text": {
-				"__TYPE__": "FieldContent",
-				"value": "particularly",
-				"type": "Text"
-			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
 				"value": "neck",
@@ -36,6 +31,17 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim magna sunt sit proident ipsum eiusmod deserunt reprehenderit eiusmod adipisicing sint aliquip."
+						}
+					}
+				]
 			}
 		},
 		"items": []

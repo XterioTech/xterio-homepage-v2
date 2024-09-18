@@ -18,14 +18,6 @@
 								}
 							],
 							[
-								"text",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "apart",
-									"type": "Text"
-								}
-							],
-							[
 								"button_1_text",
 								{
 									"__TYPE__": "FieldContent",
@@ -67,6 +59,20 @@
 									"__TYPE__": "FieldContent",
 									"value": "Half Width",
 									"type": "Select"
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eiusmod Lorem minim ad voluptate enim."
+											}
+										}
+									]
 								}
 							]
 						]

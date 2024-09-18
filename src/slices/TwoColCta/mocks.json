@@ -8,11 +8,6 @@
 				"value": "bag",
 				"type": "Text"
 			},
-			"text": {
-				"__TYPE__": "FieldContent",
-				"value": "among",
-				"type": "Text"
-			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
 				"value": "applied",
@@ -54,6 +49,17 @@
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com"
 				}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia proident magna elit reprehenderit. Aliqua labore proident minim amet laborum sunt qui."
+						}
+					}
+				]
 			}
 		},
 		"items": []

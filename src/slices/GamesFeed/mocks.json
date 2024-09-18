@@ -8,11 +8,6 @@
 				"value": "particles",
 				"type": "Text"
 			},
-			"text": {
-				"__TYPE__": "FieldContent",
-				"value": "like",
-				"type": "Text"
-			},
 			"button_1_text": {
 				"__TYPE__": "FieldContent",
 				"value": "bottom",
@@ -81,6 +76,17 @@
 								}
 							]
 						]
+					}
+				]
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex commodo id eiusmod exercitation aliqua tempor ea Lorem do exercitation consequat non exercitation anim sit. Laborum eu laboris sint laboris veniam occaecat tempor ipsum exercitation ipsum proident occaecat."
+						}
 					}
 				]
 			}
