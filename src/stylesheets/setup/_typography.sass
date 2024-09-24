@@ -1,15 +1,22 @@
 body
-  +primaryFont
-  +clamp('font-size', 16px, 18px, 375px, 1440px)
+  +firstFont
+  font-size: 1em
   color: $black
   line-height: $baseline
 
-%h0, %h1, %h2, %h3, %h4, %h5
-  +secondaryFont
+%h1, %h2, %h3, %h4
+  +secondFont
+
+%h0, %h5
+  +thirdFont
+
+%h6
+  +fourthFont
+
+%h0, %h1, %h2, %h3, %h4, %h5, %h6
   display: block
-  font-weight: $blackFontWeight
-  letter-spacing: -0.08em
   line-height: 1.4em
+  text-transform: uppercase
 
 %h0
   font-size: 2.25em
