@@ -1,7 +1,6 @@
 import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
-import {Button, Image} from "@superrb/next-addons/components";
-import {ButtonVariant} from "@/components/button";
+import Button, { ButtonVariant } from '@/components/button'
 
 /**
  * Props for `GamesFeed`.
@@ -22,6 +21,11 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
     theme
   } = slice.primary
 
+  let buttonColour = 'outline'
+  if (theme == 'Light') {
+    buttonColour = 'black'
+  }
+
   return (
     <section
       className="games-feed"
@@ -38,9 +42,22 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
         <Button
           href={button_1_url}
           label={button_1_text}
-          variants={[ButtonVariant.round]}
+          variants={[buttonColour as ButtonVariant, ButtonVariant.round]}
           className="games-feed__button"
         />
+        <div className="games-feed__blocks">
+          {slice.primary.block.map(({ image }, index) => (
+            <div className="games-feed__block games-feed-block" key={index}>
+              <Button
+                href={button_1_url}
+                label={game_block_button_text}
+                variants={[ButtonVariant.outline, ButtonVariant.square]}
+                className="games-feed-block__button"
+              />
+            </div>
+          ))}
+        </div>
+
       </div>
 
     </section>
