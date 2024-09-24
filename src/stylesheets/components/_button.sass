@@ -20,15 +20,6 @@
     position: relative
 
     &:hover
-      &.button--outline,
-      &.button--black
-        .button__icon
-          background-color: $black
-
-      &.button--white
-        .button__icon
-          background-color: $white
-
       .button__icon
         &:before
           transform: translate(0, 0)
@@ -69,7 +60,7 @@
         background-color: $white
 
         &:before
-          +buttonArrow($white)
+          +buttonArrow($black)
 
         &:after
           +buttonArrow($black)
@@ -79,7 +70,7 @@
         background-color: $black
 
         &:before
-          +buttonArrow($black)
+          +buttonArrow($white)
 
         &:after
           +buttonArrow($white)
@@ -91,28 +82,16 @@
     background-color: $black
     color: $white
 
-    &:hover
-      background-color: $white
-      color: $black
-
   &--white
     background-color: $white
     border: $border
     color: $black
-
-    &:hover
-      background-color: $black
-      color: $white
 
   &--outline
     background-color: rgba($white, 0)
     border: $border
     border-color: $white
     color: $white
-
-    &:hover
-      background-color: $white
-      color: $black
 
   &__text
     margin: auto
