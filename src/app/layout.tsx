@@ -3,6 +3,7 @@ import '@/stylesheets/style.sass'
 import Navigation from "@/components/navigation";
 import {CookieBanner} from "@superrb/react-addons/components";
 import Scripts from "@/components/scripts";
+import {GtAmerica, PPMonument} from "@/fonts";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${GtAmerica.variable} ${PPMonument.variable}`}>
       <Navigation name={'navigation'}/>
       {children}
       <CookieBanner />
