@@ -4,6 +4,9 @@ import { LinkBase, LinkBaseProps } from '@superrb/next-addons/components'
 export enum ButtonVariant {
   round = 'round',
   square = 'square',
+  black = 'black',
+  white = 'white',
+  outline = 'outline',
 }
 
 export type ButtonProps = {
@@ -27,6 +30,8 @@ const Button = ({
     <LinkBase className={`button ${variantClasses} ${className}`} {...props}>
       <span className="button__text">
         {label as string}
+      </span>
+      <span className="button__icon">
       </span>
       {children}
     </LinkBase>

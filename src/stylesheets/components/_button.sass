@@ -1,0 +1,120 @@
+.button
+  +unbutton
+  +fifthFont
+  @extend %tinyFontSize
+  align-items: center
+  cursor: pointer
+  display: inline-flex
+  gap: ($baseline * .5)
+  justify-content: space-between
+  min-width: 13rem
+  overflow: hidden
+  padding: 1rem $textSpacer
+  text-decoration: none
+  text-transform: uppercase
+  transition: background $transitionDuration $transitionTimingFunction, color $transitionDuration $transitionTimingFunction
+
+  &--round
+    border-radius: $buttonBorderRadius
+    padding-right: 4.5em
+    position: relative
+
+    &:hover
+      &.button--outline,
+      &.button--black
+        .button__icon
+          background-color: $black
+
+      &.button--white
+        .button__icon
+          background-color: $white
+
+      .button__icon
+        &:before
+          transform: translate(0, 0)
+
+        &:after
+          transform: translate(100%, -100%)
+
+    .button__icon
+      border-radius: 100%
+      bottom: 0
+      height: 2.4375rem
+      overflow: hidden
+      position: absolute
+      right: 0.5625rem
+      top: 0
+      transition: background $transitionDuration $transitionTimingFunction
+      width: 2.4375rem
+      margin: auto 0
+
+      &:before,
+      &:after
+        +pseudoBasics
+        height: 100%
+        left: 0
+        top: 0
+        transition: transform $transitionDuration $transitionTimingFunction
+        width: 100%
+
+      &:before
+        transform: translate(-100%, 100%)
+
+      &:after
+        transform: translate(0, 0)
+
+    &.button--outline,
+    &.button--black
+      .button__icon
+        background-color: $white
+
+        &:before
+          +buttonArrow($white)
+
+        &:after
+          +buttonArrow($black)
+
+    &.button--white
+      .button__icon
+        background-color: $black
+
+        &:before
+          +buttonArrow($black)
+
+        &:after
+          +buttonArrow($white)
+
+  &--square
+    border-radius: $buttonBorderRadiusSquare
+
+  &--black
+    background-color: $black
+    color: $white
+
+    &:hover
+      background-color: $white
+      color: $black
+
+  &--white
+    background-color: $white
+    color: $black
+
+    &:hover
+      background-color: $black
+      color: $white
+
+  &--outline
+    background-color: rgba($white, 0)
+    border: $border
+    border-color: $white
+    color: $white
+
+    &:hover
+      background-color: $white
+      color: $black
+
+  &__text
+    margin: auto
+
+    span
+      margin-bottom: 0 !important
