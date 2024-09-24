@@ -12,8 +12,10 @@ export type CarouselProps = SliceComponentProps<Content.CarouselSlice>
 const Carousel = ({ slice }: CarouselProps): JSX.Element => {
   return (
     <section
+      className="carousel"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"dark"}
     >
       Placeholder component for carousel (variation: {slice.variation}) Slices
     </section>

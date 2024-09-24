@@ -1,7 +1,5 @@
 .button
   +unbutton
-  +fifthFont
-  @extend %tinyFontSize
   align-items: center
   cursor: pointer
   display: inline-flex
@@ -11,13 +9,15 @@
   overflow: hidden
   padding: 1rem $textSpacer
   text-decoration: none
-  text-transform: uppercase
   transition: background $transitionDuration $transitionTimingFunction, color $transitionDuration $transitionTimingFunction
 
   &--round
+    +fifthFont
+    @extend %tinyFontSize
     border-radius: $buttonBorderRadius
     padding-right: 4.5em
     position: relative
+    text-transform: uppercase
 
     &:hover
       .button__icon
@@ -76,6 +76,7 @@
           +buttonArrow($white)
 
   &--square
+    +clamp('font-size', 0.625em, 1.125em, $largeMobile, $desktop)
     border-radius: $buttonBorderRadiusSquare
 
   &--black

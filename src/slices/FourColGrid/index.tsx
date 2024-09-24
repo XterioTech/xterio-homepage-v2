@@ -12,8 +12,10 @@ export type FourColGridProps = SliceComponentProps<Content.FourColGridSlice>
 const FourColGrid = ({ slice }: FourColGridProps): JSX.Element => {
   return (
     <section
+      className="four-col-grid"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"light"}
     >
       Placeholder component for four_col_grid (variation: {slice.variation})
       Slices

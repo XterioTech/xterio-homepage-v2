@@ -12,8 +12,10 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>
 const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
   return (
     <section
+      className="testimonials"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"light"}
     >
       Placeholder component for testimonials (variation: {slice.variation})
       Slices

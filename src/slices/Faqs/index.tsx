@@ -12,8 +12,10 @@ export type FaqsProps = SliceComponentProps<Content.FaqsSlice>
 const Faqs = ({ slice }: FaqsProps): JSX.Element => {
   return (
     <section
+      className="faqs"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"dark"}
     >
       Placeholder component for faqs (variation: {slice.variation}) Slices
     </section>

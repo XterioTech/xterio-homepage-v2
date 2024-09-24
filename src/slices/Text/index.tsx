@@ -12,8 +12,10 @@ export type TextProps = SliceComponentProps<Content.TextSlice>
 const Text = ({ slice }: TextProps): JSX.Element => {
   return (
     <section
+      className="text"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"light"}
     >
       Placeholder component for text (variation: {slice.variation}) Slices
     </section>

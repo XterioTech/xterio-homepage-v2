@@ -1,0 +1,18 @@
+[data-slice-backgroundcolour="light"]
+  background-color: $white
+  color: $black
+
+[data-slice-backgroundcolour="dark"]
+  background-color: $black
+  color: $white
+
+[data-slice-backgroundcolour="light"] + [dcata-slice-backgroundcolour="dark"],
+[data-slice-backgroundcolour="dark"] + [data-slice-backgroundcolour="light"],
+[data-slice-backgroundcolour="image"] + [data-slice-backgroundcolour="light"],
+[data-slice-backgroundcolour="image"] + [data-slice-backgroundcolour="dark"]
+  +spacingTop
+
+section:last-of-type
+  &[data-slice-backgroundcolour="dark"],
+  &[data-slice-backgroundcolour="light"]
+    +clamp('margin-bottom', $spacerMobile, $spacerDesktop, $largeMobile, $desktop)

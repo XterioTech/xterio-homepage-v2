@@ -12,8 +12,10 @@ export type FeatureGridProps = SliceComponentProps<Content.FeatureGridSlice>
 const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
   return (
     <section
+      className="feature-grid"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"light"}
     >
       Placeholder component for feature_grid (variation: {slice.variation})
       Slices

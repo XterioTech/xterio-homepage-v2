@@ -12,8 +12,10 @@ export type ImageProps = SliceComponentProps<Content.ImageSlice>
 const Image = ({ slice }: ImageProps): JSX.Element => {
   return (
     <section
+      className="parallax-image"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"image"}
     >
       Placeholder component for image (variation: {slice.variation}) Slices
     </section>

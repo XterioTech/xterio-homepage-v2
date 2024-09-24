@@ -27,6 +27,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
       className="section-intro"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"light"}
     >
       <div className="section-intro__container">
         <h2 className="section-intro__title">{title}</h2>

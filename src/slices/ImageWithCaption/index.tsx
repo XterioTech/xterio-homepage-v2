@@ -13,8 +13,10 @@ export type ImageWithCaptionProps =
 const ImageWithCaption = ({ slice }: ImageWithCaptionProps): JSX.Element => {
   return (
     <section
+      className="image-with-caption"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"dark"}
     >
       Placeholder component for image_with_caption (variation: {slice.variation}
       ) Slices

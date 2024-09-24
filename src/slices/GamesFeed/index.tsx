@@ -18,7 +18,8 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
     text,
     button_1_url,
     button_1_text,
-    game_block_button_text
+    game_block_button_text,
+    theme
   } = slice.primary
 
   return (
@@ -26,6 +27,10 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
       className="games-feed"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={theme
+        .toLowerCase()
+        .split(' ')
+        .join('')}
     >
       <div className="games-feed__container">
         <h2 className="games-feed__title">{title}</h2>

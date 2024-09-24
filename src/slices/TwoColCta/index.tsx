@@ -12,8 +12,10 @@ export type TwoColCtaProps = SliceComponentProps<Content.TwoColCtaSlice>
 const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
   return (
     <section
+      className="two-col-cta"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"dark"}
     >
       Placeholder component for two_col_cta (variation: {slice.variation})
       Slices

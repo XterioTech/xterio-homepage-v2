@@ -12,8 +12,10 @@ export type MeetTheTeamProps = SliceComponentProps<Content.MeetTheTeamSlice>
 const MeetTheTeam = ({ slice }: MeetTheTeamProps): JSX.Element => {
   return (
     <section
+      className="meet-the-team"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-backgroundcolour={"dark"}
     >
       Placeholder component for meet_the_team (variation: {slice.variation})
       Slices
