@@ -19,6 +19,17 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     theme
   } = slice.primary
 
+
+  let button1Colour = 'black'
+  if (theme == 'Dark') {
+    button1Colour = 'white'
+  }
+
+  let button2Colour = 'white'
+  if (theme == 'Dark') {
+    button2Colour = 'outline'
+  }
+
   return (
     <section
       className="hero-banner"
@@ -34,13 +45,13 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       <Button
         href={button_1_url}
         label={button_1_text}
-        variants={[ButtonVariant.black, ButtonVariant.round]}
+        variants={[button1Colour as ButtonVariant, ButtonVariant.round]}
         className="hero-banner__button"
       />
       <Button
         href={button_2_url}
         label={button_2_text}
-        variants={[ButtonVariant.white, ButtonVariant.round]}
+        variants={[button2Colour as ButtonVariant, ButtonVariant.round]}
         className="hero-banner__button"
       />
     </section>
