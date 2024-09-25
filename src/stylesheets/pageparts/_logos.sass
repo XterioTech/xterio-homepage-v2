@@ -1,2 +1,43 @@
 .logos
   +spacingBottom
+  overflow: hidden
+
+  &__container
+    display: flex
+
+  &__header
+    +gutters
+
+    &[data-text-align="center"]
+      text-align: center
+
+    &[data-text-align="left"]
+      text-align: left
+
+  &__title
+    @extend %h5
+
+  &__marquee
+    align-items: center
+    animation: logosMarquee 30s linear infinite running
+    display: flex
+    flex: 0 0 auto
+    height: 7.5rem
+    overflow: hidden
+    width: auto
+
+  &__block
+    +clamp(width, 4em, 8em, $largeMobile, $desktop)
+    flex: 0 0 auto
+    height: 100%
+    margin: 0 $textSpacer
+
+    @media (min-width: $tablet)
+      margin-left: 4em
+      margin-right: 4em
+
+  &__image
+    max-height: 10.9375em
+
+    img
+      object-fit: contain
