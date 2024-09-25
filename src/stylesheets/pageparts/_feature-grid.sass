@@ -1,2 +1,52 @@
 .feature-grid
   +spacingBottom
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+    +clamp('column-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    +clamp('row-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    display: grid
+    grid-template-columns: repeat(6, minmax(0, 1fr))
+    grid-template-rows: auto
+    grid-auto-flow: row dense
+    width: 100%
+    min-width: 0
+
+    @media (min-width: $smallDesktop)
+      column-gap: $gap
+      row-gap: $gap
+
+  &__block
+    +clamp('padding', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
+    border: $border
+    border-radius: $borderRadius
+    grid-column-end: span 6
+    min-width: 0
+
+    @media (min-width: $smallDesktop)
+      padding: $gap
+
+    &[data-block-width="fullwidth"]
+      @media (min-width: $smallDesktop)
+        grid-column-end: span 6
+
+    &[data-block-width="halfwidth"]
+      @media (min-width: $smallDesktop)
+        grid-column-end: span 3
+
+    &[data-block-width="onethird"]
+      @media (min-width: $smallDesktop)
+        grid-column-end: span 2
+
+    &[data-block-width="twothirds"]
+      @media (min-width: $smallDesktop)
+        grid-column-end: span 4
+
+  &__title
+    @extend %h3
+
+  &__text
+    p
+      @extend %smallFontSize
+      margin-bottom: 0
