@@ -50,3 +50,16 @@
     p
       @extend %smallFontSize
       margin-bottom: 0
+
+  &__button
+    margin-top: $textSpacer / 2
+    margin-right: $textSpacer / 2
+
+    @media (max-width: $maxTablet)
+      width: 100%
+
+    &:first-of-type
+      margin-top: $textSpacer
+
+    &:last-of-type
+      margin-right: 0
