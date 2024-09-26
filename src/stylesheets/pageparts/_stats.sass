@@ -1,2 +1,55 @@
 .stats
   +spacingBottom
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+
+  &__blocks
+    +clamp('column-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    +clamp('row-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    display: grid
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+    grid-template-rows: auto
+    grid-auto-flow: row dense
+    width: 100%
+    min-width: 0
+
+    @media (min-width: $smallDesktop)
+      column-gap: $gap / 2
+      row-gap: $gap / 2
+
+  &__block,
+  &__button
+    border: $border
+    border-radius: $borderRadius
+    padding: $textSpacer
+    text-align: center
+
+  &__block
+    grid-column-end: span 4
+    min-width: 0
+
+    @media (min-width: $tablet)
+      grid-column-end: span 2
+
+    @media (min-width: $smallDesktop)
+      grid-column-end: span 1
+
+  &__title
+    +thirdFont
+    @extend %tinyFontSize
+
+  &__text
+    p
+      +secondFont
+      @extend %pFontSize
+      margin-bottom: 0
+      word-break: break-word
+
+  &__button
+    margin-top:  $gap / 2
+    width: 100%
+
+  &__text-link
+    +thirdFont
