@@ -1,0 +1,36 @@
+%textLinkInit
+  +fifthFont
+  @extend %tinyFontSize
+  opacity: 1
+  overflow: hidden
+  position: relative
+  text-transform: uppercase
+  text-decoration: none
+
+  &:after
+    +pseudoBasics
+    width: 100%
+    height: 0.0625rem
+    bottom: 0
+    left: 0
+    background-color: currentColor
+    transform-origin: bottom left
+    transform: scaleX(1)
+    transition: transform $transitionDuration $transitionTimingFunction
+
+%textLinkHover
+  &:hover
+    opacity: 1 !important
+
+    &:after
+      transform: scaleX(0)
+      transform-origin: bottom right
+
+%textLink
+  @extend %textLinkInit
+
+  &:hover
+    @extend %textLinkHover
+
+.text-link
+  @extend %textLink
