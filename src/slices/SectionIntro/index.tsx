@@ -1,7 +1,6 @@
-import { Content } from '@prismicio/client'
+import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
-import {Button} from "@superrb/next-addons/components";
-import {ButtonVariant} from "@/components/button";
+import Button, {ButtonVariant} from "@/components/button";
 import TextLink from '@/components/text-link'
 
 /**
@@ -32,17 +31,20 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
       <div className="section-intro__container">
         <h2 className="section-intro__title">{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>
-        <Button
-          href={button_url}
-          label={button_text}
-          variants={[ButtonVariant.round]}
-          className="section-intro__button"
-        />
+        {asLink(button_url) && button_text && (
+          <Button
+            href={button_url}
+            label={button_text}
+            variants={[ButtonVariant.white, ButtonVariant.round]}
+            className="section-intro__button"
+          />
+        )}
 
         {link_url && link_text && (
           <TextLink
             href={link_url}
             label={link_text}
+            className="section-intro__text-link"
           />
         )}
       </div>
