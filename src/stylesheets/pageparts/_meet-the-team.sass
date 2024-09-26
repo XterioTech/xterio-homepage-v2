@@ -1,2 +1,66 @@
 .meet-the-team
   +spacingBottom
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+
+  &__header
+    display: flex
+    justify-content: space-between
+
+    @media (max-width: $maxTablet)
+      flex-wrap: wrap
+
+  &__team
+    column-gap: $gap * 2
+    display: grid
+
+    @media (min-width: $tablet)
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+
+.team-header
+  padding-bottom: $textSpacer
+
+  @media (min-width: $smallDesktop)
+    +spacingBottomHalf
+
+  &__title,
+  &__text
+    flex: 0 0 100%
+
+  &__title
+    @extend %h2
+
+    @media (min-width: $tablet)
+      flex: 0 0 35%
+      margin-bottom: 0
+
+  &__text
+    margin-bottom: 0
+
+    @media (min-width: $tablet)
+      flex: 0 0 57%
+
+.employee
+  display: block
+
+  &__image
+    aspect-ratio: 408/363
+    border-radius: $imgBorderRadius
+    margin-bottom: $textSpacer
+    max-width: 100%
+    min-width: 0
+    overflow: hidden
+
+    img
+      display: block
+      height: 100%
+      object-fit: cover
+      width: 100%
+
+  &__name
+    @extend %h5
+
+  &__role
+    @extend %h6
