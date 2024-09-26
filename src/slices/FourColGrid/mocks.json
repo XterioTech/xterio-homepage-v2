@@ -70,6 +70,11 @@
 						]
 					}
 				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "shadow",
+				"type": "Text"
 			}
 		},
 		"items": []

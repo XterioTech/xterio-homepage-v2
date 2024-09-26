@@ -1065,6 +1065,16 @@ export interface FourColGridSliceDefaultPrimaryBlockItem {
  */
 export interface FourColGridSliceDefaultPrimary {
   /**
+   * Button Text field in *FourColGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: four_col_grid.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField
+
+  /**
    * Block field in *FourColGrid → Default → Primary*
    *
    * - **Field Type**: Group

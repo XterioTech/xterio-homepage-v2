@@ -1,2 +1,55 @@
 .four-col-grid
   +spacingBottom
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+    +clamp('column-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    +clamp('row-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
+    display: grid
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+    grid-template-rows: auto
+    grid-auto-flow: row dense
+    width: 100%
+    min-width: 0
+
+    @media (min-width: $smallDesktop)
+      column-gap: $gap
+      row-gap: $gap
+
+  &__block
+    +clamp('padding', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
+    border: $border
+    border-radius: $borderRadius
+    display: flex
+    flex-direction: column
+    grid-column-end: span 4
+    min-width: 0
+
+    @media (min-width: $tablet)
+      grid-column-end: span 2
+
+    @media (min-width: $desktop)
+      grid-column-end: span 1
+      padding: $gap
+
+  &__image
+    border-radius: $imgBorderRadius
+    height: 4.6875rem
+    margin-bottom: $textSpacer
+    width: 4.6875rem
+
+  &__title
+    @extend %h4
+
+  &__text
+    p
+      @extend %mediumFontSize
+      margin-bottom: 0
+
+  &__footer
+    margin-top: auto
+
+  &__button
+    margin-top: $textSpacer
+    width: 100%
