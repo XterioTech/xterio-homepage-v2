@@ -14,8 +14,8 @@
     min-width: 0
 
     @media (min-width: $smallDesktop)
-      column-gap: $gap
-      row-gap: $gap
+      column-gap: $gap * 2
+      row-gap: $gap * 2
 
   &__block
     +clamp('padding', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
@@ -25,7 +25,7 @@
     min-width: 0
 
     @media (min-width: $smallDesktop)
-      padding: $gap
+      padding: $gap * 2
 
     &[data-block-width="fullwidth"]
       @media (min-width: $smallDesktop)
