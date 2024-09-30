@@ -4,16 +4,10 @@
   &__header
     +gutters
 
-  &__slides
-    +slideshow(x, center)
-    +spacingTop
-    scroll-padding-inline: 50%
-    align-items: stretch
+  &__blocks
     display: flex
-    flex: 1 1 100%
-    gap: $textSpacer
 
-  &__slide
+  &__block
     aspect-ratio: 360/503
     border-radius: $borderRadius
     flex: 0 0 calc(80vw + $textSpacer)

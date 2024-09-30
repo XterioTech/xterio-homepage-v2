@@ -1,13 +1,6 @@
-'use client'
-
-import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, { ButtonVariant } from '@/components/button'
 import GameBlock from "@/components/game-block";
-import {MutableRefObject, useEffect, useRef, useState} from "react";
-import { useSlideshow } from '@superrb/react-addons/hooks'
-import {SlideshowPagination} from "@superrb/react-addons/components";
-import {isCentered} from "@superrb/react-addons/hooks/use-slideshow";
 
 /**
  * Props for `GamesFeed`.
@@ -32,17 +25,6 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
   if (theme == 'Light') {
     buttonColour = 'black'
   }
-
-  const [ready, setReady] = useState(false)
-  const slideshowRef =
-    useRef<HTMLElement>() as MutableRefObject<HTMLUListElement>
-  const slideshow = useSlideshow(slideshowRef)
-
-  useEffect(() => {
-    setReady(true)
-  }, [])
-
-  const slides = [...slice.primary.block]
 
   return (
     <section
@@ -69,24 +51,19 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
         </header>
 
 
-        <ul className="games-feed__slides" ref={slideshowRef}>
-          {slides.map((item, i) => (
-            <li
-              className="games-feed__slide"
-              key={`games-feed-item-${i}`}
-              aria-current={i === slideshow.currentSlide}
-            >
+        <div className="games-feed__blocks">
+          {slice.primary.block.map(({ image, type, url }, index) => (
+            <div className="games-feed__block game-block" key={index}>
               <GameBlock
-                image={item.image}
-                blockType={item.type}
+                image={image}
+                blockType={type}
                 buttonText={game_block_button_text}
-                buttonUrl={item.button_1_url}
+                buttonUrl={button_1_url}
+                buttonVariants={[ButtonVariant.outline, ButtonVariant.square]}
               />
-            </li>
+            </div>
           ))}
-        </ul>
-
-        <SlideshowPagination slideshow={slideshow} />
+        </div>
 
       </div>
 
