@@ -45,6 +45,12 @@
 .employee
   display: block
 
+  @media (max-width: $maxTablet)
+    padding-bottom: $textSpacer * 1.5
+
+  &:last-of-type
+    padding-bottom: 0
+
   &__image
     aspect-ratio: 408/363
     border-radius: $imgBorderRadius
@@ -64,3 +70,4 @@
 
   &__role
     @extend %h6
+    margin-bottom: 0
