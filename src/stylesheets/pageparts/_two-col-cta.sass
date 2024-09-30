@@ -1,2 +1,26 @@
 .two-col-cta
   +spacingBottom
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+    display: flex
+
+    @media (max-width: $maxTablet)
+      flex-wrap: wrap
+
+  &__image
+    aspect-ratio: 268/414
+    border-radius: $imgBorderRadius
+
+.two-col-cta-col
+  &--text
+    @media (min-width: $tablet)
+      +gutterRight
+
+  &--image
+    @media (min-width: $tablet)
+      flex: 0 0 16.75rem
+
+    @media (max-width: $maxTablet)
+      +spacingTopHalf
