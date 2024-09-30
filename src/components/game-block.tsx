@@ -1,6 +1,5 @@
 import { Image } from "@superrb/next-addons/components";
 import {ImageProps} from "@superrb/next-addons/components/image";
-import Button, {ButtonVariant} from "@/components/button";
 import TextLink from "@/components/text-link";
 
 const GameBlock = ({ image, className, blockType, buttonText, buttonUrl, ...props }: ImageProps) => {
