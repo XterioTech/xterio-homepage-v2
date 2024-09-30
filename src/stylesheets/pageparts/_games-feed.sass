@@ -1,2 +1,92 @@
 .games-feed
   +spacingBottom
+
+  &__header
+    +gutters
+
+  &__slides
+    +slideshow(x, center)
+    +spacingTop
+    scroll-padding-inline: 50%
+    align-items: stretch
+    display: flex
+    flex: 1 1 100%
+    gap: $textSpacer
+
+  &__slide
+    aspect-ratio: 360/503
+    border-radius: $borderRadius
+    flex: 0 0 calc(80vw + $textSpacer)
+    height: 34.625rem
+    padding: $textSpacer $textSpacer /2
+    position: relative
+    transition: padding $transitionDuration $transitionTimingFunction
+
+    @media (min-width: $tablet)
+      flex: 0 0 calc(40vw + $textSpacer)
+
+    @media (min-width: $smallDesktop)
+      flex: 0 0 22.5rem
+
+    &[aria-current="true"]
+      @media (min-width: $smallDesktop)
+        aspect-ratio: 396/554
+        flex: 0 0 24.75rem
+        padding-top: 0
+        padding-bottom: 0
+
+    &:last-child
+      padding-right: 0
+
+.games-feed-header
+  &__container
+    @extend %cappedWidth
+    text-align: center
+
+.game-block
+  position: relative
+  width: 100%
+  height: 100%
+
+  &__image
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    aspect-ratio: 360/503
+
+    &:after
+      +pseudoBasics
+      background: linear-gradient(180deg, rgba($white, 0) 0%, $black62 100%)
+      border-radius: 0px 0px $borderRadius $borderRadius
+      height: 11.5rem
+      width: 100%
+      left: 0
+      bottom: 0
+
+    &__image
+      border-radius: $borderRadius
+
+  &__type
+    background-color: $black30
+    border-radius: $borderRadius
+    display: block
+    left: 0
+    margin: auto
+    padding: 0.5em 1em
+    position: absolute
+    right: 0
+    text-align: center
+    top: $textSpacer
+    width: fit-content
+    z-index: 2
+
+  &__button
+    bottom: $textSpacer
+    left: 0
+    right: 0
+    margin: auto
+    position: absolute
+    width: fit-content
+    z-index: 2
