@@ -1,0 +1,61 @@
+=slideshow($axis: x, $align: start, $type: proximity, $snap: normal)
+  @if $axis == x
+    overflow: auto clip
+  @else
+    overflow: clip auto
+
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+
+  -webkit-overflow-scrolling: touch
+  scroll-behavior: smooth
+
+  scrollbar-width: none
+  -ms-overflow-style: none
+
+  &::-webkit-scrollbar
+    display: none
+
+  scroll-snap-type: $axis $type
+
+  @if $align == center
+    scroll-padding: 50%
+
+  > *
+    scroll-snap-align: $align
+    scroll-snap-stop: $snap
+
+.slideshow-buttons
+  .button:disabled
+    .button__icon
+      opacity: .3
+
+  &:not(:has(.button:not(:disabled)))
+    display: none
+
+.slideshow-pagination
+  +spacingTopHalf
+  align-items: center
+  display: flex
+  gap: 1em
+  justify-content: center
+
+  &__button
+    +unbutton
+    +opacityHover
+    border: $border
+    border-color: $white
+    border-radius: 100vw
+    color: inherit
+    cursor: pointer
+    height: 1.3125em
+    transition: background-color $transitionDuration $transitionTimingFunction, opacity $transitionDuration $transitionTimingFunction
+    width: 1.3125em
+
+    &[aria-current="true"]
+      background: currentColor
+      transform: scale(1.3125)
+
+    span
+      @extend %screenreader-text
