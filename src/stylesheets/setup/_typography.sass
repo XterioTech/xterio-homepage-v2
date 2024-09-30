@@ -77,10 +77,13 @@ p
   margin: 0 0 $baseline
   width: 100%
 
-.screenreader-text
+%screenreader-text
   left: 0
   position: absolute
   top: -9999vh
+
+.screenreader-text
+  @extend %screenreader-text
 
 a
   color: inherit
