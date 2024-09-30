@@ -59,7 +59,6 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
                 blockType={type}
                 buttonText={game_block_button_text}
                 buttonUrl={button_1_url}
-                buttonVariants={[ButtonVariant.outline, ButtonVariant.square]}
               />
             </div>
           ))}
