@@ -2,8 +2,6 @@ import { KeyTextField } from '@prismicio/client'
 import { LinkBase, LinkBaseProps } from '@superrb/next-addons/components'
 
 export enum ButtonVariant {
-  round = 'round',
-  square = 'square',
   black = 'black',
   white = 'white',
   outline = 'outline',
@@ -16,7 +14,7 @@ export type ButtonProps = {
 } & LinkBaseProps
 
 const Button = ({
-    variants = [ButtonVariant.round],
+    variants = 'outline',
     label = '',
     className = '',
     children,

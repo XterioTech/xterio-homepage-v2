@@ -1,83 +1,76 @@
 .button
   +unbutton
+  +fifthFont
+  @extend %tinyFontSize
   align-items: center
+  border-radius: $buttonBorderRadius
   cursor: pointer
   display: inline-flex
   gap: ($baseline * .5)
   justify-content: space-between
   min-width: 13rem
   overflow: hidden
-  padding: 1rem $textSpacer
+  padding: 1rem 4.5em 1em $textSpacer
+  position: relative
   text-decoration: none
+  text-transform: uppercase
   transition: background $transitionDuration $transitionTimingFunction, color $transitionDuration $transitionTimingFunction
 
-  &--round
-    +fifthFont
-    @extend %tinyFontSize
-    border-radius: $buttonBorderRadius
-    padding-right: 4.5em
-    position: relative
-    text-transform: uppercase
-
-    &:hover
-      .button__icon
-        &:before
-          transform: translate(0, 0)
-
-        &:after
-          transform: translate(100%, -100%)
-
+  &:hover
     .button__icon
-      border-radius: 100%
-      bottom: 0
-      height: 2.4375rem
-      overflow: hidden
-      position: absolute
-      right: 0.5625rem
-      top: 0
-      transition: background $transitionDuration $transitionTimingFunction
-      width: 2.4375rem
-      margin: auto 0
-
-      &:before,
-      &:after
-        +pseudoBasics
-        height: 100%
-        left: 0
-        top: 0
-        transition: transform $transitionDuration $transitionTimingFunction
-        width: 100%
-
       &:before
-        transform: translate(-100%, 100%)
-
-      &:after
         transform: translate(0, 0)
 
-    &.button--outline,
-    &.button--black
-      .button__icon
-        background-color: $white
+      &:after
+        transform: translate(100%, -100%)
 
-        &:before
-          +buttonArrow($black)
+  .button__icon
+    border-radius: 100%
+    bottom: 0
+    height: 2.4375rem
+    overflow: hidden
+    position: absolute
+    right: 0.5625rem
+    top: 0
+    transition: background $transitionDuration $transitionTimingFunction
+    width: 2.4375rem
+    margin: auto 0
 
-        &:after
-          +buttonArrow($black)
+    &:before,
+    &:after
+      +pseudoBasics
+      height: 100%
+      left: 0
+      top: 0
+      transition: transform $transitionDuration $transitionTimingFunction
+      width: 100%
 
-    &.button--white
-      .button__icon
-        background-color: $black
+    &:before
+      transform: translate(-100%, 100%)
 
-        &:before
-          +buttonArrow($white)
+    &:after
+      transform: translate(0, 0)
 
-        &:after
-          +buttonArrow($white)
+  &.button--outline,
+  &.button--black
+    .button__icon
+      background-color: $white
 
-  &--square
-    +clamp('font-size', 0.625em, 1.125em, $largeMobile, $desktop)
-    border-radius: $buttonBorderRadiusSquare
+      &:before
+        +buttonArrow($black)
+
+      &:after
+        +buttonArrow($black)
+
+  &.button--white
+    .button__icon
+      background-color: $black
+
+      &:before
+        +buttonArrow($white)
+
+      &:after
+        +buttonArrow($white)
 
   &--black
     background-color: $black

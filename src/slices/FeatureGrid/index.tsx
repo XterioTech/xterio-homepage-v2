@@ -29,7 +29,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               <Button
                 href={button_1_url}
                 label={button_1_text}
-                variants={[ButtonVariant.black, ButtonVariant.round]}
+                variants={[ButtonVariant.black]}
                 className="feature-grid__button"
               />
             )}
@@ -37,7 +37,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               <Button
                 href={button_2_url}
                 label={button_2_text}
-                variants={[ButtonVariant.white, ButtonVariant.round]}
+                variants={[ButtonVariant.white]}
                 className="feature-grid__button"
               />
             )}

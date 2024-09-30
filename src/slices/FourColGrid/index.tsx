@@ -37,7 +37,7 @@ const FourColGrid = ({ slice }: FourColGridProps): JSX.Element => {
                 <Button
                   href={button_url}
                   label={button_text}
-                  variants={[ButtonVariant.black, ButtonVariant.round]}
+                  variants={[ButtonVariant.black]}
                   className="four-col-grid__button"
                 />
               </div>

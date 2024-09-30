@@ -44,7 +44,7 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
             <Button
               href={button_1_url}
               label={button_1_text}
-              variants={[buttonColour as ButtonVariant, ButtonVariant.round]}
+              variants={[buttonColour as ButtonVariant]}
               className="games-feed-header__button"
             />
           </div>

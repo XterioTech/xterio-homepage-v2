@@ -14,7 +14,7 @@ const GameBlock = ({ image, className, blockType, buttonText, buttonUrl, ...prop
             <Button
               href={buttonUrl}
               label={buttonText}
-              variants={[ButtonVariant.outline, ButtonVariant.square]}
+              variants={[ButtonVariant.outline]}
               className="game-block__button"
             />
         </div>

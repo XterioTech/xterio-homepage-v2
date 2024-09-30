@@ -35,7 +35,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
           <Button
             href={button_url}
             label={button_text}
-            variants={[ButtonVariant.white, ButtonVariant.round]}
+            variants={[ButtonVariant.white]}
             className="section-intro__button"
           />
         )}

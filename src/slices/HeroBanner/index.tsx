@@ -45,13 +45,13 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       <Button
         href={button_1_url}
         label={button_1_text}
-        variants={[button1Colour as ButtonVariant, ButtonVariant.round]}
+        variants={[button1Colour as ButtonVariant]}
         className="hero-banner__button"
       />
       <Button
         href={button_2_url}
         label={button_2_text}
-        variants={[button2Colour as ButtonVariant, ButtonVariant.round]}
+        variants={[button2Colour as ButtonVariant]}
         className="hero-banner__button"
       />
     </section>
