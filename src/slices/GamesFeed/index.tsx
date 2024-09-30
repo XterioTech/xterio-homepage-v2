@@ -58,7 +58,7 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
                 image={image}
                 blockType={type}
                 buttonText={game_block_button_text}
-                buttonUrl={button_1_url}
+                buttonUrl={url}
               />
             </div>
           ))}

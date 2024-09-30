@@ -1,6 +1,7 @@
 import { Image } from "@superrb/next-addons/components";
 import {ImageProps} from "@superrb/next-addons/components/image";
 import Button, {ButtonVariant} from "@/components/button";
+import TextLink from "@/components/text-link";
 
 const GameBlock = ({ image, className, blockType, buttonText, buttonUrl, ...props }: ImageProps) => {
     return (
@@ -11,12 +12,13 @@ const GameBlock = ({ image, className, blockType, buttonText, buttonUrl, ...prop
               className="game-block__image objFit"
               sizes="(min-width: 63.75em) 33.333vw, 100vw"
             />
-            <Button
+          {buttonUrl && buttonText && (
+            <TextLink
               href={buttonUrl}
               label={buttonText}
-              variants={[ButtonVariant.outline]}
-              className="game-block__button"
+              className="game-block__text-link"
             />
+          )}
         </div>
     )
 }
