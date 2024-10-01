@@ -14,7 +14,7 @@ export type ButtonProps = {
 } & LinkBaseProps
 
 const Button = ({
-    variants = 'outline',
+    variants = [ButtonVariant.outline],
     label = '',
     className = '',
     children,
