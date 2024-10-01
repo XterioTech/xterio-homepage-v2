@@ -13,12 +13,27 @@
     +roundedImage
     aspect-ratio: 268/414
 
+  &__video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    z-index: 2
+
+    video
+      +roundedImage
+      object-fit: cover
+
 .two-col-cta-col
   &--text
     @media (min-width: $tablet)
       +gutterRight
 
   &--image
+    position: relative
+
     @media (min-width: $tablet)
       flex: 0 0 16.75rem
 

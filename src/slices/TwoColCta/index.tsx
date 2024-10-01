@@ -1,7 +1,17 @@
+'use client'
 import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import {Image} from "@superrb/next-addons/components";
+
+import React, { useEffect, useContext, useState, LegacyRef } from 'react'
+import ReactPlayer from 'react-player/lazy'
+import { usePathname } from 'next/navigation'
+import {
+  useIsMobile,
+  useMotionAllowed,
+  useIsInViewport,
+} from '@superrb/react-addons/hooks'
 
 /**
  * Props for `TwoColCta`.
@@ -17,8 +27,26 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
     text,
     button_url,
     button_text,
-    image
+    image,
+    video
   } = slice.primary
+
+  const isMobile = useIsMobile(true)
+  const isMotionAllowed = useMotionAllowed()
+  const [ready, setReady] = useState<boolean>(false)
+  const [videoPlaying, setVideoPlaying] = useState<boolean>(false)
+  const [playButton, setPlayButton] = useState<boolean>(true)
+  const { isInViewport, setRef } = useIsInViewport(true)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setReady(true)
+
+    return () => {
+      setReady(false)
+    }
+  }, [])
+
   return (
     <section
       className="two-col-cta"
@@ -40,6 +68,28 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
           )}
         </div>
         <div className="two-col-cta__col two-col-cta-col--image">
+          {ready && !isMobile && video && (
+            <ReactPlayer
+              url={asLink(video) as string}
+              muted={true}
+              playsinline={true}
+              playing={isMotionAllowed && playButton}
+              autoPlay={true}
+              loop={true}
+              className="two-col-cta__video"
+              light={false}
+              height={'100%'}
+              width={'100%'}
+              onPlay={() => setVideoPlaying(true)}
+              config={{
+                vimeo: {
+                  playerOptions: {
+                    responsive: true,
+                  },
+                },
+              }}
+            />
+          )}
           <Image
             image={image}
             className="two-col-cta__image objFit"
