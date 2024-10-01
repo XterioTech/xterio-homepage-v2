@@ -3,9 +3,19 @@ import { createClient } from '@/prismicio'
 import Instagram from './icons/instagram'
 import { asLink } from '@prismicio/client'
 import {SiteConfigDocumentData} from '../../prismicio-types'
+import Twitter from "@/components/icons/twitter";
+import Linkedin from "@/components/icons/linkedin";
+import Discord from "@/components/icons/discord";
+import Youtube from "@/components/icons/youtube";
+import Reddit from "@/components/icons/reddit";
 
 const icons = {
+  discord: Discord,
+  twitter: Twitter,
+  reddit: Reddit,
   instagram: Instagram,
+  linkedin: Linkedin,
+  youtube: Youtube
 }
 
 const SocialIcons = async ({ className = '' }: { className?: string }) => {

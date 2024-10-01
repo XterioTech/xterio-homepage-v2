@@ -1,2 +1,17 @@
 .footer
+  +gutters
+  +spacingBottomHalf
+  +spacingTop
   background-color: $black
+  color: $white
+
+  &__container
+    @extend %cappedWidth
+
+  &__info
+    @media (max-width: $maxSmallDesktop)
+      text-align: center
+
+  &__social
+    @media (max-width: $maxSmallDesktop)
+      display: none
