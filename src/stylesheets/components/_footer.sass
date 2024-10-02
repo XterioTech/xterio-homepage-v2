@@ -1,14 +1,13 @@
 .footer
-  +gutters
-  +spacingBottomHalf
-  +spacingTop
-  background-color: $black
-  color: $white
-
-  @media (max-width: $maxTablet)
-    padding-bottom: $textSpacer
-
   &__container
+    +gutters
+    +spacingBottomHalf
+    +spacingTop
+
+    @media (max-width: $maxTablet)
+      padding-bottom: $textSpacer
+
+  &__inner
     @extend %cappedWidth
 
   &__columns,
@@ -36,8 +35,13 @@
     +clamp('margin-right', $gutterMobile / 2, $gutterDesktop / 2, $largeMobile, $desktop)
     flex-basis: 100%
 
-    @media (min-width: $tablet)
+    @media (min-width: $smallDesktop)
       flex-basis: 6.8125rem
+      margin-bottom: 0
+
+    svg
+      @media (max-width: $maxSmallDesktop)
+        width: 3.3125rem
 
   &__contact
     &-title

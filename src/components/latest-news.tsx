@@ -9,11 +9,13 @@ const LatestNews = async () => {
   const {title} = newsContent?.data
 
   return (
-    <div className="latest-news">
-      <header className="latest-news__header news-header">
-        <h3 className="news-header__title">{title}</h3>
-        <SocialIcons className="news-header__social" />
-      </header>
+    <div className="latest-news" data-slice-backgroundcolour={"dark"}>
+      <div className="latest-news__container">
+        <header className="latest-news__header news-header">
+          <h3 className="news-header__title">{title}</h3>
+          <SocialIcons className="news-header__social" />
+        </header>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,14 @@
 .latest-news
-  @extend %cappedWidth
+  +gutters
+  +spacingTop
+  border-bottom: $border
+  border-color: $white20
+
+  &__container
+    @extend %cappedWidth
 
 .news-header
+  +spacingBottom
   display: flex
   justify-content: space-between
 
@@ -10,6 +17,7 @@
 
   &__title
     @extend %h1
+    margin-bottom: 0
 
     @media (max-width: $maxSmallDesktop)
       flex: 0 0 100%
