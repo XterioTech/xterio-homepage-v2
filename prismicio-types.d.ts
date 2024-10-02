@@ -4,9 +4,47 @@ import type * as prismic from '@prismicio/client'
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
+/**
+ * Content for Author documents
+ */
+interface AuthorDocumentData {
+  /**
+   * Image field in *Author*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Name field in *Author*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField
+}
+
+/**
+ * Author document from Prismic
+ *
+ * - **API ID**: `author`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AuthorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, 'author', Lang>
+
 type BuildPageDocumentDataSlicesSlice =
   | PageBannerSlice
-  | LatestNewsSlice
   | LogosSlice
   | MeetTheTeamSlice
   | TestimonialsSlice
@@ -77,11 +115,7 @@ export type BuildPageDocument<Lang extends string = string> =
     Lang
   >
 
-type BuyPageDocumentDataSlicesSlice =
-  | LatestNewsSlice
-  | TipSlice
-  | TextSlice
-  | PageBannerSlice
+type BuyPageDocumentDataSlicesSlice = TipSlice | TextSlice | PageBannerSlice
 
 /**
  * Content for Buy Page documents
@@ -204,7 +238,6 @@ type EcosystemPageDocumentDataSlicesSlice =
   | SectionIntroSlice
   | LogosSlice
   | HeroBannerSlice
-  | LatestNewsSlice
   | FourColGridSlice
 
 /**
@@ -373,6 +406,94 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     'homepage',
+    Lang
+  >
+
+/**
+ * Item in *Latest News → News Item*
+ */
+export interface LatestNewsDocumentDataNewsItemItem {
+  /**
+   * Image field in *Latest News → News Item*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Category field in *Latest News → News Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[].category
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category: prismic.KeyTextField
+
+  /**
+   * Title field in *Latest News → News Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Author field in *Latest News → News Item*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[].author
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  author: prismic.ContentRelationshipField<'author'>
+}
+
+/**
+ * Content for Latest News documents
+ */
+interface LatestNewsDocumentData {
+  /**
+   * Title field in *Latest News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * News Item field in *Latest News*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  news_item: prismic.GroupField<Simplify<LatestNewsDocumentDataNewsItemItem>>
+}
+
+/**
+ * Latest News document from Prismic
+ *
+ * - **API ID**: `latest_news`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LatestNewsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LatestNewsDocumentData>,
+    'latest_news',
     Lang
   >
 
@@ -747,11 +868,13 @@ export type SiteConfigDocument<Lang extends string = string> =
   >
 
 export type AllDocumentTypes =
+  | AuthorDocument
   | BuildPageDocument
   | BuyPageDocument
   | ContactCtaDocument
   | EcosystemPageDocument
   | HomepageDocument
+  | LatestNewsDocument
   | LegalPageDocument
   | NavigationDocument
   | SchemaOrganisationDocument
@@ -1618,98 +1741,6 @@ export type ImageWithCaptionSlice = prismic.SharedSlice<
 >
 
 /**
- * Item in *LatestNews → Default → Primary → News Item*
- */
-export interface LatestNewsSliceDefaultPrimaryNewsItemItem {
-  /**
-   * Image field in *LatestNews → Default → Primary → News Item*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: latest_news.default.primary.news_item[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>
-
-  /**
-   * Category field in *LatestNews → Default → Primary → News Item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: latest_news.default.primary.news_item[].category
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  category: prismic.KeyTextField
-
-  /**
-   * Title field in *LatestNews → Default → Primary → News Item*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: latest_news.default.primary.news_item[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField
-}
-
-/**
- * Primary content in *LatestNews → Default → Primary*
- */
-export interface LatestNewsSliceDefaultPrimary {
-  /**
-   * Title field in *LatestNews → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: The Latest
-   * - **API ID Path**: latest_news.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField
-
-  /**
-   * News Item field in *LatestNews → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: latest_news.default.primary.news_item[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  news_item: prismic.GroupField<
-    Simplify<LatestNewsSliceDefaultPrimaryNewsItemItem>
-  >
-}
-
-/**
- * Default variation for LatestNews Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LatestNewsSliceDefault = prismic.SharedSliceVariation<
-  'default',
-  Simplify<LatestNewsSliceDefaultPrimary>,
-  never
->
-
-/**
- * Slice variation for *LatestNews*
- */
-type LatestNewsSliceVariation = LatestNewsSliceDefault
-
-/**
- * LatestNews Shared Slice
- *
- * - **API ID**: `latest_news`
- * - **Description**: LatestNews
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LatestNewsSlice = prismic.SharedSlice<
-  'latest_news',
-  LatestNewsSliceVariation
->
-
-/**
  * Item in *Logos → Default → Primary → Logo*
  */
 export interface LogosSliceDefaultPrimaryLogosItem {
@@ -2569,6 +2600,8 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
+      AuthorDocument,
+      AuthorDocumentData,
       BuildPageDocument,
       BuildPageDocumentData,
       BuildPageDocumentDataSlicesSlice,
@@ -2583,6 +2616,9 @@ declare module '@prismicio/client' {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      LatestNewsDocument,
+      LatestNewsDocumentData,
+      LatestNewsDocumentDataNewsItemItem,
       LegalPageDocument,
       LegalPageDocumentData,
       LegalPageDocumentDataSlicesSlice,
@@ -2636,11 +2672,6 @@ declare module '@prismicio/client' {
       ImageWithCaptionSliceDefaultPrimary,
       ImageWithCaptionSliceVariation,
       ImageWithCaptionSliceDefault,
-      LatestNewsSlice,
-      LatestNewsSliceDefaultPrimaryNewsItemItem,
-      LatestNewsSliceDefaultPrimary,
-      LatestNewsSliceVariation,
-      LatestNewsSliceDefault,
       LogosSlice,
       LogosSliceDefaultPrimaryLogosItem,
       LogosSliceDefaultPrimary,

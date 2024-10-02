@@ -14,9 +14,6 @@
             "page_banner": {
               "type": "SharedSlice"
             },
-            "latest_news": {
-              "type": "SharedSlice"
-            },
             "logos": {
               "type": "SharedSlice"
             },

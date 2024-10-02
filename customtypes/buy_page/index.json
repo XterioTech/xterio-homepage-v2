@@ -11,9 +11,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "latest_news": {
-              "type": "SharedSlice"
-            },
             "tip": {
               "type": "SharedSlice"
             },

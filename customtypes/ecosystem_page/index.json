@@ -20,9 +20,6 @@
             "hero_banner": {
               "type": "SharedSlice"
             },
-            "latest_news": {
-              "type": "SharedSlice"
-            },
             "four_col_grid": {
               "type": "SharedSlice"
             }

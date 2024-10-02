@@ -1,6 +1,7 @@
 import Logo from './logo'
 import { PrismicNextLink } from '@prismicio/next'
 import dynamic from 'next/dynamic'
+const LatestNews = dynamic(() => import('./latest-news'))
 const Navigation = dynamic(() => import('./navigation'))
 const SocialIcons = dynamic(() => import('./social-icons'))
 const ContactCta = dynamic(() => import('./contact-cta'))
@@ -9,6 +10,8 @@ const Footer = () => {
   return (
 
     <footer className="footer">
+      <LatestNews />
+      
       <div className="footer__container">
         <div className="footer__columns">
           <div className="footer__col">

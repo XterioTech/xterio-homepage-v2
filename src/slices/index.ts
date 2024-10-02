@@ -12,7 +12,6 @@ export const components = {
   hero_banner: dynamic(() => import('./HeroBanner')),
   image: dynamic(() => import('./ParallaxImage')),
   image_with_caption: dynamic(() => import('./ImageWithCaption')),
-  latest_news: dynamic(() => import('./LatestNews')),
   logos: dynamic(() => import('./Logos')),
   meet_the_team: dynamic(() => import('./MeetTheTeam')),
   navigation_item: dynamic(() => import('./NavigationItem')),

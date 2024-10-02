@@ -1,0 +1,57 @@
+{
+  "format": "custom",
+  "id": "latest_news",
+  "label": "Latest News",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "news_item": {
+        "type": "Group",
+        "config": {
+          "label": "News Item",
+          "repeat": true,
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "category": {
+              "type": "Text",
+              "config": {
+                "label": "Category",
+                "placeholder": ""
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "author": {
+              "type": "Link",
+              "config": {
+                "label": "Author",
+                "select": "document",
+                "customtypes": ["author"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
