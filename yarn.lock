@@ -443,10 +443,10 @@
   dependencies:
     install-peers-cli "^2.2.0"
 
-"@superrb/react-addons@^3.0.0-16":
-  version "3.0.0-16"
-  resolved "https://registry.yarnpkg.com/@superrb/react-addons/-/react-addons-3.0.0-16.tgz#5dbb0d0cd5b951af0ae65f74831a3be3121e54b8"
-  integrity sha512-G0yAb00raj1pRa3a3KcYKkgoOWeEwgvg5+g1bKLr2nyndoluK11MBXDrCML5uLiIqbasscgZAYbLLf7UH/QF4g==
+"@superrb/react-addons@^3.0.0-17":
+  version "3.0.0-17"
+  resolved "https://registry.yarnpkg.com/@superrb/react-addons/-/react-addons-3.0.0-17.tgz#88a9be9b001b1d1f12580da0b8fddea0f6ab7c7d"
+  integrity sha512-TN4HhUFsoOrI5BCBiTh8NURGF8wB7mSHwwVJ4IpzgndDnrq9qNMnY2Gfl4kXOgQy/1qUzkcMc3dAL8q3NIRB7w==
   dependencies:
     "@hookform/resolvers" "^3.3.1"
     change-case "^4.1.2"
