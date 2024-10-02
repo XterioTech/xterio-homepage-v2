@@ -5,13 +5,95 @@
   background-color: $black
   color: $white
 
+  @media (max-width: $maxTablet)
+    padding-bottom: $textSpacer
+
   &__container
     @extend %cappedWidth
 
+  &__columns,
+  &__row,
+  &__col
+    display: flex
+
+    @media (max-width: $maxSmallDesktop)
+      flex-wrap: wrap
+
+  &__row
+    justify-content: space-between
+
+    @media (min-width: $tablet)
+      +spacingTop
+
+  &__columns
+    +spacingBottom
+
+  &__col
+    @media (min-width: $tablet)
+      flex: 0 0 67%
+
+  &__logo
+    +clamp('margin-right', $gutterMobile / 2, $gutterDesktop / 2, $largeMobile, $desktop)
+    flex-basis: 100%
+
+    @media (min-width: $tablet)
+      flex-basis: 6.8125rem
+
+  &__contact
+    &-title
+      @extend %h2
+
+    &-button
+      margin-top: $textSpacer
+
+  &__menus
+    +spacingTopHalf
+    display: flex
+    justify-content: space-between
+    flex: 0 0 100%
+
+    @media (min-width: $tablet)
+      +gutterLeft
+      flex: 1 0 auto
+      padding-top: 0
+
   &__info
+    @extend %tinyFontSize
+    margin-bottom: 0
+
     @media (max-width: $maxSmallDesktop)
       text-align: center
 
+    a
+      +opacityHover
+      text-decoration: none
+
   &__social
+    flex: 1 0 auto
+
     @media (max-width: $maxSmallDesktop)
       display: none
+
+    a
+      +opacityHover
+      margin-left: $textSpacer
+
+  .nav
+    flex: 0 0 47%
+
+    &__list
+      margin-bottom: 0
+
+    &__item
+      list-style: none
+
+      &:last-child
+        .nav__link
+          padding-bottom: 0
+
+    &__link
+      @extend %mediumFontSize
+      +opacityHover
+      display: block
+      padding-bottom: $textSpacer
+      text-decoration: none
