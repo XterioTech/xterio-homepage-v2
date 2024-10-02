@@ -1,0 +1,48 @@
+.latest-news
+  @extend %cappedWidth
+
+.news-header
+  display: flex
+  justify-content: space-between
+
+  @media (max-width: $maxSmallDesktop)
+    flex-wrap: wrap
+
+  &__title
+    @extend %h1
+
+    @media (max-width: $maxSmallDesktop)
+      flex: 0 0 100%
+      order: 2
+
+  &__social
+    @media (max-width: $maxSmallDesktop)
+      +spacingBottomHalf
+      flex: 0 0 100%
+
+    a
+      +opacityHover
+      display: inline-block
+      height: 3rem
+      margin-left: $textSpacer / 2
+      margin-top: 0.8rem
+      position: relative
+      width: 3rem
+
+      &:after
+        +pseudoBasics
+        border: $border
+        border-color: $white
+        border-radius: 100%
+        height: 100%
+        left: 0
+        top: 0
+        width: 100%
+
+      svg
+        bottom: 0
+        left: 0
+        margin: auto
+        position: absolute
+        right: 0
+        top: 0

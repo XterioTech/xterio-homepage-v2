@@ -11,7 +11,7 @@ const Footer = () => {
 
     <footer className="footer">
       <LatestNews />
-      
+
       <div className="footer__container">
         <div className="footer__columns">
           <div className="footer__col">
