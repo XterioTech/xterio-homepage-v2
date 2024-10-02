@@ -1,6 +1,7 @@
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, { ButtonVariant } from '@/components/button'
 import GameBlock from "@/components/game-block";
+import {Content} from '@prismicio/client';
 
 /**
  * Props for `GamesFeed`.

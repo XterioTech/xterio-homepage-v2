@@ -82,7 +82,7 @@ const NavigationItem = ({
               <li className="nav__sub-item" key={index}>
                 <Button
                   onClick={() => closeNav()}
-                  field={link}
+                  href={link}
                   className="nav__sub-link"
                   label={label as string}
                 />
