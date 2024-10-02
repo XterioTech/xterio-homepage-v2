@@ -1,6 +1,8 @@
-%textLinkInit
+%textLinkFonts
   +fifthFont
   @extend %tinyFontSize
+
+%textLinkInit
   opacity: 1
   overflow: hidden
   position: relative
@@ -26,8 +28,19 @@
       transform: scaleX(0)
       transform-origin: bottom right
 
+%textLinkInverted
+  &:after
+    transform: scaleX(0)
+    transform-origin: bottom right
+
+%textLinkInvertedHover
+  &:after
+    transform: scaleX(1)
+    transform-origin: bottom left
+
 %textLink
   @extend %textLinkInit
+  @extend %textLinkFonts
 
   &:hover
     @extend %textLinkHover
