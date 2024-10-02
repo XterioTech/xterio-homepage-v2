@@ -641,6 +641,39 @@ interface SiteConfigDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   twitter_profile_url: prismic.LinkField
+
+  /**
+   * Discord Profile URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.discord_profile_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  discord_profile_url: prismic.LinkField
+
+  /**
+   * Reddit Profile URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.reddit_profile_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  reddit_profile_url: prismic.LinkField
+
+  /**
+   * YouTube Profile URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.youtube_profile_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  youtube_profile_url: prismic.LinkField
 }
 
 /**
@@ -2466,6 +2499,17 @@ declare module '@prismicio/client' {
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>
   }
 
   namespace Content {

@@ -37,6 +37,33 @@
           "placeholder": "",
           "select": null
         }
+      },
+      "discord_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Discord Profile URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "reddit_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Reddit Profile URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "youtube_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "YouTube Profile URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }
