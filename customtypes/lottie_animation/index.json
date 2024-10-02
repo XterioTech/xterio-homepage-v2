@@ -1,0 +1,33 @@
+{
+  "format": "custom",
+  "id": "lottie_animation",
+  "label": "Lottie Animation",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "animation_json": {
+        "type": "Link",
+        "config": {
+          "label": "Animation JSON",
+          "placeholder": "",
+          "select": "media"
+        }
+      }
+    }
+  }
+}

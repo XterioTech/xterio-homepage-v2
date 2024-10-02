@@ -79,6 +79,16 @@
                   ],
                   "default_value": "Full Width"
                 }
+              },
+              "lottie_animation": {
+                "type": "Link",
+                "config": {
+                  "label": "Lottie Animation",
+                  "select": "document",
+                  "customtypes": [
+                    "lottie_animation"
+                  ]
+                }
               }
             }
           }

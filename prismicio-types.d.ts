@@ -615,6 +615,49 @@ export type LegalPageDocument<Lang extends string = string> =
     Lang
   >
 
+/**
+ * Content for Lottie Animation documents
+ */
+interface LottieAnimationDocumentData {
+  /**
+   * Name field in *Lottie Animation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lottie_animation.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField
+
+  /**
+   * Animation JSON field in *Lottie Animation*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lottie_animation.animation_json
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  animation_json: prismic.LinkToMediaField
+}
+
+/**
+ * Lottie Animation document from Prismic
+ *
+ * - **API ID**: `lottie_animation`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LottieAnimationDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<LottieAnimationDocumentData>,
+    'lottie_animation',
+    Lang
+  >
+
 type NavigationDocumentDataSlicesSlice = NavigationItemSlice
 
 /**
@@ -876,6 +919,7 @@ export type AllDocumentTypes =
   | HomepageDocument
   | LatestNewsDocument
   | LegalPageDocument
+  | LottieAnimationDocument
   | NavigationDocument
   | SchemaOrganisationDocument
   | SiteConfigDocument
@@ -1179,6 +1223,16 @@ export interface FeatureGridSliceDefaultPrimaryBlockItem {
     'Full Width' | 'Half Width' | 'One Third' | 'Two Thirds',
     'filled'
   >
+
+  /**
+   * Lottie Animation field in *FeatureGrid → Default → Primary → Block*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_grid.default.primary.block[].lottie_animation
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lottie_animation: prismic.ContentRelationshipField<'lottie_animation'>
 }
 
 /**
@@ -2587,17 +2641,6 @@ declare module '@prismicio/client' {
     ): prismic.Client<AllDocumentTypes>
   }
 
-  interface CreateWriteClient {
-    (
-      repositoryNameOrEndpoint: string,
-      options: prismic.WriteClientConfig,
-    ): prismic.WriteClient<AllDocumentTypes>
-  }
-
-  interface CreateMigration {
-    (): prismic.Migration<AllDocumentTypes>
-  }
-
   namespace Content {
     export type {
       AuthorDocument,
@@ -2622,6 +2665,8 @@ declare module '@prismicio/client' {
       LegalPageDocument,
       LegalPageDocumentData,
       LegalPageDocumentDataSlicesSlice,
+      LottieAnimationDocument,
+      LottieAnimationDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataSlicesSlice,
