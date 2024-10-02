@@ -1,0 +1,41 @@
+{
+  "format": "custom",
+  "id": "contact_cta",
+  "label": "Contact CTA",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "YOUR JOURNEY  STARTS HERE"
+        }
+      },
+      "button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Button Text",
+          "placeholder": ""
+        }
+      },
+      "button_url": {
+        "type": "Link",
+        "config": {
+          "label": "Button URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      }
+    }
+  }
+}

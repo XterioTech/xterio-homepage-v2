@@ -1,10 +1,9 @@
 import Logo from './logo'
 import { PrismicNextLink } from '@prismicio/next'
 import dynamic from 'next/dynamic'
-import Button, {ButtonVariant} from "@/components/button";
-
 const Navigation = dynamic(() => import('./navigation'))
 const SocialIcons = dynamic(() => import('./social-icons'))
+const ContactCta = dynamic(() => import('./contact-cta'))
 
 const Footer = () => {
   return (
@@ -16,15 +15,7 @@ const Footer = () => {
             <PrismicNextLink href="/" className="footer__logo">
               <Logo />
             </PrismicNextLink>
-            <div className="footer__contact">
-              <h3 className="footer__contact-title">YOUR JOURNEY STARTS HERE</h3>
-              <Button
-                href=""
-                label="Get in touch"
-                variants={[ButtonVariant.white]}
-                className="footer__contact-button"
-              />
-            </div>
+            <ContactCta />
           </div>
 
           <div className="footer__menus">

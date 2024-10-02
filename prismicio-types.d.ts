@@ -146,6 +146,60 @@ export type BuyPageDocument<Lang extends string = string> =
     Lang
   >
 
+/**
+ * Content for Contact CTA documents
+ */
+interface ContactCtaDocumentData {
+  /**
+   * Title field in *Contact CTA*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: YOUR JOURNEY  STARTS HERE
+   * - **API ID Path**: contact_cta.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Button Text field in *Contact CTA*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_cta.button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField
+
+  /**
+   * Button URL field in *Contact CTA*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_cta.button_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_url: prismic.LinkField
+}
+
+/**
+ * Contact CTA document from Prismic
+ *
+ * - **API ID**: `contact_cta`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactCtaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ContactCtaDocumentData>,
+    'contact_cta',
+    Lang
+  >
+
 type EcosystemPageDocumentDataSlicesSlice =
   | SectionIntroSlice
   | LogosSlice
@@ -695,6 +749,7 @@ export type SiteConfigDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BuildPageDocument
   | BuyPageDocument
+  | ContactCtaDocument
   | EcosystemPageDocument
   | HomepageDocument
   | LegalPageDocument
@@ -2520,6 +2575,8 @@ declare module '@prismicio/client' {
       BuyPageDocument,
       BuyPageDocumentData,
       BuyPageDocumentDataSlicesSlice,
+      ContactCtaDocument,
+      ContactCtaDocumentData,
       EcosystemPageDocument,
       EcosystemPageDocumentData,
       EcosystemPageDocumentDataSlicesSlice,

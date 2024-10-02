@@ -78,6 +78,7 @@
       +opacityHover
       margin-left: $textSpacer
 
+
   .nav
     flex: 0 0 47%
 
@@ -92,8 +93,13 @@
           padding-bottom: 0
 
     &__link
+      @extend %textLinkInit
+      @extend %textLinkInverted
       @extend %mediumFontSize
-      +opacityHover
-      display: block
-      padding-bottom: $textSpacer
+      display: inline-block
+      margin-bottom: $textSpacer
       text-decoration: none
+
+      &:hover
+        @extend %textLinkHover
+        @extend %textLinkInvertedHover
