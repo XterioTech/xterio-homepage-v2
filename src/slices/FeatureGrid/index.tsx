@@ -1,6 +1,12 @@
-import {asLink, Content} from '@prismicio/client'
+import {
+  asLink,
+  Content,
+  FilledContentRelationshipField,
+} from '@prismicio/client'
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
-import Button, {ButtonVariant} from "@/components/button";
+import Button, { ButtonVariant } from '@/components/button'
+import Animation from '@/components/animation'
+import { LottieAnimationDocument } from '../../../prismicio-types'
 
 /**
  * Props for `FeatureGrid`.
@@ -16,33 +22,53 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
       className="feature-grid"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      data-slice-backgroundcolour={"light"}
+      data-slice-backgroundcolour={'light'}
     >
       <div className="feature-grid__container">
-        {slice.primary.block.map(({ title, width, text, button_1_text, button_1_url, button_2_text, button_2_url }, index) => (
-          <div className="feature-grid__block" data-block-width={width.toLowerCase()
-            .split(' ')
-            .join('')} key={index}>
-            <h3 className="feature-grid__title">{title}</h3>
-            <div className="feature-grid__text"><PrismicRichText field={text} /></div>
-            {asLink(button_1_url) && button_1_text && (
-              <Button
-                href={button_1_url}
-                label={button_1_text}
-                variants={[ButtonVariant.black]}
-                className="feature-grid__button"
-              />
-            )}
-            {asLink(button_2_url) && button_2_text && (
-              <Button
-                href={button_2_url}
-                label={button_2_text}
-                variants={[ButtonVariant.white]}
-                className="feature-grid__button"
-              />
-            )}
-          </div>
-        ))}
+        {slice.primary.block.map(
+          (
+            {
+              title,
+              width,
+              text,
+              button_1_text,
+              button_1_url,
+              button_2_text,
+              button_2_url,
+              lottie_animation,
+            },
+            index,
+          ) => (
+            <div
+              className="feature-grid__block"
+              data-block-width={width.toLowerCase().split(' ').join('')}
+              key={index}
+            >
+              <h3 className="feature-grid__title">{title}</h3>
+              <div className="feature-grid__text">
+                <PrismicRichText field={text} />
+              </div>
+              {asLink(button_1_url) && button_1_text && (
+                <Button
+                  href={button_1_url}
+                  label={button_1_text}
+                  variants={[ButtonVariant.black]}
+                  className="feature-grid__button"
+                />
+              )}
+              {asLink(button_2_url) && button_2_text && (
+                <Button
+                  href={button_2_url}
+                  label={button_2_text}
+                  variants={[ButtonVariant.white]}
+                  className="feature-grid__button"
+                />
+              )}
+
+              {lottie_animation && <Animation animation={lottie_animation} />}
+            </div>
+          ),
+        )}
       </div>
     </section>
   )
