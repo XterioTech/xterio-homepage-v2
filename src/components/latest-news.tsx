@@ -1,6 +1,7 @@
 import { createClient } from '@/prismicio'
 import dynamic from "next/dynamic";
 import {Image} from "@superrb/next-addons/components";
+import Author from "@/components/author";
 const SocialIcons = dynamic(() => import('./social-icons'))
 
 const LatestNews = async () => {
@@ -18,7 +19,7 @@ const LatestNews = async () => {
         </header>
 
         <div className="latest-news__blocks">
-          {news_item.map(({ image, category, title}, index) => (
+          {news_item.map(({ image, category, title, author}, index) => (
             <div className="latest-news__block news-block" key={index}>
               <Image
                 image={image}
@@ -27,6 +28,7 @@ const LatestNews = async () => {
               />
               <div className="news-block__category">#{category}</div>
               <h3 className="news-block__title">{title}</h3>
+              <Author className="news-block__author" author={author} />
             </div>
           ))}
         </div>
