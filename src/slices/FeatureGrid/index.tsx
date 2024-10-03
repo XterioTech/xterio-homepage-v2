@@ -48,6 +48,9 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               <div className="feature-grid__text">
                 <PrismicRichText field={text} />
               </div>
+
+              {(asLink(button_1_url) || asLink(button_2_url)) && (
+                <div className="feature-grid__buttons">
               {asLink(button_1_url) && button_1_text && (
                 <Button
                   href={button_1_url}
@@ -63,6 +66,8 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                   variants={[ButtonVariant.white]}
                   className="feature-grid__button"
                 />
+              )}
+                </div>
               )}
 
               {lottie_animation && <Animation animation={lottie_animation} />}
