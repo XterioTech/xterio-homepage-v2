@@ -1,22 +1,27 @@
 .accordion
   &__trigger
+    +opacityHover
+    +unbutton
     align-items: center
+    color: currentColor
+    cursor: pointer
     display: flex
     justify-content: space-between
+    padding: 1.8rem 2.2em 1.5rem 0
     width: 100%
-
-    &::after
-      content: '▸'
-      transition: transform $transitionDurationLong $transitionTimingFunction
 
     &[aria-selected="true"]
       & + .accordion__content
         max-height: 100vh
 
-      &::after
-        transform: rotate(90deg)
-
   &__content
     max-height: 0
     overflow: clip
-    transition: max-height $transitionDurationLong $transitionTimingFunction
+    transition: max-height $transitionDuration $transitionTimingFunction
+
+    > :last-child
+      margin-bottom: 1.5rem
+
+    a
+      +opacityHover
+      text-decoration: underline

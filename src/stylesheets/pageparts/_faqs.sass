@@ -1,2 +1,41 @@
 .faqs
+  +gutters
   +spacingBottom
+
+  &__container
+    @extend %cappedWidth
+    +clamp('padding', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
+    padding-right: $textSpacer !important
+    border-radius: $borderRadius
+    display: flex
+
+    @media (max-width: $maxSmallDesktop)
+      flex-wrap: wrap
+
+  &__col
+    @media (min-width: $smallDesktop)
+      flex: 0 1 50%
+
+  &__title
+    padding-right: $textSpacer
+
+  .accordion
+    @media (max-width: $maxSmallDesktop)
+      margin-top: $textSpacer
+
+    &__block
+      border: $border
+      border-color: $white
+      border-radius: $buttonBorderRadius
+      margin-bottom: $textSpacer
+      padding: $textSpacer $textSpacer 0 $textSpacer
+
+    &__trigger
+      @extend %h5
+      margin-bottom: 0
+      padding-top: 0
+
+    &__content
+      p
+        @extend %mediumFontSize
+        margin-bottom: $textSpacer
