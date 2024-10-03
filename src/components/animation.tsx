@@ -14,8 +14,7 @@ const Animation = async ({
     | LottieAnimationDocument
     | FilledContentRelationshipField<'lottie_animation'>
 }) => {
-  console.log(animation)
-  if (animation?.data === undefined) {
+  if (animation?.data === undefined && animation?.uid) {
     const client = createClient()
     animation = await client.getByUID('lottie_animation', animation.uid)
   }
