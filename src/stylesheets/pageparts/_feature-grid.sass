@@ -40,6 +40,9 @@
         .lottie-animation
           margin-top: -12em
 
+        .feature-grid__text
+          padding-right: 15em
+
     &[data-block-width="halfwidth"]
       @media (min-width: $smallDesktop)
         grid-column-end: span 3
@@ -62,6 +65,7 @@
 
   &__buttons
     display: flex
+    flex-wrap: wrap
     gap: ($textSpacer / 2)
     margin-top: $textSpacer
 
@@ -74,6 +78,9 @@
     height: 15em
     margin-top: auto
     width: 15em
+
+    @media (max-width: $maxSmallDesktop)
+      display: none
 
     > div
       height: 100%

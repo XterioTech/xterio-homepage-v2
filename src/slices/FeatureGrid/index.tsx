@@ -6,6 +6,7 @@ import {
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
 import Button, { ButtonVariant } from '@/components/button'
 import Animation from '@/components/animation'
+import { useIsMobile } from '@superrb/react-addons/hooks'
 
 /**
  * Props for `FeatureGrid`.
