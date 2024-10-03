@@ -6,7 +6,6 @@ import {
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
 import Button, { ButtonVariant } from '@/components/button'
 import Animation from '@/components/animation'
-import { LottieAnimationDocument } from '../../../prismicio-types'
 
 /**
  * Props for `FeatureGrid`.
@@ -51,26 +50,32 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
 
               {(asLink(button_1_url) || asLink(button_2_url)) && (
                 <div className="feature-grid__buttons">
-              {asLink(button_1_url) && button_1_text && (
-                <Button
-                  href={button_1_url}
-                  label={button_1_text}
-                  variants={[ButtonVariant.black]}
-                  className="feature-grid__button"
-                />
-              )}
-              {asLink(button_2_url) && button_2_text && (
-                <Button
-                  href={button_2_url}
-                  label={button_2_text}
-                  variants={[ButtonVariant.white]}
-                  className="feature-grid__button"
-                />
-              )}
+                  {asLink(button_1_url) && button_1_text && (
+                    <Button
+                      href={button_1_url}
+                      label={button_1_text}
+                      variants={[ButtonVariant.black]}
+                      className="feature-grid__button"
+                    />
+                  )}
+                  {asLink(button_2_url) && button_2_text && (
+                    <Button
+                      href={button_2_url}
+                      label={button_2_text}
+                      variants={[ButtonVariant.white]}
+                      className="feature-grid__button"
+                    />
+                  )}
                 </div>
               )}
 
-              {lottie_animation && <Animation animation={lottie_animation} />}
+              {lottie_animation && (
+                <Animation
+                  animation={
+                    lottie_animation as FilledContentRelationshipField<'lottie_animation'>
+                  }
+                />
+              )}
             </div>
           ),
         )}

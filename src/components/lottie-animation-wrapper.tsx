@@ -4,7 +4,9 @@ import { useIsInViewport } from '@superrb/react-addons/hooks'
 import Lottie, { LottieProps } from 'react-lottie-player'
 import LottiePlayer from 'lottie-web'
 
-LottiePlayer.setQuality(2)
+if ('setQuality' in LottiePlayer) {
+  LottiePlayer.setQuality(2)
+}
 
 const LottieAnimationWrapper = (props: LottieProps) => {
   const { isInViewport, setRef } = useIsInViewport()
@@ -13,7 +15,11 @@ const LottieAnimationWrapper = (props: LottieProps) => {
 
   return (
     <div className="lottie-animation" ref={setRef}>
-      <Lottie renderer="svg" {...props} />
+      <Lottie
+        renderer="svg"
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+        {...props}
+      />
     </div>
   )
 }
