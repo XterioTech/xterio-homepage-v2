@@ -1,4 +1,4 @@
-import { Content } from '@prismicio/client'
+import {asLink, Content} from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 
@@ -42,18 +42,22 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     >
       Placeholder component for hero_banner (variation: {slice.variation})
       Slices
-      <Button
-        href={button_1_url}
-        label={button_1_text}
-        variants={[button1Colour as ButtonVariant]}
-        className="hero-banner__button"
-      />
-      <Button
-        href={button_2_url}
-        label={button_2_text}
-        variants={[button2Colour as ButtonVariant]}
-        className="hero-banner__button"
-      />
+      {asLink(button_1_url) && button_1_text && (
+        <Button
+          href={button_1_url}
+          label={button_1_text}
+          variants={[button1Colour as ButtonVariant]}
+          className="hero-banner__button"
+        />
+      )}
+      {asLink(button_2_url) && button_2_text && (
+        <Button
+          href={button_2_url}
+          label={button_2_text}
+          variants={[button2Colour as ButtonVariant]}
+          className="hero-banner__button"
+        />
+      )}
     </section>
   )
 }
