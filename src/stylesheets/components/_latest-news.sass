@@ -7,6 +7,13 @@
   &__container
     @extend %cappedWidth
 
+  &__blocks
+    column-gap: $gap * 2
+    display: grid
+
+    @media (min-width: $tablet)
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+
 .news-header
   +spacingBottom
   display: flex
@@ -30,22 +37,15 @@
 
     a
       +opacityHover
+      border: $border
+      border-color: $white
+      border-radius: 100%
       display: inline-block
       height: 3rem
       margin-left: $textSpacer / 2
       margin-top: 0.8rem
       position: relative
       width: 3rem
-
-      &:after
-        +pseudoBasics
-        border: $border
-        border-color: $white
-        border-radius: 100%
-        height: 100%
-        left: 0
-        top: 0
-        width: 100%
 
       svg
         bottom: 0
@@ -54,3 +54,32 @@
         position: absolute
         right: 0
         top: 0
+
+.news-block
+  display: block
+
+  @media (max-width: $maxTablet)
+    padding-bottom: $textSpacer * 1.5
+
+  &:last-of-type
+    padding-bottom: 0
+
+  &__category
+    @extend %h6
+
+  &__title
+    @extend %h5
+
+  &__image
+    +roundedImage
+    aspect-ratio: 2/1
+    margin-bottom: $textSpacer
+    max-width: 100%
+    min-width: 0
+    overflow: hidden
+
+    img
+      display: block
+      height: 100%
+      object-fit: cover
+      width: 100%
