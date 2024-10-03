@@ -44,6 +44,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               data-block-width={width.toLowerCase().split(' ').join('')}
               key={index}
             >
+              <div className="feature-grid__block-content">
               <h3 className="feature-grid__title">{title}</h3>
               <div className="feature-grid__text">
                 <PrismicRichText field={text} />
@@ -69,6 +70,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
                   )}
                 </div>
               )}
+              </div>
 
               {lottie_animation && (
                 <Animation
