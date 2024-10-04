@@ -1,0 +1,136 @@
+.header
+  +gutters
+  align-items: center
+  display: flex
+  gap: ($baseline * 3)
+  justify-content: space-between
+  padding-block: $baseline * .5
+  position: fixed
+  transition: color .5s ease, padding .5s ease, background .5s ease, backdrop-filter .5s ease
+  width: 100%
+  z-index: 9
+
+  @media (min-width: $smallDesktop)
+    padding-block: ($baseline * 2)
+
+    &--sticky
+      padding-block: $baseline
+
+  svg
+    color: inherit
+
+    path
+      fill: currentColor
+
+  &--sticky
+    backdrop-filter: blur(30px)
+    background: rgba($white, .1)
+
+    // &.header--light
+    //   .nav--secondary
+    //     .nav__link
+    //       @extend .button--black
+
+    @media (min-width: $smallDesktop)
+      &.header--light
+        .nav--secondary
+          .nav__link
+            background: $black
+            color: $white
+
+      &.header--dark
+        .nav--secondary
+          .nav__link
+            background: $white
+            color: $black
+
+  &--dark,
+  &:has(.menu-toggle[aria-expanded="true"])
+    color: $white
+
+    svg
+      path
+        fill: $white
+
+  &__logo
+    +clamp('width', 8.125em, 9.7em, $largeMobile, $desktop)
+    flex: 0 0 auto
+    z-index: 10
+
+  &__nav
+    align-items: center
+    display: flex
+    flex: 1 1
+    justify-content: space-between
+
+    @media (max-width: $maxSmallDesktop)
+      +cover
+      align-items: flex-start
+      background: $black
+      color: $white
+      flex-direction: column
+      height: 100vh
+      opacity: 0
+      padding: ($baseline * 5) $gutterMobile $gutterMobile
+      pointer-events: none
+      position: fixed
+      transition: opacity .5s ease
+      width: 100%
+
+      &[aria-hidden="false"],
+      &:has(~ .menu-toggle[aria-expanded="true"])
+        opacity: 1
+        pointer-events: all
+
+  .menu-toggle
+    border-radius: 0
+    flex: 0 0 auto
+    height: 1.3225em
+    min-width: auto
+    overflow: visible
+    padding: 0
+    position: relative
+    width: 1.5em
+
+    @media (min-width: $smallDesktop)
+      display: none
+
+    &__icon, &::before, &::after
+      background: currentColor
+      border-radius: 100vw
+      height: 2px
+      width: 100%
+
+    &::before, &::after
+      content: ''
+      display: block
+      position: absolute
+      transition: transform .5s ease
+
+    &::before
+      transform-origin: top right
+      top: 0
+
+    &::after
+      bottom: 2px
+      transform-origin: bottom right
+
+    &__icon
+      top: 50%
+      transform: translateY(-50%)
+      transition: background .5s ease
+
+    &[aria-expanded="true"]
+      .menu-toggle__icon
+        background: transparent
+
+      &::before
+        transform: rotate(-45deg)
+
+      &::after
+        transform: rotate(45deg)
+
+    &__icon
+      font-size: 0
+      line-height: 0
+      text-fill-color: transparent

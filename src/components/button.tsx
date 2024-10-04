@@ -28,10 +28,10 @@ const Button = ({
     <LinkBase className={`button ${variantClasses} ${className}`} {...props}>
       <span className="button__text">
         {label as string}
+        {children}
       </span>
       <span className="button__icon">
       </span>
-      {children}
     </LinkBase>
   )
 }

@@ -1052,6 +1052,11 @@ debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.3.5:
   dependencies:
     ms "^2.1.3"
 
+decko@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/decko/-/decko-1.2.0.tgz#fd43c735e967b8013306884a56fbe665996b6817"
+  integrity sha512-m8FnyHXV1QX+S1cl+KPFDIl6NMkxtKsy6+U/aYyjrOqWMuwAwYWu7ePqrsUHtDR5Y8Yk2pi/KIDSgF+vT4cPOQ==
+
 deep-equal@^2.0.5:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-2.2.3.tgz#af89dafb23a396c7da3e862abc0be27cf51d56e1"
@@ -2459,6 +2464,13 @@ levn@^0.4.1:
   dependencies:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
+
+live-node-list@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/live-node-list/-/live-node-list-2.1.1.tgz#868d8c13a7ef7875c06ebebae866bf9e3e9e5b8c"
+  integrity sha512-0oAtOcOQXHNUO6KMDkJ8wea94cXGtT5BW2Gcr/0JyTVX+T1+HM2gAO15F10ogSpHf9VM5M0Q1FzvqfcAuiZFlQ==
+  dependencies:
+    decko "^1.2.0"
 
 load-script@^1.0.0:
   version "1.0.0"

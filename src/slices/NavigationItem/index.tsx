@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@superrb/next-addons/components'
+import Button from '@/components/button'
 import { Content, asLink } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
@@ -8,12 +8,18 @@ import { useEventListener } from '@superrb/react-addons/hooks'
 import { useContext, useState } from 'react'
 import { kebabCase } from 'change-case'
 import { NavContext } from '@superrb/react-addons/context'
+import DropdownArrow from '@/components/icons/dropdown-arrow'
+import { LinkBase } from '@superrb/next-addons/components'
 
 /**
  * Props for `NavigationItem`.
  */
 export type NavigationItemProps =
-  SliceComponentProps<Content.NavigationItemSlice>
+  SliceComponentProps<Content.NavigationItemSlice> & {
+    context: {
+      menuName: string
+    }
+  }
 
 /**
  * Component for "NavigationItem" Slices.
@@ -23,6 +29,7 @@ const NavigationItem = ({
     primary: { link, label },
     items,
   },
+  context: { menuName },
 }: NavigationItemProps): JSX.Element => {
   const { closeNav } = useContext(NavContext)
   const [subnavOpen, setSubnavOpen] = useState<boolean>(false)
@@ -38,6 +45,11 @@ const NavigationItem = ({
 
   const href = asLink(link) as string
 
+  let LinkComponent: typeof LinkBase | typeof Button = LinkBase
+  if (menuName === 'secondary') {
+    LinkComponent = Button
+  }
+
   return (
     <li
       className={`nav__item ${
@@ -45,13 +57,13 @@ const NavigationItem = ({
       }`}
     >
       {href ? (
-        <PrismicNextLink
+        <LinkComponent
           href={href}
           className="nav__link"
           onClick={() => closeNav()}
         >
           {label}
-        </PrismicNextLink>
+        </LinkComponent>
       ) : (
         <span className="nav__link">{label}</span>
       )}
@@ -63,7 +75,7 @@ const NavigationItem = ({
           aria-expanded={subnavOpen}
           aria-controls={`sub-nav-${kebabCase(label as string)}`}
         >
-          V
+          <DropdownArrow />
         </button>
       )}
 
@@ -80,12 +92,11 @@ const NavigationItem = ({
 
             return (
               <li className="nav__sub-item" key={index}>
-                <Button
+                <LinkBase
                   onClick={() => closeNav()}
                   href={link}
                   className="nav__sub-link"
-                  label={label as string}
-                />
+                >{label}</LinkBase>
               </li>
             )
           })}

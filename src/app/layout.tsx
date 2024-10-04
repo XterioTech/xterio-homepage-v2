@@ -5,6 +5,7 @@ import {CookieBanner} from "@superrb/react-addons/components";
 import Scripts from "@/components/scripts";
 import {GtAmericaExBlack, GtAmericaExBold, GtAmericaExRegular, GtAmericaStRegular, PPMonumentExHeavy} from "@/fonts";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,14 +17,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const navigation = (
+    <>
+      <Navigation name={'navigation'} />
+      <Navigation name={'secondary'} />
+    </>
+  )
+
   return (
     <html lang="en">
       <body className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}>
-      <Navigation name={'navigation'}/>
-      {children}
-      <Footer />
-      <CookieBanner />
-      <Scripts />
+        <Header navigation={navigation} />
+        {children}
+        <Footer />
+        <CookieBanner />
+        <Scripts />
       </body>
     </html>
   )

@@ -1,3 +1,119 @@
 .nav
   &[aria-hidden="true"]
     display: none
+
+  .header__nav &
+    &__list
+      align-items: flex-start
+      display: flex
+      flex-direction: column
+      gap: $baseline
+      list-style: none
+      margin: 0
+
+      @media (min-width: $smallDesktop)
+        flex-direction: row
+        align-items: center
+
+    &__item
+      align-items: center
+      display: flex
+      flex-wrap: wrap
+      gap: 0 $baseline
+      position: relative
+
+    &--navigation
+      .nav
+        &__link
+          text-decoration: none
+
+          @media (max-width: $maxSmallDesktop)
+            +secondFont
+            font-size: 2.04375em
+            padding: .1em 0
+            text-transform: uppercase
+
+    &__expand
+      +unbutton
+
+      svg
+        color: inherit
+
+        path
+          fill: currentColor
+
+      &[aria-expanded="true"]
+        svg
+          transform: rotate(180deg)
+
+        ~ .nav__sub-list
+          @media (max-width: $maxSmallDesktop)
+            transition-timing-function: ease-in
+            max-height: 100vh
+
+          @media (min-width: $smallDesktop)
+            opacity: 1
+            pointer-events: all
+
+    &__sub-list
+      flex: 0 0 100%
+      list-style: none
+      margin: 0
+      max-height: 0
+      overflow: hidden
+      transition: max-height .5s ease-out
+
+      @media (min-width: $smallDesktop)
+        left: 0
+        max-height: none
+        opacity: 0
+        pointer-events: none
+        position: absolute
+        top: 100%
+        transition: opacity .5s ease
+
+    &__sub-item
+      &:first-child
+        margin-top: ($baseline * .5)
+
+    &__sub-link
+      +thirdFont
+      padding: 0
+      text-decoration: none
+      text-transform: uppercase
+
+    &--secondary
+      @media (max-width: $maxSmallDesktop)
+        width: 100%
+
+        .nav__item
+          width: 100%
+
+          &:first-child
+            .nav__link
+              background-color: $white
+              color: $black
+              border-color: $white
+              color: $black
+
+              .button__icon
+                background: $black
+
+                &::before,
+                &::after
+                  +buttonArrow($white)
+
+      .nav
+        &__link
+          &.nav__link
+            min-width: auto
+            text-align: left
+            width: 100%
+
+            @media (min-width: $smallDesktop)
+              border: 0
+              padding: .75em 2.25em
+              width: auto
+
+              .button__icon
+                display: none

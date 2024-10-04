@@ -20,9 +20,9 @@ const Navigation = async ({
   const items = navigation?.data?.slices
 
   return (
-    <nav className={`${className} nav`}>
+    <nav className={`${className} nav nav--${name}`}>
       <ul className="nav__list">
-        <SliceZone slices={items} components={components} />
+        <SliceZone slices={items} components={components} context={{ menuName: name }} />
       </ul>
     </nav>
   )
