@@ -17,7 +17,8 @@
       flex: 0 1 50%
 
   &__title
-    padding-right: $textSpacer
+    @media (min-width: $tablet)
+      padding-right: $textSpacer
 
   .accordion
     @media (max-width: $maxSmallDesktop)
