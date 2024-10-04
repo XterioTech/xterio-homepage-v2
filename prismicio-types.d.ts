@@ -303,6 +303,71 @@ export type EcosystemPageDocument<Lang extends string = string> =
     Lang
   >
 
+type ErrorPageDocumentDataSlicesSlice = PageBannerSlice
+
+/**
+ * Content for Error Page documents
+ */
+interface ErrorPageDocumentData {
+  /**
+   * Slice Zone field in *Error Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: error_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ErrorPageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Error Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: error_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+
+  /**
+   * Meta Description field in *Error Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: error_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *Error Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: error_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+}
+
+/**
+ * Error Page document from Prismic
+ *
+ * - **API ID**: `error_page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ErrorPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ErrorPageDocumentData>,
+    'error_page',
+    Lang
+  >
+
 type HomepageDocumentDataSlicesSlice =
   | FaqsSlice
   | GamesFeedSlice
@@ -916,6 +981,7 @@ export type AllDocumentTypes =
   | BuyPageDocument
   | ContactCtaDocument
   | EcosystemPageDocument
+  | ErrorPageDocument
   | HomepageDocument
   | LatestNewsDocument
   | LegalPageDocument
@@ -2154,9 +2220,99 @@ export type PageBannerSliceDefault = prismic.SharedSliceVariation<
 >
 
 /**
+ * Primary content in *PageBanner → Image Left → Primary*
+ */
+export interface PageBannerSliceImageLeftPrimary {
+  /**
+   * Title field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Text field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField
+
+  /**
+   * Button 1 Text field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.button_1_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_1_text: prismic.KeyTextField
+
+  /**
+   * Button 1 URL field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.button_1_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_1_url: prismic.LinkField
+
+  /**
+   * Button 2 Text field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.button_2_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_2_text: prismic.KeyTextField
+
+  /**
+   * Button 2 URL field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.button_2_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_2_url: prismic.LinkField
+
+  /**
+   * Image field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+}
+
+/**
+ * Image Left variation for PageBanner Slice
+ *
+ * - **API ID**: `imageLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageBannerSliceImageLeft = prismic.SharedSliceVariation<
+  'imageLeft',
+  Simplify<PageBannerSliceImageLeftPrimary>,
+  never
+>
+
+/**
  * Slice variation for *PageBanner*
  */
-type PageBannerSliceVariation = PageBannerSliceDefault
+type PageBannerSliceVariation =
+  | PageBannerSliceDefault
+  | PageBannerSliceImageLeft
 
 /**
  * PageBanner Shared Slice
@@ -2641,6 +2797,17 @@ declare module '@prismicio/client' {
     ): prismic.Client<AllDocumentTypes>
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>
+  }
+
   namespace Content {
     export type {
       AuthorDocument,
@@ -2656,6 +2823,9 @@ declare module '@prismicio/client' {
       EcosystemPageDocument,
       EcosystemPageDocumentData,
       EcosystemPageDocumentDataSlicesSlice,
+      ErrorPageDocument,
+      ErrorPageDocumentData,
+      ErrorPageDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -2734,8 +2904,10 @@ declare module '@prismicio/client' {
       NavigationItemSliceDefault,
       PageBannerSlice,
       PageBannerSliceDefaultPrimary,
+      PageBannerSliceImageLeftPrimary,
       PageBannerSliceVariation,
       PageBannerSliceDefault,
+      PageBannerSliceImageLeft,
       SectionIntroSlice,
       SectionIntroSliceDefaultPrimary,
       SectionIntroSliceVariation,

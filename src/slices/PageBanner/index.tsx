@@ -11,7 +11,7 @@ export type PageBannerProps = SliceComponentProps<Content.PageBannerSlice>
 /**
  * Component for "PageBanner" Slices.
  */
-const PageBanner = ({ slice }: PageBannerProps): JSX.Element => {
+const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: string }): JSX.Element => {
   const {
     title,
     text,

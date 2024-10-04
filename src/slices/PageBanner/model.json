@@ -70,6 +70,73 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "imageLeft",
+      "name": "Image Left",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "button_1_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button 1 Text",
+            "placeholder": ""
+          }
+        },
+        "button_1_url": {
+          "type": "Link",
+          "config": {
+            "label": "Button 1 URL",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "button_2_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button 2 Text",
+            "placeholder": ""
+          }
+        },
+        "button_2_url": {
+          "type": "Link",
+          "config": {
+            "label": "Button 2 URL",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

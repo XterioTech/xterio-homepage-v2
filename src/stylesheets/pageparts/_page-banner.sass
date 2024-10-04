@@ -1,6 +1,15 @@
 .page-banner
   +gutters
   +spacingBottom
+  padding-top: max(9em, 12.5vw)
+
+  &[data-slice-variation="imageLeft"]
+    .page-banner__container
+      gap: ($baseline * 2)
+
+    .page-banner__image
+      margin-left: 0
+      order: -1
 
   &__container
     @extend %cappedWidth
@@ -14,9 +23,11 @@
     @media (min-width: $smallDesktop)
       flex: 0 0 69%
 
+  &__title
+    text-wrap: balance
+
   &__text
-    @media (min-width: $smallDesktop)
-      max-width: 70%
+    text-wrap: balance
 
   &__image
     @media (min-width: $smallDesktop)
@@ -32,7 +43,7 @@
 
     @media (max-width: $maxTablet)
       width: 100%
-      
+
     @media (max-width: $maxSmallDesktop)
       margin-bottom: $textSpacer /2
 
