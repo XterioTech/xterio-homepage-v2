@@ -12,15 +12,20 @@
       margin: 0
 
       @media (min-width: $smallDesktop)
-        flex-direction: row
         align-items: center
+        flex-direction: row
+        gap: $baseline ($baseline * 1.5)
 
     &__item
       align-items: center
       display: flex
       flex-wrap: wrap
-      gap: 0 $baseline
+      gap: 0 ($baseline * .5)
       position: relative
+
+    &__link
+      @media (min-width: $smallDesktop)
+        font-size: 1.25em
 
     &--navigation
       .nav
@@ -35,6 +40,7 @@
 
     &__expand
       +unbutton
+      cursor: pointer
 
       svg
         color: inherit
