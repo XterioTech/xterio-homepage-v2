@@ -26,25 +26,22 @@
     backdrop-filter: blur(30px)
     background: rgba($white, .1)
 
-    // &.header--light
-    //   .nav--secondary
-    //     .nav__link
-    //       @extend .button--black
+  @media (min-width: $smallDesktop)
+    &.header--light
+      .nav--secondary
+        .nav__link
+          background: $black
+          color: $white
 
-    @media (min-width: $smallDesktop)
-      &.header--light
-        .nav--secondary
-          .nav__link
-            background: $black
-            color: $white
-
-      &.header--dark
-        .nav--secondary
-          .nav__link
-            background: $white
-            color: $black
+    &.header--dark,
+    &.header--image
+      .nav--secondary
+        .nav__link
+          background: $white
+          color: $black
 
   &--dark,
+  &--image,
   &:has(.menu-toggle[aria-expanded="true"])
     color: $white
 
