@@ -29,11 +29,15 @@
       transform-origin: bottom right
 
 %textLinkInverted
+  @extend %textLinkInit
+
   &:after
     transform: scaleX(0)
     transform-origin: bottom right
 
 %textLinkInvertedHover
+  @extend %textLinkHover
+
   &:after
     transform: scaleX(1)
     transform-origin: bottom left
