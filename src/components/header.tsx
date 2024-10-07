@@ -7,12 +7,14 @@ import { useEventListener, useLockBodyScroll } from '@superrb/react-addons/hooks
 import { MenuToggle } from '@superrb/react-addons/components'
 import { useNavStore } from '@superrb/react-addons/store'
 import {PrismicNextLink} from "@prismicio/next";
+import {usePathname} from 'next/navigation'
 
 const Header = ({ navigation }: { navigation: ReactNode }) => {
   const [sticky, setSticky] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const sections = useRef<LiveNodeList>() as MutableRefObject<LiveNodeList>
   const navOpen = useNavStore(state => state.navOpen)
+  const pathname = usePathname()
 
   useLockBodyScroll(navOpen)
 
@@ -22,7 +24,14 @@ const Header = ({ navigation }: { navigation: ReactNode }) => {
 
   useEventListener('scroll', () => {
     setSticky(window.scrollY > 50)
+    updateHeaderTheme()
+  })
 
+  useEffect(() => {
+    updateHeaderTheme()
+  }, [pathname])
+
+  const updateHeaderTheme = () => {
     for (const section of [...sections.current?.items]?.reverse()) {
       const { top } = section.getBoundingClientRect()
 
@@ -36,7 +45,7 @@ const Header = ({ navigation }: { navigation: ReactNode }) => {
         break
       }
     }
-  })
+  }
 
   return (
     <header
