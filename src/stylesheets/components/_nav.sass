@@ -27,6 +27,12 @@
       @media (min-width: $smallDesktop)
         font-size: 1.25em
 
+    a.nav__link
+      @extend %textLinkInverted
+
+      &:hover
+        @extend %textLinkInvertedHover
+
     &--navigation
       @media (max-width: $maxSmallDesktop)
         margin-bottom: auto
