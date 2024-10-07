@@ -53,7 +53,13 @@
 
       svg
         color: inherit
+        height: 0.4375rem
+        width: 0.75rem
         transition: transform $transitionDuration $transitionTimingFunction
+
+        @media (max-width: $maxSmallDesktop)
+          height: 0.593125rem
+          width: 1.0625rem
 
         path
           fill: currentColor
