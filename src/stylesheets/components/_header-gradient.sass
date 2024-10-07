@@ -6,19 +6,20 @@
   position: absolute
   z-index: -1
 
-  &__small-rectangle,
+  &__circle,
   &__big-rectangle
     position: absolute
 
-  &__small-rectangle
-    height: 50.9375rem
-    width: 50.9375rem
-    border-radius: 815.166px
-    opacity: 0.4
-    background: #7ADCFC
+  &__circle
+    +clamp('left', -3em, -9.0625em, $largeMobile, $desktop)
+    background: $blue
+    border-radius: 50.947875rem
     filter: blur(196.1891326904297px)
+    height: 50.9375rem
+    max-width: 50.9375rem
+    opacity: 0.4
     top: -26.75rem
-    left: -9.0625rem
+    width: 50%
 
   &__big-rectangle
     width: 100vw
@@ -27,11 +28,3 @@
     bottom: 0
     left: 0
     z-index: 1
-
-  &:after
-    width: 100vw
-    height: 13.0625rem
-    background: linear-gradient(180deg, #FFF 6.22%, rgba(255, 255, 255, 0.00) 100%)
-    bottom: 0
-    left: 0
-    transform: rotate(180deg)
