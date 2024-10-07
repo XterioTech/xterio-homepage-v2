@@ -28,6 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}>
         <Header navigation={navigation} />
+        <div className="header-gradient">
+          <span className="header-gradient__circle"></span>
+          <span className="header-gradient__big-rectangle"></span>
+          <span className="header-gradient__small-rectangle"></span>
+        </div>
         {children}
         <Footer />
         <CookieBanner />
