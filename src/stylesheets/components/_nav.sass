@@ -70,24 +70,38 @@
       transition: max-height .5s ease-out
 
       @media (min-width: $smallDesktop)
+        background: $white
+        border-radius: 6.42px
         left: 0
         max-height: none
         opacity: 0
+        padding: ($baseline * .5)
         pointer-events: none
         position: absolute
-        top: 100%
+        top: calc(100% + #{$baseline * .5})
         transition: opacity .5s ease
         white-space: nowrap
 
+        &:hover
+          .nav__sub-link
+            opacity: .3
+            transition: opacity .5s ease
+
+            &:hover
+              opacity: 1
+
     &__sub-item
-      &:first-child
-        margin-top: ($baseline * .5)
+      @media (max-width: $maxSmallDesktop)
+        &:first-child
+          margin-top: ($baseline * .5)
 
     &__sub-link
-      +thirdFont
       padding: 0
       text-decoration: none
-      text-transform: uppercase
+
+      @media (max-width: $maxSmallDesktop)
+        +thirdFont
+        text-transform: uppercase
 
     &--secondary
       @media (max-width: $maxSmallDesktop)
