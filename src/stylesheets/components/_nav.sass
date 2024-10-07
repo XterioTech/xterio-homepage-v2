@@ -2,6 +2,13 @@
   &[aria-hidden="true"]
     display: none
 
+  &--navigation
+    a.nav__link
+      @extend %textLinkInverted
+
+      &:hover
+        @extend %textLinkInvertedHover
+
   .header__nav &
     &__list
       align-items: flex-start
@@ -26,12 +33,6 @@
     &__link
       @media (min-width: $smallDesktop)
         font-size: 1.25em
-
-    a.nav__link
-      @extend %textLinkInverted
-
-      &:hover
-        @extend %textLinkInvertedHover
 
     &--navigation
       @media (max-width: $maxSmallDesktop)
