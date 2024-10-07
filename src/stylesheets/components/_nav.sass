@@ -53,13 +53,14 @@
 
       svg
         color: inherit
+        transition: transform $transitionDuration $transitionTimingFunction
 
         path
           fill: currentColor
 
       &[aria-expanded="true"]
         svg
-          transform: rotate(180deg)
+          transform: scaleY(-1)
 
         ~ .nav__sub-list
           @media (max-width: $maxSmallDesktop)
