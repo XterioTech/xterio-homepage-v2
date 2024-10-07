@@ -6,6 +6,7 @@ import FullLogo from './full-logo'
 import { useEventListener, useLockBodyScroll } from '@superrb/react-addons/hooks'
 import { MenuToggle } from '@superrb/react-addons/components'
 import { useNavStore } from '@superrb/react-addons/store'
+import {PrismicNextLink} from "@prismicio/next";
 
 const Header = ({ navigation }: { navigation: ReactNode }) => {
   const [sticky, setSticky] = useState(false)
@@ -41,7 +42,9 @@ const Header = ({ navigation }: { navigation: ReactNode }) => {
     <header
       className={`header header--${theme} ${navOpen ? 'header--nav-open' : ''} ${sticky ? 'header--sticky' : ''}`}
     >
-      <FullLogo className="header__logo" />
+      <PrismicNextLink href="/">
+        <FullLogo className="header__logo" />
+      </PrismicNextLink>
 
       <div className="header__nav" id="nav" aria-hidden={!navOpen}>
         {navigation}
