@@ -10,6 +10,7 @@ import { kebabCase } from 'change-case'
 import { NavContext } from '@superrb/react-addons/context'
 import DropdownArrow from '@/components/icons/dropdown-arrow'
 import { LinkBase } from '@superrb/next-addons/components'
+import {useNavStore} from '@superrb/react-addons/store'
 
 /**
  * Props for `NavigationItem`.
@@ -31,7 +32,7 @@ const NavigationItem = ({
   },
   context: { menuName },
 }: NavigationItemProps): JSX.Element => {
-  const { closeNav } = useContext(NavContext)
+  const { closeNav } = useNavStore()
   const [subnavOpen, setSubnavOpen] = useState<boolean>(false)
 
   useEventListener(
