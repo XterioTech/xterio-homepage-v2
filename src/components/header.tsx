@@ -8,6 +8,8 @@ import { MenuToggle } from '@superrb/react-addons/components'
 import { useNavStore } from '@superrb/react-addons/store'
 import {PrismicNextLink} from "@prismicio/next";
 import {usePathname} from 'next/navigation'
+import dynamic from "next/dynamic";
+const SocialIcons = dynamic(() => import('./social-icons'))
 
 const Header = ({ navigation }: { navigation: ReactNode }) => {
   const [sticky, setSticky] = useState(false)
@@ -57,6 +59,7 @@ const Header = ({ navigation }: { navigation: ReactNode }) => {
 
       <div className="header__nav" id="nav" aria-hidden={!navOpen}>
         {navigation}
+        <SocialIcons className="header__social" />
       </div>
 
       <MenuToggle aria-controls="nav" />
