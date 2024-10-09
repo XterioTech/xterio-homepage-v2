@@ -2,6 +2,7 @@ import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import TextLink from '@/components/text-link'
+import Anchor from "@/components/anchor";
 
 /**
  * Props for `SectionIntro`.
@@ -28,6 +29,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       data-slice-backgroundcolour={"light"}
     >
+      <Anchor anchorName={title} />
       <div className="section-intro__container">
         <h2 className="section-intro__title">{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>

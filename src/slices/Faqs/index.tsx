@@ -2,6 +2,7 @@ import { Content } from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import {Image} from "@superrb/next-addons/components";
 import {Accordion, AccordionItem} from "@superrb/react-addons/components";
+import Anchor from "@/components/anchor";
 
 /**
  * Props for `Faqs`.
@@ -22,6 +23,7 @@ const Faqs = ({ slice }: FaqsProps): JSX.Element => {
       data-slice-variation={slice.variation}
       data-slice-backgroundcolour={"light"}
     >
+      <Anchor anchorName={title} />
       <div className="faqs__container" data-slice-backgroundcolour={"dark"}>
         <div className="faqs__col">
           <h2 className="faqs__title">{title}</h2>
