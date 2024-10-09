@@ -62,7 +62,7 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
         </header>
 
         <Flickity
-          className={'games-feed__blocks carousel'} // default ''
+          className={'games-feed__blocks flickity'} // default ''
           elementType={'div'} // default 'div'
           options={flickityOptions} // takes flickity options {}
           disableImagesLoaded={false} // default false

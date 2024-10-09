@@ -1,3 +1,7 @@
+.flickity
+  &:focus-visible
+    outline: none
+
 .flickity-slider
   width: 100%
 
@@ -15,3 +19,28 @@
 
   @media (min-width: $tablet)
     width: 33.333%
+
+.flickity-page-dots
+  +gutters
+  text-align: center
+
+.flickity-page-dot
+  +unbutton
+  border: $border
+  border-color: $white
+  border-radius: 100%
+  cursor: pointer
+  display: inline-block
+  height: 1.0625rem
+  margin: 0 $textSpacer /2
+  text-indent: -9999px
+  transition: background-color $transitionDuration $transitionTimingFunction
+  width: 1.0625rem
+
+  @media (min-width: $tablet)
+    height: 1.3125rem
+    width: 1.3125rem
+
+  &:hover,
+  &.is-selected
+    background-color: $white
