@@ -1,7 +1,10 @@
+'use client'
+
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, { ButtonVariant } from '@/components/button'
 import GameBlock from "@/components/game-block";
 import {Content} from '@prismicio/client';
+import Flickity from "react-flickity-component";
 
 /**
  * Props for `GamesFeed`.
@@ -25,6 +28,13 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
   let buttonColour = 'outline'
   if (theme == 'Light') {
     buttonColour = 'black'
+  }
+
+  const flickityOptions = {
+    initialIndex: 2,
+    wrapAround: true,
+    prevNextButtons: false,
+    adaptiveHeight: true
   }
 
   return (
@@ -51,10 +61,16 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
           </div>
         </header>
 
-
-        <div className="games-feed__blocks">
+        <Flickity
+          className={'games-feed__blocks carousel'} // default ''
+          elementType={'div'} // default 'div'
+          options={flickityOptions} // takes flickity options {}
+          disableImagesLoaded={false} // default false
+          reloadOnUpdate // default false
+          static // default false
+        >
           {slice.primary.block.map(({ image, type, url }, index) => (
-            <div className="games-feed__block game-block" key={index}>
+            <div className="games-feed__block carousel-block" key={index}>
               <GameBlock
                 image={image}
                 blockType={type}
@@ -63,7 +79,7 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
               />
             </div>
           ))}
-        </div>
+        </Flickity>
 
       </div>
 

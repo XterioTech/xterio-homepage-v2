@@ -5,33 +5,19 @@
   &__header
     +gutters
 
-  &__blocks
-    display: flex
+  .flickity-viewport
+    +clamp('margin-bottom', $spacerMobile , $spacerDesktop / 2, $largeMobile, $desktop)
+    +clamp('margin-top', $spacerMobile , $spacerDesktop / 2, $largeMobile, $desktop)
 
-  &__block
+  .flickity-cell
     aspect-ratio: 360/503
-    border-radius: $borderRadius
-    flex: 0 0 calc(80vw + $textSpacer)
-    height: 34.625rem
-    padding: $textSpacer $textSpacer /2
-    position: relative
-    transition: padding $transitionDuration $transitionTimingFunction
+    width: 70%
 
     @media (min-width: $tablet)
-      flex: 0 0 calc(40vw + $textSpacer)
+      width: 35%
 
     @media (min-width: $smallDesktop)
-      flex: 0 0 22.5rem
-
-    &[aria-current="true"]
-      @media (min-width: $smallDesktop)
-        aspect-ratio: 396/554
-        flex: 0 0 24.75rem
-        padding-top: 0
-        padding-bottom: 0
-
-    &:last-child
-      padding-right: 0
+      width: 28%
 
 .games-feed-header
   &__container
@@ -42,6 +28,7 @@
   position: relative
   width: 100%
   height: 100%
+  transition: transform $transitionDuration $transitionTimingFunction
 
   &__image
     position: absolute
