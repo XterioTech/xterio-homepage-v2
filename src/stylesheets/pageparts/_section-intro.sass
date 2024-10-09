@@ -21,10 +21,14 @@
       margin: 0 $textSpacer / 2
 
   &__button
+    +clamp('margin-top', $spacerMobile , $spacerDesktop / 2, $largeMobile, $desktop)
+
     @media (max-width: $maxTablet)
       width: 100%
 
   &__text-link
+    +clamp('margin-top', $spacerMobile , $spacerDesktop / 2, $largeMobile, $desktop)
+    
     @media (max-width: $maxTablet)
       display: inline-block
       margin-top: $textSpacer
