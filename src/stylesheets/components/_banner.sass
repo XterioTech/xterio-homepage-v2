@@ -1,0 +1,40 @@
+.banner
+  &__container
+    @extend %cappedWidth
+    align-items: center
+    display: flex
+
+    @media (max-width: $maxSmallDesktop)
+      flex-wrap: wrap
+
+  &__content
+    @media (min-width: $smallDesktop)
+      flex: 0 0 69%
+
+  &__title
+    text-wrap: balance
+
+  &__text
+    text-wrap: balance
+
+  &__media
+    @media (min-width: $smallDesktop)
+      flex: 0 0 29%
+      margin-left: -2em
+
+    @media (max-width: $maxSmallDesktop)
+      order: -1
+      margin-left: auto
+
+  &__button
+    margin-right: $textSpacer
+
+    @media (max-width: $maxTablet)
+      width: 100%
+
+    @media (max-width: $maxSmallDesktop)
+      margin-bottom: $textSpacer /2
+
+    &:last-child
+      margin-right: 0
+      margin-bottom: 0

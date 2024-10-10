@@ -23,15 +23,15 @@ const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: s
   } = slice.primary
   return (
     <section
-      className="page-banner"
+      className="page-banner banner"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       data-slice-backgroundcolour={"light"}
     >
-      <div className="page-banner__container">
-        <div className="page-banner__content">
-          <h1 className="page-banner__title">{title}</h1>
-          <div className="page-banner__text">
+      <div className="page-banner__container banner__container">
+        <div className="page-banner__content banner__content">
+          <h1 className="page-banner__title banner__title">{title}</h1>
+          <div className="page-banner__text banner__text">
             <PrismicRichText field={text} />
           </div>
           {asLink(button_1_url) && button_1_text && (
@@ -51,7 +51,7 @@ const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: s
             />
           )}
         </div>
-        <div className="page-banner__image">
+        <div className="page-banner__media banner__media">
           <Image
             image={image}
             className="page-banner__image objFit"
