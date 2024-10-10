@@ -27,7 +27,8 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     button_1_text,
     button_2_url,
     button_2_text,
-    theme
+    theme,
+    animation_direction
   } = slice.primary
   
   let button1Colour = 'black'
@@ -39,6 +40,8 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
   if (theme == 'Dark') {
     button2Colour = 'outline'
   }
+
+  let carouselDirection = animation_direction.toLowerCase() as string
 
   const isMotionAllowed = useMotionAllowed()
   const { isInViewport, setRef } = useIsInViewport()
@@ -55,6 +58,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
       className="hero-banner banner"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      data-slice-carouseldirection={animation_direction}
       data-slice-backgroundcolour={theme
         .toLowerCase()
         .split(' ')
@@ -94,14 +98,14 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                     modules={[Autoplay]}
                     allowTouchMove={false}
                     simulateTouch={false}
-                    direction={'vertical'}
+                    direction={carouselDirection === 'vertical' ? 'vertical' : 'horizontal'}
                     height={900}
                     spaceBetween={17}
                     slidesPerView={'auto'}
                     speed={14000}
                     loop={true}
                     autoplay={isMotionAllowed ? {
-                        delay: 0,
+                        delay: 0
                       } :
                       false}
                   >
@@ -118,35 +122,39 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                       )
                     })}
                   </Swiper>
-                  <Swiper
-                    modules={[Autoplay]}
-                    allowTouchMove={false}
-                    simulateTouch={false}
-                    direction={'vertical'}
-                    height={900}
-                    spaceBetween={17}
-                    slidesPerView={'auto'}
-                    speed={14000}
-                    loop={true}
-                    autoplay={isMotionAllowed ? {
-                        delay: 0,
-                        reverseDirection: true
-                      } :
-                      false}
-                  >
-                    {slice.primary.block.map(({ image, type, url }, index) => {
-                      return (
-                        <SwiperSlide key={`hero-banner__left-slide--${index}`}>
-                          <GameBlock
-                            image={image}
-                            blockType={type}
-                            buttonText="Play Now"
-                            buttonUrl={url}
-                          />
-                        </SwiperSlide>
-                      )
-                    })}
-                  </Swiper>
+                  {animation_direction === 'Vertical' && (
+                    <Swiper
+                      modules={[Autoplay]}
+                      allowTouchMove={false}
+                      simulateTouch={false}
+                      direction={carouselDirection === 'vertical' ? 'vertical' : 'horizontal'}
+                      height={900}
+                      spaceBetween={17}
+                      slidesPerView={'auto'}
+                      speed={14000}
+                      loop={true}
+                      autoplay={isMotionAllowed ? {
+                          delay: 0,
+                          reverseDirection: true
+                        } :
+                        false}
+
+                    >
+                      {slice.primary.block.map(({ image, type, url }, index) => {
+                        return (
+                          <SwiperSlide key={`hero-banner__left-slide--${index}`}>
+                            <GameBlock
+                              image={image}
+                              blockType={type}
+                              buttonText="Play Now"
+                              buttonUrl={url}
+                            />
+                          </SwiperSlide>
+                        )
+                      })}
+                    </Swiper>
+                  )}
+
                 </>
                 : ''}
             </>
