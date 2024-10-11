@@ -26,19 +26,16 @@ export default function RootLayout({
 }) {
   const navigation = (
     <>
-      <Navigation name={'navigation'} />
-      <Navigation name={'secondary'} />
+      <Navigation name={'landing-page'} />
     </>
   )
-
-  const socialIcons = <SocialIcons className="header__social" />
 
   return (
     <html lang="en">
       <body
         className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}
       >
-        <Header navigation={navigation} socialIcons={socialIcons} />
+        <Header navigation={navigation} />
         {children}
         <Footer />
         <CookieBanner customiseLabel="Customize" tracking={{title: "Optional Cookies", description: "These cookies are set by third-parties to track browsing habits in order to personalize your experience."}}/>

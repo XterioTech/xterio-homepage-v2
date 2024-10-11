@@ -7,18 +7,11 @@ import {
   useEventListener,
   useLockBodyScroll,
 } from '@superrb/react-addons/hooks'
-import { MenuToggle } from '@superrb/react-addons/components'
 import { useNavStore } from '@superrb/react-addons/store'
 import { PrismicNextLink } from '@prismicio/next'
 import { usePathname } from 'next/navigation'
 
-const Header = ({
-  navigation,
-  socialIcons,
-}: {
-  navigation: ReactNode
-  socialIcons: ReactNode
-}) => {
+const Header = ({ navigation }: { navigation: ReactNode }) => {
   const [sticky, setSticky] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const sections = useRef<LiveNodeList>() as MutableRefObject<LiveNodeList>
@@ -63,12 +56,7 @@ const Header = ({
         <FullLogo className="header__logo" />
       </PrismicNextLink>
 
-      <div className="header__nav" id="nav" aria-hidden={!navOpen}>
-        {navigation}
-        {socialIcons}
-      </div>
-
-      <MenuToggle aria-controls="nav" />
+      {navigation}
     </header>
   )
 }
