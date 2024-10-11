@@ -1,17 +1,25 @@
 'use client'
 
 import { useIsInViewport } from '@superrb/react-addons/hooks'
-import Lottie, { LottieProps } from 'react-lottie-player'
-import LottiePlayer from 'lottie-web'
+import { LottieProps } from 'react-lottie-player'
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 
-if ('setQuality' in LottiePlayer) {
-  LottiePlayer.setQuality(2)
-}
+const Lottie = dynamic(() => import('react-lottie-player'))
 
 const LottieAnimationWrapper = (props: LottieProps) => {
   const { isInViewport, setRef } = useIsInViewport()
+  const [ready, setReady] = useState<boolean>(false)
 
   props.play = isInViewport
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
+  if (!ready) {
+    return null
+  }
 
   return (
     <div className="lottie-animation" ref={setRef}>
