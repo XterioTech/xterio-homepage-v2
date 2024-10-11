@@ -3,19 +3,22 @@
 import LiveNodeList from 'live-node-list'
 import { MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react'
 import FullLogo from './full-logo'
-import { useEventListener, useLockBodyScroll } from '@superrb/react-addons/hooks'
+import {
+  useEventListener,
+  useLockBodyScroll,
+} from '@superrb/react-addons/hooks'
 import { MenuToggle } from '@superrb/react-addons/components'
 import { useNavStore } from '@superrb/react-addons/store'
-import {PrismicNextLink} from "@prismicio/next";
-import {usePathname} from 'next/navigation'
-import dynamic from "next/dynamic";
+import { PrismicNextLink } from '@prismicio/next'
+import { usePathname } from 'next/navigation'
+import dynamic from 'next/dynamic'
 const SocialIcons = dynamic(() => import('./social-icons'))
 
 const Header = ({ navigation }: { navigation: ReactNode }) => {
   const [sticky, setSticky] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const sections = useRef<LiveNodeList>() as MutableRefObject<LiveNodeList>
-  const navOpen = useNavStore(state => state.navOpen)
+  const navOpen = useNavStore((state) => state.navOpen)
   const pathname = usePathname()
 
   useLockBodyScroll(navOpen)
