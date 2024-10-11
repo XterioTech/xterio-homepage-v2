@@ -9,7 +9,7 @@
       &:hover
         @extend %textLinkInvertedHover
 
-  .header__nav &
+  .nav
     &__list
       align-items: flex-start
       display: flex
@@ -34,96 +34,97 @@
       @media (min-width: $smallDesktop)
         font-size: 1.25em
 
-    &--navigation
-      @media (max-width: $maxSmallDesktop)
-        margin-bottom: auto
+  &--navigation
+    @media (max-width: $maxSmallDesktop)
+      margin-bottom: auto
 
-      .nav
-        &__link
-          text-decoration: none
-
-          @media (max-width: $maxSmallDesktop)
-            +secondFont
-            font-size: 2.04375em
-            padding: .1em 0
-            text-transform: uppercase
-
-    &__expand
-      +unbutton
-      cursor: pointer
-
-      svg
-        color: inherit
-        height: 0.4375rem
-        width: 0.75rem
-        transition: transform $transitionDuration $transitionTimingFunction
+    .nav
+      &__link
+        text-decoration: none
 
         @media (max-width: $maxSmallDesktop)
-          height: 0.593125rem
-          width: 1.0625rem
+          +secondFont
+          font-size: 2.04375em
+          padding: .1em 0
+          text-transform: uppercase
 
-        path
-          fill: currentColor
+      &__expand
+        +unbutton
+        cursor: pointer
 
-      &[aria-expanded="true"]
         svg
-          transform: scaleY(-1)
+          color: inherit
+          height: 0.4375rem
+          width: 0.75rem
+          transition: transform $transitionDuration $transitionTimingFunction
 
-        ~ .nav__sub-list
           @media (max-width: $maxSmallDesktop)
-            transition-timing-function: ease-in
-            max-height: 100vh
+            height: 0.593125rem
+            width: 1.0625rem
 
-          @media (min-width: $smallDesktop)
-            opacity: 1
-            pointer-events: all
+          path
+            fill: currentColor
 
-    &__sub-list
-      flex: 0 0 100%
-      list-style: none
-      margin: 0
-      max-height: 0
-      overflow: hidden
-      transition: max-height .5s ease-out
+        &[aria-expanded="true"]
+          svg
+            transform: scaleY(-1)
 
-      @media (min-width: $smallDesktop)
-        background: $white
-        border-radius: 6.42px
-        left: 0
-        max-height: none
-        opacity: 0
-        padding: ($baseline * .5)
-        pointer-events: none
-        position: absolute
-        top: calc(100% + #{$baseline * .5})
-        transition: opacity .5s ease
-        white-space: nowrap
+          ~ .nav__sub-list
+            @media (max-width: $maxSmallDesktop)
+              transition-timing-function: ease-in
+              max-height: 100vh
 
-        &:hover
-          .nav__sub-link
-            opacity: .3
-            transition: opacity .5s ease
-
-            &:hover
+            @media (min-width: $smallDesktop)
               opacity: 1
+              pointer-events: all
 
-    &__sub-item
-      @media (max-width: $maxSmallDesktop)
-        &:first-child
-          margin-top: ($baseline * .5)
+      &__sub-list
+        flex: 0 0 100%
+        list-style: none
+        margin: 0
+        max-height: 0
+        overflow: hidden
+        transition: max-height .5s ease-out
 
-    &__sub-link
-      padding: 0
-      text-decoration: none
+        @media (min-width: $smallDesktop)
+          background: $white
+          border-radius: 6.42px
+          left: 0
+          max-height: none
+          opacity: 0
+          padding: ($baseline * .5)
+          pointer-events: none
+          position: absolute
+          top: calc(100% + #{$baseline * .5})
+          transition: opacity .5s ease
+          white-space: nowrap
 
-      @media (min-width: $smallDesktop)
-        color: $black
+          &:hover
+            .nav__sub-link
+              opacity: .3
+              transition: opacity .5s ease
 
-      @media (max-width: $maxSmallDesktop)
-        +thirdFont
-        text-transform: uppercase
+              &:hover
+                opacity: 1
 
-    &--secondary
+      &__sub-item
+        @media (max-width: $maxSmallDesktop)
+          &:first-child
+            margin-top: ($baseline * .5)
+
+      &__sub-link
+        padding: 0
+        text-decoration: none
+
+        @media (min-width: $smallDesktop)
+          color: $black
+
+        @media (max-width: $maxSmallDesktop)
+          +thirdFont
+          text-transform: uppercase
+
+  &--secondary, &--landing-page
+    .header__nav &
       @media (max-width: $maxSmallDesktop)
         width: 100%
 
@@ -143,18 +144,27 @@
                 &::after
                   +buttonArrow($white)
 
-      .nav
-        &__link
-          &.nav__link
-            min-width: auto
-            text-align: left
-            width: 100%
+    .nav
+      &__link
+        &.nav__link
+          min-width: auto
+          text-align: left
+          width: 100%
 
-            @media (min-width: $smallDesktop)
-              border: 0
-              font-size: 0.9375em
-              padding: .75em 2.25em
-              width: auto
+          @media (min-width: $smallDesktop)
+            border: 0
+            font-size: 0.9375em
+            padding: .75em 2.25em
+            width: auto
 
-              .button__icon
-                display: none
+            .button__icon
+              display: none
+
+  &--landing-page
+    border: 0
+    font-size: 0.9375em
+    padding: .75em 2.25em
+    width: auto
+
+    .button__icon
+      display: none

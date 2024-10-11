@@ -22,25 +22,30 @@
     path
       fill: currentColor
 
+  &:not(.header--sticky)
+    .nav--secondary, .nav--landing-page
+      .nav__link
+        background: $white
+
   &--sticky
     backdrop-filter: blur(30px)
     background: rgba($white, .1)
 
   @media (min-width: $smallDesktop)
     &.header--light
-      .nav--secondary
+      .nav--secondary, .nav--landing-page
         .nav__link
           color: $black
 
     &.header--light.header--sticky
-      .nav--secondary
+      .nav--secondary, .nav--landing-page
         .nav__link
           background: $black
           color: $white
 
     &.header--dark,
     &.header--image
-      .nav--secondary
+      .nav--secondary, .nav--landing-page
         .nav__link
           background: $white
           color: $black

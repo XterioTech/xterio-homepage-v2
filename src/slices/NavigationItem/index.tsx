@@ -2,15 +2,13 @@
 
 import Button from '@/components/button'
 import { Content, asLink } from '@prismicio/client'
-import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
 import { useEventListener } from '@superrb/react-addons/hooks'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { kebabCase } from 'change-case'
-import { NavContext } from '@superrb/react-addons/context'
 import DropdownArrow from '@/components/icons/dropdown-arrow'
 import { LinkBase } from '@superrb/next-addons/components'
-import {useNavStore} from '@superrb/react-addons/store'
+import { useNavStore } from '@superrb/react-addons/store'
 
 /**
  * Props for `NavigationItem`.
@@ -47,7 +45,7 @@ const NavigationItem = ({
   const href = asLink(link) as string
 
   let LinkComponent: typeof LinkBase | typeof Button = LinkBase
-  if (menuName === 'secondary') {
+  if (menuName === 'secondary' || menuName === 'landing-page') {
     LinkComponent = Button
   }
 
@@ -97,7 +95,9 @@ const NavigationItem = ({
                   onClick={() => closeNav()}
                   href={link}
                   className="nav__sub-link"
-                >{label}</LinkBase>
+                >
+                  {label}
+                </LinkBase>
               </li>
             )
           })}
