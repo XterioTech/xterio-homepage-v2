@@ -24,8 +24,7 @@ const Footer = () => {
             </div>
 
             <div className="footer__menus">
-              <Navigation className="footer-nav" name={'footer-menu-one'} />
-              <Navigation className="footer-nav" name={'footer-menu-two'} />
+              <Navigation className="footer-nav" name={'landing-page-footer'} />
             </div>
           </div>
           <div className="footer__row">
