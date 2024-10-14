@@ -62,7 +62,7 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
             <Button
               href={button_url}
               label={button_text}
-              variants={[ButtonVariant.white]}
+              variants={[ButtonVariant.outline]}
               className="two-col-cta__button"
             />
           )}
