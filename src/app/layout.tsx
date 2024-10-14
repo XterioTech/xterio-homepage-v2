@@ -1,11 +1,18 @@
 import type { Metadata } from 'next'
 import '@/stylesheets/style.sass'
-import Navigation from "@/components/navigation";
-import {CookieBanner} from "@superrb/react-addons/components";
-import Scripts from "@/components/scripts";
-import {GtAmericaExBlack, GtAmericaExBold, GtAmericaExRegular, GtAmericaStRegular, PPMonumentExHeavy} from "@/fonts";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Navigation from '@/components/navigation'
+import { CookieBanner } from '@superrb/react-addons/components'
+import Scripts from '@/components/scripts'
+import {
+  GtAmericaExBlack,
+  GtAmericaExBold,
+  GtAmericaExRegular,
+  GtAmericaStRegular,
+  PPMonumentExHeavy,
+} from '@/fonts'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import SocialIcons from '@/components/social-icons'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,10 +31,14 @@ export default function RootLayout({
     </>
   )
 
+  const socialIcons = <SocialIcons className="header__social" />
+
   return (
     <html lang="en">
-      <body className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}>
-        <Header navigation={navigation} />
+      <body
+        className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}
+      >
+        <Header navigation={navigation} socialIcons={socialIcons} />
         <div className="header-gradient">
           <span className="header-gradient__circle"></span>
           <span className="header-gradient__big-rectangle"></span>
