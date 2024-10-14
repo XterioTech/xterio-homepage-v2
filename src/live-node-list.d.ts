@@ -7,6 +7,13 @@ interface LiveNodeList {
     config: IntersectionObserverInit,
   ): LiveNodeList
   items: NodeListOf<HTMLElement>
+  on: (
+    event: string,
+    callback: (
+    newItems: NodeListOf<HTMLElement>,
+    oldItems: NodeListOf<HTMLElement>,
+    ) => void
+  ) => void
 }
 
 interface LiveElement {
@@ -16,4 +23,8 @@ interface LiveElement {
     config: IntersectionObserverInit,
   ): LiveElement
   item: HTMLElement
+  on: (
+    event: string,
+    callback: (newItem: HTMLElement, oldItem: HTMLElement) => void,
+  ) => void
 }

@@ -12,7 +12,13 @@ import { useNavStore } from '@superrb/react-addons/store'
 import { PrismicNextLink } from '@prismicio/next'
 import { usePathname } from 'next/navigation'
 
-const Header = ({ navigation, socialIcons }: { navigation: ReactNode, socialIcons: ReactNode }) => {
+const Header = ({
+  navigation,
+  socialIcons,
+}: {
+  navigation: ReactNode
+  socialIcons: ReactNode
+}) => {
   const [sticky, setSticky] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const sections = useRef<LiveNodeList>() as MutableRefObject<LiveNodeList>
@@ -23,16 +29,13 @@ const Header = ({ navigation, socialIcons }: { navigation: ReactNode, socialIcon
 
   useEffect(() => {
     sections.current = new LiveNodeList('[data-slice-backgroundcolour]')
+    sections.current?.on('update', updateHeaderTheme)
   }, [])
 
   useEventListener('scroll', () => {
     setSticky(window.scrollY > 50)
     updateHeaderTheme()
   })
-
-  useEffect(() => {
-    updateHeaderTheme()
-  }, [pathname])
 
   const updateHeaderTheme = () => {
     for (const section of [...sections.current?.items]?.reverse()) {
