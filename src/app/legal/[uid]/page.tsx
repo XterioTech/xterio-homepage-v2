@@ -4,10 +4,42 @@ import { NotFoundError } from '@prismicio/client'
 import { PrismicRichText, SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
 
-export default async function Page({ params }: { params: { uid: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: string; uid: string }
+}) {
+  const client = createClient()
+
+  try {
+    const page = await client.getByUID('legal_page', params.uid, {
+      lang: params.lang,
+    })
+
+    return {
+      title: page.data.meta_title,
+      description: page.data.meta_description,
+      image: page.data.meta_image,
+    }
+  } catch (error) {
+    if (error instanceof NotFoundError) {
+      notFound()
+    }
+
+    throw error
+  }
+}
+
+export default async function Page({
+  params,
+}: {
+  params: { lang: string; uid: string }
+}) {
   try {
     const client = createClient()
-    const page = await client.getByUID('legal_page', params.uid)
+    const page = await client.getByUID('legal_page', params.uid, {
+      lang: params.lang,
+    })
 
     const { title, content } = page?.data
 
