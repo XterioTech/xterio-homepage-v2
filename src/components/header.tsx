@@ -30,6 +30,8 @@ const Header = ({
   useEffect(() => {
     sections.current = new LiveNodeList('[data-slice-backgroundcolour]')
     sections.current?.on('update', updateHeaderTheme)
+
+    updateHeaderTheme()
   }, [])
 
   useEventListener('scroll', () => {
