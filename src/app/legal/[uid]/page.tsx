@@ -44,7 +44,7 @@ export default async function Page({
     const { title, content } = page?.data
 
     return (
-      <section className="legal-page">
+      <section className="legal-page" data-slice-backgroundcolour={"light"}>
         <div className="legal-page__container container">
           <h1 className="legal-page__title">{title}</h1>
 
