@@ -25,7 +25,8 @@
   &:not(.header--sticky)
     .nav--secondary, .nav--landing-page
       .nav__link
-        background: $white
+        @media (min-width: $smallDesktop)
+          background: $white
 
   &--sticky
     backdrop-filter: blur(30px)
