@@ -42,7 +42,8 @@
   &__title
     @extend %h5
 
-  &__text
+  &__text,
+  p
     @extend %mediumFontSize
     margin: 0
 
@@ -61,8 +62,24 @@
       display: flex
       gap: $baseline
 
+      &-text
+        strong
+          +thirdFont
+          @extend %mediumFontSize
+          display: block
+          margin-top: $textSpacer /2
+
+      p
+        display: inline
+        margin-bottom: $textSpacer /2
+
+    input
+      margin-top: auto
+      margin-bottom: 5px
+
     .form__submit
       margin-left: auto
+      margin-top: $textSpacer /2
 
   &__buttons
     align-items: center
@@ -83,7 +100,8 @@
         width: 100%
 
   &__accept,
-  &__customise
+  &__customise,
+  .form__submit
     @extend .button--black
     justify-content: center
     min-width: unset
