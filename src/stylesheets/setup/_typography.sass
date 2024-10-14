@@ -70,12 +70,15 @@ h6
 %tinyFontSize
   +clamp('font-size', 0.875em, 0.9375em, $largeMobile, $desktop) // 14px ~ 15px
 
-p
-  @extend %pFontSize
-  display: block
+%pStyles
   line-height: 1.3em
   margin: 0 0 $baseline
   width: 100%
+
+p
+  @extend %pFontSize
+  @extend %pStyles
+  display: block
 
 %screenreader-text
   left: 0
