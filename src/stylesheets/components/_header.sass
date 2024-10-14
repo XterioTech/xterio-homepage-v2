@@ -25,8 +25,7 @@
   &:not(.header--sticky)
     .nav--secondary, .nav--landing-page
       .nav__link
-        @media (min-width: $smallDesktop)
-          background: $white
+        background: $white
 
     @media (max-width: $maxSmallDesktop)
       .nav--landing-page
@@ -59,24 +58,24 @@
         &:after
           +buttonArrow($white)
 
-  @media (min-width: $smallDesktop)
-    &.header--light
-      .nav--secondary, .nav--landing-page
-        .nav__link
-          color: $black
+  &.header--light
+    .nav--secondary, .nav--landing-page
+      .nav__link
+        color: $black
 
-    &.header--light.header--sticky
-      .nav--secondary, .nav--landing-page
-        .nav__link
-          background: $black
-          color: $white
+  &.header--light.header--sticky
+    .nav--secondary, .nav--landing-page
+      .nav__link
+        background: $black
+        border-color: $black
+        color: $white
 
-    &.header--dark,
-    &.header--image
-      .nav--secondary, .nav--landing-page
-        .nav__link
-          background: $white
-          color: $black
+  &.header--dark,
+  &.header--image
+    .nav--secondary, .nav--landing-page
+      .nav__link
+        background: $white
+        color: $black
 
   &--dark,
   &--image,
