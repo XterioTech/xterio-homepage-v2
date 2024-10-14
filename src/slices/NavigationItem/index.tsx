@@ -42,6 +42,10 @@ const NavigationItem = ({
     typeof document !== 'undefined' ? document : undefined,
   )
 
+  const closeSubnav = () => {
+    setSubnavOpen(false)
+  }
+
   const href = asLink(link) as string
 
   let LinkComponent: typeof LinkBase | typeof Button = LinkBase
@@ -92,7 +96,10 @@ const NavigationItem = ({
             return (
               <li className="nav__sub-item" key={index}>
                 <LinkBase
-                  onClick={() => closeNav()}
+                  onClick={() => {
+                    closeSubnav()
+                    closeNav()
+                  }}
                   href={link}
                   className="nav__sub-link"
                 >
