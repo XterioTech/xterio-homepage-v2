@@ -3,10 +3,13 @@
   padding: $baseline 0
   pointer-events: none
   position: fixed
-  transition: opacity $transitionDurationLong $transitionTimingFunction
+  transform: translateY(0)
+  transition: opacity $transitionDuration $transitionTimingFunction, transform $transitionDurationLong $transitionTimingFunction
+  z-index: 4
 
   &--hide
     opacity: 0
+    transform: translateY(3em)
     pointer-events: none
 
   &__container
@@ -17,10 +20,9 @@
     justify-content: flex-end
 
   &__inner
-    background: $black
-    color: $white
-    max-width: 32em
-    padding: $baseline
+    background-color: $white
+    border-radius: $borderRadius
+    padding: $textSpacer
     pointer-events: all
     z-index: 999
 
@@ -30,11 +32,18 @@
     gap: $baseline
     justify-content: space-between
 
+    @media (max-width: $maxTablet)
+      flex-wrap: wrap
+
   &__message
     &[aria-hidden="true"]
       display: none
 
+  &__title
+    @extend %h5
+
   &__text
+    @extend %mediumFontSize
     margin: 0
 
   &__form
@@ -59,6 +68,23 @@
     align-items: center
     display: flex
     gap: ($baseline * .5)
-    justify-content: flex-end
+    justify-content: center
     white-space: nowrap
     flex: 1 1
+
+    @media (min-width: $tablet)
+      justify-content: flex-end
+
+    @media (max-width: $maxLargeMobile)
+      flex-wrap: wrap
+
+    .button
+      @media (max-width: $maxLargeMobile)
+        width: 100%
+
+  &__accept,
+  &__customise
+    @extend .button--black
+    justify-content: center
+    min-width: unset
+    padding: .75em 2.25em
