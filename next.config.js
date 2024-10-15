@@ -75,38 +75,38 @@ const nextConfig = {
       },
       // Wildcard path matching
       {
-        source: '/games/:slug',
-        destination: 'https://app.xter.io/games/:slug',
+        source: '/games/:slug*',
+        destination: 'https://app.xter.io/games/:slug*',
         permanent: true,
       },
       {
-        source: '/fans/:slug',
-        destination: 'https://app.xter.io/fans/:slug',
+        source: '/fans/:slug*',
+        destination: 'https://app.xter.io/fans/:slug*',
         permanent: true,
       },
       {
-        source: '/launchpad/:slug',
-        destination: 'https://app.xter.io/launchpad/:slug',
+        source: '/launchpad/:slug*',
+        destination: 'https://app.xter.io/launchpad/:slug*',
         permanent: true,
       },
       {
-        source: '/dashboard/:slug',
-        destination: 'https://app.xter.io/dashboard/:slug',
+        source: '/dashboard/:slug*',
+        destination: 'https://app.xter.io/dashboard/:slug*',
         permanent: true,
       },
       {
-        source: '/nft-detail/:slug',
-        destination: 'https://app.xter.io/nft-detail/:slug',
+        source: '/nft-detail/:slug*',
+        destination: 'https://app.xter.io/nft-detail/:slug*',
         permanent: true,
       },
       {
-        source: '/collection/:slug',
-        destination: 'https://app.xter.io/collection/:slug',
+        source: '/collection/:slug*',
+        destination: 'https://app.xter.io/collection/:slug*',
         permanent: true,
       },
       {
-        source: '/protocol/:slug',
-        destination: 'https://app.xter.io/protocol/:slug',
+        source: '/protocol/:slug*',
+        destination: 'https://app.xter.io/protocol/:slug*',
         permanent: true,
       },
     ]
