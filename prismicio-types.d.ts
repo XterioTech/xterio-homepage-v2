@@ -517,6 +517,16 @@ export interface LatestNewsDocumentDataNewsItemItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   author: prismic.ContentRelationshipField<'author'>
+
+  /**
+   * Link field in *Latest News → News Item*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: latest_news.news_item[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField
 }
 
 /**
