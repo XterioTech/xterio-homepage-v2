@@ -2,7 +2,7 @@
   +gutters
   align-items: center
   display: flex
-  gap: ($baseline * 3)
+  gap: $baseline
   justify-content: space-between
   padding-block: $baseline * .5
   position: fixed
@@ -27,6 +27,16 @@
       .nav__link
         @media (min-width: $smallDesktop)
           background: $white
+
+    @media (max-width: $maxSmallDesktop)
+      .nav--landing-page
+        .nav__link
+          border: 1px solid $black
+
+    body:has(.legal-page) &
+      .nav--landing-page
+        .nav__link
+          border: 1px solid $black
 
   &--sticky
     backdrop-filter: blur(30px)
