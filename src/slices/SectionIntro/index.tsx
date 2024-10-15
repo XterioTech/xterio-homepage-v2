@@ -33,6 +33,8 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
       <div className="section-intro__container">
         <h2 className="section-intro__title">{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>
+
+        <div className="section-intro__buttons">
         {asLink(button_url) && button_text && (
           <Button
             href={button_url}
@@ -49,6 +51,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
             className="section-intro__text-link"
           />
         )}
+        </div>
       </div>
     </section>
   )
