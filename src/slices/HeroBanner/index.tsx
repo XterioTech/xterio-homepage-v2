@@ -3,7 +3,7 @@
 import {asLink, Content} from '@prismicio/client'
 import Button, {ButtonVariant} from "@/components/button";
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
-import { useIsInViewport, useMotionAllowed } from '@superrb/react-addons/hooks'
+import {useIsInViewport, useIsMobile, useMotionAllowed} from '@superrb/react-addons/hooks'
 import {useEffect, useState} from "react";
 import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -46,6 +46,13 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
   const isMotionAllowed = useMotionAllowed()
   const { isInViewport, setRef } = useIsInViewport()
   const [imagesReady, setImagesReady] = useState<boolean>(false)
+  const isMobile = useIsMobile(true)
+
+  if (isMobile) {
+    carouselDirection = "horizontal"
+  } else {
+    carouselDirection = animation_direction.toLowerCase() as string
+  }
 
   useEffect(() => {
     if (isInViewport) {
