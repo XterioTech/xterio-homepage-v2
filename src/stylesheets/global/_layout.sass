@@ -16,6 +16,10 @@
 #back-to-top
   bottom: 0
 
+html
+  scroll-padding-top: $headerHeight
+  scroll-behavior: smooth
+
 body
   height: 100%
   overflow-x: hidden
@@ -48,9 +52,3 @@ body
 .skip-to
   left: 0
   top: 0
-
-.anchor
-  display: block
-  position: relative
-  padding-top: $headerHeight
-  margin-top: -$headerHeight
