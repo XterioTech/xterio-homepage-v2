@@ -122,3 +122,15 @@
       position: absolute
       right: 0
       top: 0
+
+=scaleImage
+  img
+    transition: transform $transitionDurationLong ease-in-out
+    transform: $imageScale
+
+=scaleImageHover
+  img
+    transform: $imageScaleHover
+
+    @media (prefers-reduced-motion: reduce)
+      transform: none !important
