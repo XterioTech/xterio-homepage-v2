@@ -109,6 +109,22 @@ const nextConfig = {
         destination: 'https://app.xter.io/protocol/:slug*',
         permanent: true,
       },
+      // landing page specific redirects
+      {
+        source: '/ecosystem',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/build',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/buy',
+        destination: '/',
+        permanent: false,
+      },
     ]
   },
 }
