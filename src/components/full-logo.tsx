@@ -1,9 +1,9 @@
 const FullLogo = ({ className }: { className: string }) => (
   <svg
     className={className}
-    width="194"
-    height="40"
-    viewBox="0 0 194 40"
+    width="196"
+    height="42"
+    viewBox="-1 -1 195 41"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
