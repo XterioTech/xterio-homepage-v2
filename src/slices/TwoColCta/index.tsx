@@ -52,9 +52,9 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
       className="two-col-cta"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      data-slice-backgroundcolour={"dark"}
+      data-slice-backgroundcolour={"light"}
     >
-      <div className="two-col-cta__container">
+      <div className="two-col-cta__container" data-slice-backgroundcolour={"dark"}>
         <div className="two-col-cta__col two-col-cta-col--text">
           <h2 className="two-col-cta__title">{title}</h2>
           <div className="two-col-cta__text"><PrismicRichText field={text} /></div>

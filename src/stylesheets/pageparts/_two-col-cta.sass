@@ -4,10 +4,18 @@
 
   &__container
     @extend %cappedWidth
+    border-radius: $borderRadius
     display: flex
+    padding: $textSpacer * 1.5
+
+    @media (min-width: $smallDesktop)
+      +clamp('padding-left', $gutterMobile, $gutterDesktop, $largeMobile, $desktop)
 
     @media (max-width: $maxTablet)
       flex-wrap: wrap
+
+  &__text
+    margin-top: $textSpacer
 
   &__image
     +roundedImage
@@ -28,6 +36,9 @@
 
 .two-col-cta-col
   &--text
+    padding-bottom: $textSpacer
+    padding-top: $textSpacer
+
     @media (min-width: $tablet)
       +gutterRight
 
