@@ -61,6 +61,7 @@
 
   &__image
     +roundedImage
+    +scaleImage
     aspect-ratio: 2/1
     margin-bottom: $textSpacer
     max-width: 100%
@@ -87,3 +88,7 @@
     &__name
       @extend %mediumFontSize
       margin-bottom: 0
+
+  &:hover
+    .news-block__image
+      +scaleImageHover
