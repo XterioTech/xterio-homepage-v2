@@ -32,7 +32,7 @@
     min-width: 0
 
     @media (min-width: $smallDesktop)
-      padding: ($gap * 2) ($gap * 2) $gap
+      padding: ($gap * 2)
 
     &[data-block-width="fullwidth"]
       @media (min-width: $smallDesktop)
@@ -51,6 +51,11 @@
       @media (min-width: $smallDesktop)
         grid-column-end: span 3
 
+    &-content
+      display: flex
+      flex-direction: column
+      height: 100%
+
   &__title
     @extend %h3
 
@@ -63,7 +68,8 @@
     display: flex
     flex-wrap: wrap
     gap: ($textSpacer / 2)
-    margin-top: $textSpacer
+    margin-top: auto
+    padding-top: $textSpacer
     width: 100%
 
   &__button
