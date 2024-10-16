@@ -42,6 +42,23 @@
     backdrop-filter: blur(30px)
     background: rgba($white, .1)
 
+  &:not(.header--sticky).header--light
+    .nav--secondary, .nav--landing-page
+      .nav__link
+        border: $border
+
+  &:not(.header--sticky).header--light,
+  &.header--dark.header--sticky
+    .nav--secondary, .nav--landing-page
+      .button__icon
+        background-color: $black
+
+        &:before
+          +buttonArrow($white)
+
+        &:after
+          +buttonArrow($white)
+
   @media (min-width: $smallDesktop)
     &.header--light
       .nav--secondary, .nav--landing-page
