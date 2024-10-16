@@ -13,6 +13,8 @@
       flex-wrap: wrap
 
   &__col
+    flex: 0 0 100%
+
     @media (min-width: $smallDesktop)
       flex: 0 1 50%
 
@@ -40,6 +42,8 @@
         +clamp('top', -0.9em, -0.45em, $largeMobile, $desktop)
 
     &__content
+      word-wrap: break-word
+
       p
         @extend %mediumFontSize
         margin-bottom: $textSpacer
