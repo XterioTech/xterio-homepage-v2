@@ -77,9 +77,9 @@
       width: 100%
 
   .lottie-animation
+    +clamp('height', 15em, 19em, $smallDesktop, $desktop)
+    +clamp('width', 15em, 19em, $smallDesktop, $desktop)
     align-self: flex-end
-    height: 15em
-    width: 15em
 
     @media (max-width: $maxSmallDesktop)
       display: none
