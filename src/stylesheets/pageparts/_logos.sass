@@ -1,3 +1,6 @@
+.logos:has(+ .stats)
+  +clamp('padding-bottom', $spacerMobile / 2, $spacerDesktop / 2, $largeMobile, $desktop)
+
 .logos
   +spacingBottom
   overflow: hidden
@@ -27,7 +30,7 @@
     width: auto
 
   &__block
-    +clamp(width, 4em, 8em, $largeMobile, $desktop)
+    +clamp(width, 7em, 8em, $largeMobile, $desktop)
     flex: 0 0 auto
     height: 100%
     margin: 0 $textSpacer

@@ -1,3 +1,6 @@
+.hero-banner:has(+ .logos)
+  +clamp('padding-bottom', $spacerMobile / 2, $spacerDesktop / 2, $largeMobile, $desktop)
+
 .hero-banner
   +spacingBottom
   position: relative
