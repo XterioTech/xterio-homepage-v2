@@ -5,6 +5,13 @@
   height: 41.625rem
   position: absolute
   z-index: -1
+  bottom: 0
+
+  .legal-page &
+    bottom: unset
+
+  [data-slice-backgroundcolour="dark"] &
+    display: none
 
   &__circle,
   &__big-rectangle

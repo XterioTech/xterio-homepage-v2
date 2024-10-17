@@ -2,6 +2,7 @@ import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import {Image} from "@superrb/next-addons/components";
+import HeaderGradient from "@/components/header-gradient";
 
 /**
  * Props for `PageBanner`.
@@ -28,6 +29,7 @@ const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: s
       data-slice-variation={slice.variation}
       data-slice-backgroundcolour={"light"}
     >
+      <HeaderGradient />
       <div className="page-banner__container banner__container">
         <div className="page-banner__content banner__content">
           <h1 className="page-banner__title banner__title">{title}</h1>

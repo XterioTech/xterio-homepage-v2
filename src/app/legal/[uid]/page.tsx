@@ -3,6 +3,7 @@ import { components } from '@/slices'
 import { NotFoundError } from '@prismicio/client'
 import { PrismicRichText, SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
+import HeaderGradient from "@/components/header-gradient";
 
 export async function generateMetadata({
   params,
@@ -45,6 +46,7 @@ export default async function Page({
 
     return (
       <section className="legal-page" data-slice-backgroundcolour={"light"}>
+        <HeaderGradient />
         <div className="legal-page__container container">
           <h1 className="legal-page__title">{title}</h1>
 

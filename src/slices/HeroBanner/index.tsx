@@ -10,6 +10,7 @@ import 'swiper/css'
 import { Autoplay } from 'swiper/modules'
 import {Image} from "@superrb/next-addons/components";
 import GameBlock from "@/components/game-block";
+import HeaderGradient from "@/components/header-gradient";
 
 /**
  * Props for `HeroBanner`.
@@ -71,6 +72,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
         .split(' ')
         .join('')}
     >
+     <HeaderGradient />
       <div className="hero-banner__container banner__container">
         <div className="hero-banner__content banner__content">
           <div className="her-banner__inner">

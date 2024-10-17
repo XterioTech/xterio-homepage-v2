@@ -39,11 +39,6 @@ export default function RootLayout({
         className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}
       >
         <Header navigation={navigation} socialIcons={socialIcons} />
-        <div className="header-gradient">
-          <span className="header-gradient__circle"></span>
-          <span className="header-gradient__big-rectangle"></span>
-          <span className="header-gradient__small-rectangle"></span>
-        </div>
         {children}
         <Footer />
         <CookieBanner />
