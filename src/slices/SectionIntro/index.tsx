@@ -34,24 +34,26 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
         <h2 className="section-intro__title">{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>
 
-        <div className="section-intro__buttons">
-        {asLink(button_url) && button_text && (
-          <Button
-            href={button_url}
-            label={button_text}
-            variants={[ButtonVariant.white]}
-            className="section-intro__button"
-          />
-        )}
+        {(asLink(button_url) || asLink(link_url)) && (
+          <div className="section-intro__buttons">
+            {asLink(button_url) && button_text && (
+              <Button
+                href={button_url}
+                label={button_text}
+                variants={[ButtonVariant.white]}
+                className="section-intro__button"
+              />
+            )}
 
-        {link_url && link_text && (
-          <TextLink
-            href={link_url}
-            label={link_text}
-            className="section-intro__text-link"
-          />
+            {link_url && link_text && (
+              <TextLink
+                href={link_url}
+                label={link_text}
+                className="section-intro__text-link"
+              />
+            )}
+          </div>
         )}
-        </div>
       </div>
     </section>
   )
