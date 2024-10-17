@@ -436,10 +436,10 @@
     prettier "^3.0.3"
     prismic-ts-codegen "^0.1.22"
 
-"@superrb/next-addons@^4.0.0-8":
-  version "4.0.0-8"
-  resolved "https://registry.yarnpkg.com/@superrb/next-addons/-/next-addons-4.0.0-8.tgz#59c5751fec16b8849e4687905d8add6d593c8c21"
-  integrity sha512-oDcAqqchH1QQs5iU0TlxMk36cRiPNr8kDgKwE+wddaLW38OXeS1jmU5KvfE7zycyfvthEi2W489uqiv4tyxiSw==
+"@superrb/next-addons@^4.0.0-10":
+  version "4.0.0-10"
+  resolved "https://registry.yarnpkg.com/@superrb/next-addons/-/next-addons-4.0.0-10.tgz#6606241ede13c0833c4160692a50b738bc35cb6f"
+  integrity sha512-7qdp3jgHgQhmzMnwptorMc0xrfh6arApLN+/6aSfGs8JGMpBMXwmMkcCAMPDWx8WIhvV0Nhbbc/Vq/bBUyjrEw==
   dependencies:
     install-peers-cli "^2.2.0"
 
