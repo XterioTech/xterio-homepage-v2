@@ -2,13 +2,16 @@
   +gutters
   align-items: center
   display: flex
-  gap: $baseline
+  gap: 0.5em
   justify-content: space-between
   padding-block: $baseline * .5
   position: fixed
   transition: color .5s ease, padding .5s ease, background .5s ease, backdrop-filter .5s ease
   width: 100%
   z-index: 9
+
+  @media (min-width: $tablet)
+    gap: $baseline
 
   @media (min-width: $smallDesktop)
     padding-block: ($baseline * 2)
@@ -97,6 +100,9 @@
     flex: 1 1
     justify-content: space-between
 
+    @media (max-width: $maxTablet)
+      flex: 1 0 auto
+
     @media (max-width: $maxSmallDesktop)
       +cover
       align-items: flex-start
@@ -116,6 +122,10 @@
       &:has(~ .menu-toggle[aria-expanded="true"])
         opacity: 1
         pointer-events: all
+
+    &-item
+      @media (max-width: $maxTablet)
+        margin-left: auto
 
   &__social
     +socialButtons
@@ -193,3 +203,8 @@
       font-size: 0
       line-height: 0
       text-fill-color: transparent
+
+  .button
+    @media (min-width: $maxTablet)
+      min-width: unset
+      padding-left: 1.2rem
