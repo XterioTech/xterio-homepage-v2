@@ -38,9 +38,13 @@
   &--text
     padding-bottom: $textSpacer
     padding-top: $textSpacer
+    flex: 1 1 50%
 
     @media (min-width: $tablet)
       +gutterRight
+
+    @media (min-width: $smallDesktop)
+      flex-basis: auto
 
     .button
       @media (max-width: $maxTablet)
@@ -50,7 +54,11 @@
     position: relative
 
     @media (min-width: $tablet)
-      flex: 0 0 16.75rem
+      flex: 0 1 16.75rem
+
+    @media (min-width: $smallDesktop)
+      flex-shrink: 0
 
     @media (max-width: $maxTablet)
       +spacingTopHalf
+      flex: auto
