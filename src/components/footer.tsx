@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* <LatestNews /> */}
+       <LatestNews />
 
       <div className="footer__container" data-slice-backgroundcolour={"dark"}>
         <div className="footer__inner">
