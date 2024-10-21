@@ -7,6 +7,8 @@ const SocialIcons = dynamic(() => import('./social-icons'))
 const ContactCta = dynamic(() => import('./contact-cta'))
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="footer">
       {/* <LatestNews /> */}
@@ -27,7 +29,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer__row">
-            <p className="footer__info">© Copyright 2024 - Xterio Limited. All rights reserved. <a href="https://www.superrb.com" target="_blank" rel="noopener nofollow" title="Website by Superrb">Website by Superrb</a></p>
+            <p className="footer__info">© Copyright {currentYear} Xterio Labs Limited. Xterio is the registered trademark of Xterio Foundation. All right Reserved. <a href="https://www.superrb.com" target="_blank" rel="noopener nofollow" title="Website by Superrb">Website by Superrb</a></p>
             <SocialIcons className="footer__social" />
           </div>
         </div>
