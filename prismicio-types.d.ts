@@ -115,7 +115,11 @@ export type BuildPageDocument<Lang extends string = string> =
     Lang
   >
 
-type BuyPageDocumentDataSlicesSlice = TipSlice | TextSlice | PageBannerSlice
+type BuyPageDocumentDataSlicesSlice =
+  | ImageWithCaptionSlice
+  | TipSlice
+  | TextSlice
+  | PageBannerSlice
 
 /**
  * Content for Buy Page documents
