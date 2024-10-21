@@ -29,7 +29,8 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     button_2_url,
     button_2_text,
     theme,
-    animation_direction
+    animation_direction,
+    game_block_button_text
   } = slice.primary
   
   let button1Colour = 'black'
@@ -124,7 +125,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                           <GameBlock
                             image={image}
                             blockType={type}
-                            buttonText="Play Now"
+                            buttonText={game_block_button_text}
                             buttonUrl={url}
                           />
                         </SwiperSlide>
@@ -155,7 +156,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                             <GameBlock
                               image={image}
                               blockType={type}
-                              buttonText="Play Now"
+                              buttonText={game_block_button_text}
                               buttonUrl={url}
                             />
                           </SwiperSlide>

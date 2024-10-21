@@ -106,6 +106,11 @@
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com"
 				}
+			},
+			"game_block_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "environment",
+				"type": "Text"
 			}
 		},
 		"items": []

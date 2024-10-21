@@ -1734,6 +1734,16 @@ export interface HeroBannerSliceDefaultPrimary {
   theme: prismic.SelectField<'Light' | 'Dark', 'filled'>
 
   /**
+   * Game Block Button Text field in *HeroBanner → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_banner.default.primary.game_block_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  game_block_button_text: prismic.KeyTextField
+
+  /**
    * Block field in *HeroBanner → Default → Primary*
    *
    * - **Field Type**: Group
