@@ -41,7 +41,7 @@ export default function RootLayout({
         <Header navigation={navigation} socialIcons={socialIcons} />
         {children}
         <Footer />
-        <CookieBanner customiseLabel="Customize"/>
+        <CookieBanner customiseLabel="Customize" tracking={{title: "Optional Cookies", description: "These cookies are set by third-parties to track browsing habits in order to personalize your experience."}}/>
         <Scripts />
       </body>
     </html>
