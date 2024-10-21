@@ -41,7 +41,7 @@ export default function RootLayout({
         <Header navigation={navigation} socialIcons={socialIcons} />
         {children}
         <Footer />
-        <CookieBanner />
+        <CookieBanner customiseLabel="Customize"/>
         <Scripts />
       </body>
     </html>
