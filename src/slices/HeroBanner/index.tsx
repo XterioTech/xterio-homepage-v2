@@ -62,6 +62,11 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
     }
   }, [isInViewport])
 
+  const gamesCount = slice.primary.block.length
+  const gamesCountHalf = Math.round(gamesCount / 2)
+  const leftSide = slice.primary.block.slice(0,gamesCountHalf)
+  const rightSide = slice.primary.block.slice(gamesCountHalf,gamesCount)
+
   return (
     <section
       className="hero-banner banner"
@@ -119,7 +124,31 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                       } :
                       false}
                   >
-                    {slice.primary.block.map(({ image, type, url }, index) => {
+                    {leftSide.map(({ image, type, url }, index) => {
+                      return (
+                        <SwiperSlide key={`hero-banner__left-slide--${index}`}>
+                          <GameBlock
+                            image={image}
+                            blockType={type}
+                            buttonText={game_block_button_text}
+                            buttonUrl={url}
+                          />
+                        </SwiperSlide>
+                      )
+                    })}
+                    {leftSide.map(({ image, type, url }, index) => {
+                      return (
+                        <SwiperSlide key={`hero-banner__left-slide--${index}`}>
+                          <GameBlock
+                            image={image}
+                            blockType={type}
+                            buttonText={game_block_button_text}
+                            buttonUrl={url}
+                          />
+                        </SwiperSlide>
+                      )
+                    })}
+                    {leftSide.map(({ image, type, url }, index) => {
                       return (
                         <SwiperSlide key={`hero-banner__left-slide--${index}`}>
                           <GameBlock
@@ -150,7 +179,31 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
                         false}
 
                     >
-                      {slice.primary.block.map(({ image, type, url }, index) => {
+                      {rightSide.map(({ image, type, url }, index) => {
+                        return (
+                          <SwiperSlide key={`hero-banner__left-slide--${index}`}>
+                            <GameBlock
+                              image={image}
+                              blockType={type}
+                              buttonText={game_block_button_text}
+                              buttonUrl={url}
+                            />
+                          </SwiperSlide>
+                        )
+                      })}
+                      {rightSide.map(({ image, type, url }, index) => {
+                        return (
+                          <SwiperSlide key={`hero-banner__left-slide--${index}`}>
+                            <GameBlock
+                              image={image}
+                              blockType={type}
+                              buttonText={game_block_button_text}
+                              buttonUrl={url}
+                            />
+                          </SwiperSlide>
+                        )
+                      })}
+                      {rightSide.map(({ image, type, url }, index) => {
                         return (
                           <SwiperSlide key={`hero-banner__left-slide--${index}`}>
                             <GameBlock
