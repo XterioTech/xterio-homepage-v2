@@ -15,7 +15,7 @@
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
     "@superrb/next-addons": "^4.0.0-10",
-    "@superrb/react-addons": "^3.0.0-17",
+    "@superrb/react-addons": "^3.0.0-18",
     "change-case": "^5.4.2",
     "flickity": "^3.0.0",
     "live-node-list": "^2.1.1",
