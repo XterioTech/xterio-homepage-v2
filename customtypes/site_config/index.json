@@ -64,6 +64,15 @@
           "allowTargetBlank": false,
           "select": null
         }
+      },
+      "medium_profile_url": {
+        "type": "Link",
+        "config": {
+          "label": "Medium Profile URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }

@@ -971,6 +971,17 @@ interface SiteConfigDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   youtube_profile_url: prismic.LinkField
+
+  /**
+   * Medium Profile URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.medium_profile_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  medium_profile_url: prismic.LinkField
 }
 
 /**
