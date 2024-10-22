@@ -1,2 +1,37 @@
 .image-with-caption
-  +spacingBottom
+  +spacingBottomHalf
+
+  &__container
+    [data-slice-width="fullcolumnwidth"] &,
+    [data-slice-width="inset70columnwidth"] &
+      +gutters
+
+  &__inner
+    [data-slice-width="fullcolumnwidth"] &,
+    [data-slice-width="inset70columnwidth"] &
+      @extend %cappedWidth
+
+    [data-slice-width="inset70columnwidth"] &
+      max-width: 70%
+
+  &__image
+    [data-slice-width="fullcolumnwidth"] &,
+    [data-slice-width="inset70columnwidth"] &
+      +roundedImage
+
+    img
+      height: auto
+
+  &__footer
+    margin-top: $textSpacer / 2
+
+    [data-slice-width="edgetoedge"] &
+      +gutters
+
+    &-container
+      [data-slice-width="edgetoedge"] &
+        @extend %cappedWidth
+
+  &__caption
+    @extend %tinyFontSize
+    margin-bottom: 0
