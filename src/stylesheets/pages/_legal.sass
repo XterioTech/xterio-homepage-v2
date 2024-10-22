@@ -8,21 +8,3 @@
 
   &__content
     @extend %wysiwyg
-
-    > *
-      &:last-child
-        margin-bottom: 0
-        
-    p, li
-      @extend %pStyles
-      @extend %smallFontSize
-
-    li
-      margin-bottom: 0
-
-    ul
-      list-style-position: outside
-      margin-left: $baseline
-
-    a
-      +opacityHover
