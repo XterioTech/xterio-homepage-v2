@@ -19,6 +19,32 @@
     @media (min-width: $smallDesktop)
       width: 28%
 
+    &.is-selected
+      .game-block
+        transform: scale(1)
+
+  .flickity-cell.is-selected + .flickity-cell,
+  .flickity-cell:has(+ .flickity-cell.is-selected),
+  .flickity-cell:first-child:has(~ .flickity-cell.is-selected:last-child),
+  .flickity-cell.is-selected:first-child ~ .flickity-cell:last-child
+    .game-block
+      transform: scale(0.95)
+
+  .flickity-cell.is-selected + .flickity-cell
+    padding-left: $textSpacer/2
+    
+  .flickity-cell:has(+ .flickity-cell.is-selected)
+    padding-right: $textSpacer/2
+    
+  .flickity-cell:first-child:has(~ .flickity-cell.is-selected:last-child)
+    padding-left: $textSpacer/2
+    
+  .flickity-cell.is-selected:first-child ~ .flickity-cell:last-child
+    padding-right: $textSpacer/2
+
+  .game-block
+    transform: scale(0.90)
+
   .button
     @media (max-width: $largeMobile)
       width: 100%
