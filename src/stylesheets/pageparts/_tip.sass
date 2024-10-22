@@ -1,2 +1,47 @@
+$lightbulbWidthSmall: 1.4375rem
+$lightbulbWidthLarge: 2.9375rem
+$lightbulbHeightSmall: 2.1875rem
+$lightbulbHeightLarge: 4.5625rem
+
 .tip
   +spacingBottom
+
+  &__container
+    +gutters
+
+  &__inner
+    @extend %cappedWidth
+    border: $border
+    border-radius: $borderRadius
+    max-width: $mediumContainerWidth
+    padding: $textSpacer
+    position: relative
+
+    @media (min-width: $tablet)
+      padding: $textSpacer * 1.5
+      padding-left: ($textSpacer * 3) + $lightbulbWidthLarge
+
+    &:before
+      +pseudoBasics
+      +lightbulb($black)
+      bottom: 0
+      height: $lightbulbHeightSmall
+      left: 0
+      margin: auto 0
+      position: relative
+      top: 0
+      width: $lightbulbWidthSmall
+
+      @media (min-width: $tablet)
+        height: $lightbulbHeightLarge
+        left: $textSpacer * 1.5
+        position: absolute
+        width: $lightbulbWidthLarge
+
+  &__text
+    @media (max-width: $maxTablet)
+      margin-top: $textSpacer /2
+
+    p
+      @extend %smallFontSize
+      margin-bottom: 0
