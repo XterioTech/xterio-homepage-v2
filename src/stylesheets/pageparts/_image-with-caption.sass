@@ -11,8 +11,11 @@
     [data-slice-width="inset70columnwidth"] &
       @extend %cappedWidth
 
+    [data-slice-width="fullcolumnwidth"] &
+      max-width: $mediumContainerWidth
+
     [data-slice-width="inset70columnwidth"] &
-      max-width: 70%
+      max-width: $mediumContainerWidth * 0.7
 
   &__image
     [data-slice-width="fullcolumnwidth"] &,
