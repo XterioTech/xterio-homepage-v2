@@ -1,2 +1,10 @@
 .text
   +spacingBottom
+
+  &__container
+    +gutters
+
+  &__inner
+    @extend %cappedWidth
+    @extend %wysiwyg
+    max-width: $mediumContainerWidth

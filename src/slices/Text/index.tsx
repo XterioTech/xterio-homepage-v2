@@ -1,15 +1,17 @@
-import { Content } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
+import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 
 /**
  * Props for `Text`.
  */
 export type TextProps = SliceComponentProps<Content.TextSlice>
-
 /**
  * Component for "Text" Slices.
  */
 const Text = ({ slice }: TextProps): JSX.Element => {
+  const {
+    text
+  } = slice.primary
+
   return (
     <section
       className="text"
@@ -17,7 +19,12 @@ const Text = ({ slice }: TextProps): JSX.Element => {
       data-slice-variation={slice.variation}
       data-slice-backgroundcolour={"light"}
     >
-      Placeholder component for text (variation: {slice.variation}) Slices
+      <div className="text__container">
+        <div className="text__inner">
+
+          <PrismicRichText field={text} />
+        </div>
+      </div>
     </section>
   )
 }
