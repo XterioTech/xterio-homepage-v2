@@ -1,2 +1,55 @@
 .carousel
   +spacingBottom
+
+  &__container
+    +gutters
+
+  &__inner
+    @extend %cappedWidth
+    +spacingBottom
+    +spacingTop
+    border-radius: $borderRadius
+    display: flex
+    overflow: clip
+
+  &__marquee
+    align-items: flex-start
+    animation: logosMarquee 30s linear infinite running
+    display: flex
+    flex: 0 0 auto
+    overflow: hidden
+    width: auto
+
+  &__block
+    +clamp("width", 16.5em, 18.375em, $largeMobile, $desktop)
+    flex: 0 0 auto
+    margin: 0 $textSpacer /2
+
+    @media (min-width: $tablet)
+      margin-left: $textSpacer
+      margin-right: $textSpacer
+
+.carousel-block
+  display: block
+
+  &__image
+    +roundedImage
+    aspect-ratio: 1/1
+
+    img
+      display: block
+      height: 100%
+      object-fit: cover
+      width: 100%
+
+  &__name
+    @extend %h5
+    margin-top: 1em
+
+  &__handle
+    @extend %mediumFontSize
+    margin-top: 0.5em
+
+  &__name,
+  &__handle
+    margin-bottom: 0
