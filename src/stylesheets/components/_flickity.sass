@@ -27,7 +27,6 @@
 .flickity-page-dot
   +unbutton
   border: $border
-  border-color: $white
   border-radius: 100%
   cursor: pointer
   display: inline-block
@@ -41,6 +40,12 @@
     height: 1.3125rem
     width: 1.3125rem
 
+  [data-slice-backgroundcolour="dark"] &
+    border-color: $white
+
   &:hover,
   &.is-selected
-    background-color: $white
+    background-color: $black
+
+    [data-slice-backgroundcolour="dark"] &
+      background-color: $white
