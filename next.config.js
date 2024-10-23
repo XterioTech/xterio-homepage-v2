@@ -39,11 +39,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/build',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/login',
         destination: '/',
         permanent: true,
