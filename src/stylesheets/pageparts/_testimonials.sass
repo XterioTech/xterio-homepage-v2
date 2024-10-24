@@ -1,2 +1,59 @@
+$quoteHeight: 2.8125rem
 .testimonials
   +spacingBottom
+
+  &__container
+    +gutters
+
+  &__inner
+    @extend %cappedWidth
+    max-width: $mediumContainerWidth
+    overflow-x: clip
+
+  .flickity-cell
+    @media (min-width: $tablet)
+      width: calc(33.333% - $textSpacer/1.5)
+
+  .flickity-page-dots
+    +spacingTopHalf
+
+.testimonials-header
+  +spacingBottomHalf
+  text-align: center
+
+.testimonial-block
+  border: $border
+  border-radius: $borderRadius
+  padding: $textSpacer
+
+  &__quote
+    padding-top: $quoteHeight + 1rem
+    position: relative
+    text-align: left
+
+    &:before
+      +pseudoBasics
+      +quoteMark($black)
+      height: $quoteHeight
+      top: 0
+      width: 2.5rem
+
+    p
+      @extend %smallFontSize
+
+  &__credit
+    display: flex
+    margin-top: auto
+
+  &__author,
+  &__company
+    @extend %mediumFontSize
+    text-align: left
+    margin-bottom: 0
+
+  &__image
+    aspect-ratio: 1/1
+    border-radius: 100%
+    height: 3rem
+    margin-right: 1rem
+    width: 3rem
