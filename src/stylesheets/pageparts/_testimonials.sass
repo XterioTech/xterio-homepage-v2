@@ -1,4 +1,5 @@
-$quoteHeight: 2.8125rem
+$quoteHeightSmall: 1.3125rem
+$quoteHeightLarge: 2.8125rem
 .testimonials
   +spacingBottom
 
@@ -27,23 +28,37 @@ $quoteHeight: 2.8125rem
   padding: $textSpacer
 
   &__quote
-    padding-top: $quoteHeight + 1rem
+    padding-top: $quoteHeightSmall + 1rem
     position: relative
     text-align: left
+
+    @media (min-width: $tablet)
+      padding-top: $quoteHeightLarge + 1rem
 
     &:before
       +pseudoBasics
       +quoteMark($black)
-      height: $quoteHeight
+      height: $quoteHeightSmall
       top: 0
-      width: 2.5rem
+      width: 1.4375rem
+
+      @media (min-width: $tablet)
+        height: $quoteHeightLarge
+        width: 2.5rem
 
     p
       @extend %smallFontSize
 
+      &:last-child
+        margin-bottom: 0
+
   &__credit
+    +spacingTopHalf
     display: flex
     margin-top: auto
+
+    @media (max-width: $maxTablet)
+      display: none
 
   &__author,
   &__company
