@@ -77,15 +77,23 @@
       width: 100%
 
   .lottie-animation
-    +clamp('height', 15em, 19em, $smallDesktop, $desktop)
-    +clamp('width', 15em, 19em, $smallDesktop, $desktop)
     align-self: flex-end
 
     @media (max-width: $maxSmallDesktop)
       display: none
 
+    &[data-animation-ratio="Portrait"]
+      > div
+        +clamp('height', 15em, 19em, $smallDesktop, $desktop)
+        +clamp('width', 11em, 15em, $smallDesktop, $desktop)
+
+    &[data-animation-ratio="Landscape"]
+      > div
+        +clamp('height', 11em, 15em, $smallDesktop, $desktop)
+        +clamp('width', 15em, 19em, $smallDesktop, $desktop)
+
     > div
-      height: 100%
+      +clamp('height', 15em, 19em, $smallDesktop, $desktop)
+      +clamp('width', 15em, 19em, $smallDesktop, $desktop)
       object-fit: contain
       object-position: center
-      width: 100%
