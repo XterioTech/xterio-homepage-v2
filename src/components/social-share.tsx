@@ -17,7 +17,7 @@ const ShareOnSocial = ({
    name,
    currentPath
  }: {
-  name: string,
+  name: keyof typeof icons,
   currentPath: string
 }) => {
 
@@ -25,9 +25,6 @@ const ShareOnSocial = ({
   switch (name) {
     case 'twitter':
       url ='https://twitter.com/share?url=';
-      break;
-    case 'facebook':
-      url = 'https://www.facebook.com/sharer/sharer.php?u=';
       break;
     case 'linkedin':
       url = 'https://www.linkedin.com/shareArticle?url=';
@@ -41,6 +38,7 @@ const ShareOnSocial = ({
   }
 
   url = url + currentPath
+  const Icon = icons[name]
 
 return (
 
@@ -50,6 +48,7 @@ return (
       className="social-share__link"
     >
       Share on {name}
+      <Icon />
     </LinkBase>
   </li>
   )
@@ -71,23 +70,26 @@ const SocialShare = () => {
 
   return (
     <section className="social-share">
-      <header className="social-share__header">
-        <h3 className="social-share__title">
-          Social Share
-        </h3>
+      <div className="social-share__container">
+        <header className="social-share__header">
+          <h3 className="social-share__title">
+            Share this post
+          </h3>
+        </header>
         <ul className="social-share__list">
 
           {Object.entries(icons).map(([name, Icon]) => {
             return (
               <ShareOnSocial
                 key={name}
-                name={name}
+                name={name as keyof typeof icons}
                 currentPath={currentPath}
               />
             )
           })}
         </ul>
-      </header>
+      </div>
+
     </section>
   )
 }
