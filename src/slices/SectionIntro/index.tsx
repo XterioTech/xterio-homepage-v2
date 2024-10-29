@@ -29,12 +29,10 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
   } = slice.primary
 
   const [ready, setReady] = useState(false)
-  useEffect(()=> {
+
+  useEffect(() => {
     setReady(true)
   }, [])
-  if (!ready){
-    return null
-  }
 
   return (
     <section

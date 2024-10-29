@@ -1,10 +1,11 @@
 'use client'
+
 import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import {Image} from "@superrb/next-addons/components";
-
-import React, { useEffect, useContext, useState, LegacyRef } from 'react'
+import {animator} from "@superrb/react-addons/utils";
+import React, { MutableRefObject, useEffect, useContext, useState, LegacyRef } from 'react'
 import ReactPlayer from 'react-player/lazy'
 import { usePathname } from 'next/navigation'
 import {
@@ -56,7 +57,7 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
     >
       <div className="two-col-cta__container" data-slice-backgroundcolour={"dark"}>
         <div className="two-col-cta__col two-col-cta-col--text">
-          <h2 className="two-col-cta__title">{title}</h2>
+          <h2 className="two-col-cta__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
           <div className="two-col-cta__text"><PrismicRichText field={text} /></div>
           {asLink(button_url) && button_text && (
             <Button

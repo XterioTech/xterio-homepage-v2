@@ -5,6 +5,8 @@ import Button, { ButtonVariant } from '@/components/button'
 import GameBlock from "@/components/game-block";
 import {Content} from '@prismicio/client';
 import Flickity from "react-flickity-component";
+import {animator} from "@superrb/react-addons/utils";
+import {LegacyRef, useEffect, useState} from "react";
 
 /**
  * Props for `GamesFeed`.
@@ -37,6 +39,12 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
     adaptiveHeight: true
   }
 
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
   return (
     <section
       className="games-feed"
@@ -50,7 +58,7 @@ const GamesFeed = ({ slice }: GamesFeedProps): JSX.Element => {
       <div className="games-feed__container">
         <header className="games-feed__header games-feed-header">
           <div className="games-feed-header__container">
-            <h2 className="games-feed-header__title">{title}</h2>
+            <h2 className="games-feed-header__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
             <div className="games-feed-header__text"><PrismicRichText field={text} /></div>
             <Button
               href={button_1_url}

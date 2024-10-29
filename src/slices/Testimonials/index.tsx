@@ -4,6 +4,8 @@ import { Content } from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Flickity from "react-flickity-component";
 import {Image} from "@superrb/next-addons/components";
+import {animator} from "@superrb/react-addons/utils";
+import {LegacyRef, MutableRefObject, useEffect, useState} from "react";
 
 /**
  * Props for `Testimonials`.
@@ -25,6 +27,12 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     prevNextButtons: false
   }
 
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
   return (
     <section
       className="testimonials"
@@ -36,7 +44,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
         <div className="testimonials__inner">
           {title && (
             <header className="testimonials__header testimonials-header">
-              <h2 className="testimonials-header__title">{title}</h2>
+              <h2 className="testimonials-header__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
             </header>
           )}
 

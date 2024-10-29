@@ -1,8 +1,12 @@
+'use client'
+
 import { Content } from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import {Image} from "@superrb/next-addons/components";
 import {Accordion, AccordionItem} from "@superrb/react-addons/components";
 import Anchor from "@/components/anchor";
+import {animator} from "@superrb/react-addons/utils";
+import {LegacyRef, MutableRefObject, useEffect, useState} from "react";
 
 /**
  * Props for `Faqs`.
@@ -13,6 +17,12 @@ export type FaqsProps = SliceComponentProps<Content.FaqsSlice>
  * Component for "Faqs" Slices.
  */
 const Faqs = ({ slice }: FaqsProps): JSX.Element => {
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
   const {
     title,
   } = slice.primary
@@ -26,7 +36,7 @@ const Faqs = ({ slice }: FaqsProps): JSX.Element => {
       <Anchor anchorName={title} />
       <div className="faqs__container" data-slice-backgroundcolour={"dark"}>
         <div className="faqs__col">
-          <h2 className="faqs__title">{title}</h2>
+          <h2 className="faqs__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
         </div>
         <div className="faqs__col">
           <div className="faqs__questions">

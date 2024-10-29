@@ -1,6 +1,10 @@
+'use client'
+
 import { Content } from '@prismicio/client'
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
 import {Image} from "@superrb/next-addons/components";
+import {animator} from "@superrb/react-addons/utils";
+import {LegacyRef, MutableRefObject, useEffect, useState} from "react";
 
 /**
  * Props for `MeetTheTeam`.
@@ -17,6 +21,12 @@ const MeetTheTeam = ({ slice }: MeetTheTeamProps): JSX.Element => {
     text
   } = slice.primary
 
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    setReady(true)
+  }, [])
+
   return (
     <section
       className="meet-the-team"
@@ -26,7 +36,7 @@ const MeetTheTeam = ({ slice }: MeetTheTeamProps): JSX.Element => {
     >
       <div className="meet-the-team__container">
         <header className="meet-the-team__header team-header">
-          <h3 className="team-header__title">{title}</h3>
+          <h3 className="team-header__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h3>
           <div className="team-header__text"><PrismicRichText field={text} /></div>
         </header>
         <div className="meet-the-team__team">
