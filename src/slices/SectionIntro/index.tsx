@@ -1,8 +1,13 @@
+'use client'
+
 import {asLink, Content} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import TextLink from '@/components/text-link'
 import Anchor from "@/components/anchor";
+import {animator} from "@superrb/react-addons/utils";
+import {LegacyRef, MutableRefObject, useEffect, useState} from "react";
+import {read} from "fs";
 
 /**
  * Props for `SectionIntro`.
@@ -22,6 +27,15 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
     link_url,
     link_text
   } = slice.primary
+
+  const [ready, setReady] = useState(false)
+  useEffect(()=> {
+    setReady(true)
+  }, [])
+  if (!ready){
+    return null
+  }
+
   return (
     <section
       className="section-intro"
@@ -31,7 +45,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
     >
       <Anchor anchorName={title} />
       <div className="section-intro__container">
-        <h2 className="section-intro__title">{title}</h2>
+        <h2 className="section-intro__title tt" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>
 
         {(asLink(button_url) || asLink(link_url)) && (
