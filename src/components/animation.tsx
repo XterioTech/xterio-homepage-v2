@@ -38,6 +38,9 @@ const Animation = async ({
   return (
     <LottieAnimationWrapper
       animationData={animationData}
+      animation_ratio={
+        (animation?.data as LottieAnimationDocumentData)?.animation_ratio
+      }
       play={true}
       loop={true}
     />
