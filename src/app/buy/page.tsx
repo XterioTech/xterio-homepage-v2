@@ -4,6 +4,7 @@ import { NotFoundError } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
 import {BuyPageDocument} from "../../../prismicio-types";
+import SocialShare from "@/components/social-share";
 
 export async function generateMetadata({
  params,
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: { lang: string } }) {
     return (
       <section className="buy-page">
         <SliceZone slices={page.data?.slices} components={components} />
+        <SocialShare />
       </section>
     )
   } catch (error) {
