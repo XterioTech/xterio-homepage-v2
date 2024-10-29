@@ -47,7 +47,7 @@ return (
       href={url}
       className="social-share__link"
     >
-      Share on {name}
+      <span className="screenreader-text">Share on {name}</span>
       <Icon />
     </LinkBase>
   </li>

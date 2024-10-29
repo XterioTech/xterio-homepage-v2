@@ -5,3 +5,19 @@
   &__container
     @extend %cappedWidth
     max-width: $mediumContainerWidth
+
+  &__list
+    list-style: none
+
+  &__item
+    +socialButtons
+    display: inline-block
+
+    a
+      border-color: $black
+      margin-left: 0
+      margin-right: $textSpacer / 2
+
+      svg
+        path
+          fill: $black
