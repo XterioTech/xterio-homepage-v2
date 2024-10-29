@@ -43,8 +43,11 @@
   &__text
     p
       @extend %h4
-      margin-bottom: 0
-      word-break: break-word
+      margin: 0 auto
+
+      @media (min-width: $smallDesktop)
+        +clamp('max-width', 6.48em, 9.84em, $largeMobile, $desktop)
+        font-size: 1.5vw
 
   &__button
     margin-top:  $gap
