@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 
 const Lottie = dynamic(() => import('react-lottie-player'))
 
-const LottieAnimationWrapper = (props: LottieProps) => {
+const LottieAnimationWrapper = ({ animation_ratio = 'Square', ...props }: LottieProps & { animation_ratio?: string })  => {
   const { isInViewport, setRef } = useIsInViewport()
   const [ready, setReady] = useState<boolean>(false)
 
@@ -22,7 +22,7 @@ const LottieAnimationWrapper = (props: LottieProps) => {
   }
 
   return (
-    <div className="lottie-animation" ref={setRef}>
+    <div className="lottie-animation" data-animation-ratio={animation_ratio || "Square"} ref={setRef}>
       <Lottie
         renderer="svg"
         rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}

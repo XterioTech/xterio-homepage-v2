@@ -719,6 +719,21 @@ interface LottieAnimationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   animation_json: prismic.LinkToMediaField
+
+  /**
+   * Animation Ratio field in *Lottie Animation*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Square
+   * - **API ID Path**: lottie_animation.animation_ratio
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  animation_ratio: prismic.SelectField<
+    'Square' | 'Portrait' | 'Landscape',
+    'filled'
+  >
 }
 
 /**

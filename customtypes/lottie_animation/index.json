@@ -27,6 +27,15 @@
           "placeholder": "",
           "select": "media"
         }
+      },
+      "animation_ratio": {
+        "type": "Select",
+        "config": {
+          "label": "Animation Ratio",
+          "placeholder": "",
+          "options": ["Square", "Portrait", "Landscape"],
+          "default_value": "Square"
+        }
       }
     }
   }
