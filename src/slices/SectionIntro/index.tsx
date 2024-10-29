@@ -45,7 +45,7 @@ const SectionIntro = ({ slice }: SectionIntroProps): JSX.Element => {
     >
       <Anchor anchorName={title} />
       <div className="section-intro__container">
-        <h2 className="section-intro__title tt" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
+        <h2 className="section-intro__title" ref={animator as LegacyRef<HTMLHeadingElement>}>{title}</h2>
         <div className="section-intro__text"><PrismicRichText field={text} /></div>
 
         {(asLink(button_url) || asLink(link_url)) && (
