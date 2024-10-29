@@ -9,14 +9,14 @@
     border-radius: $borderRadius
     display: flex
 
-    @media (max-width: $maxSmallDesktop)
+    @media (max-width: $maxMediumDesktop)
       flex-wrap: wrap
 
   &__col
     flex: 0 0 100%
     width: 100%
 
-    @media (min-width: $smallDesktop)
+    @media (min-width: $mediumDesktop)
       flex: 0 1 50%
       width: 50%
 
@@ -25,7 +25,7 @@
       padding-right: $textSpacer
 
   .accordion
-    @media (max-width: $maxSmallDesktop)
+    @media (max-width: $maxMediumDesktop)
       margin-top: $textSpacer
 
     &__block
