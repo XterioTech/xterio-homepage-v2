@@ -64,8 +64,10 @@ const Header = ({
       </PrismicNextLink>
 
       <div className="header__nav" id="nav" aria-hidden={!navOpen}>
-        {navigation}
-        {socialIcons}
+        <div className="header__container">
+          {navigation}
+          {socialIcons}
+        </div>
       </div>
 
       <MenuToggle aria-controls="nav" />

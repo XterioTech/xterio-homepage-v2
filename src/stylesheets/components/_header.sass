@@ -96,21 +96,14 @@
     z-index: 10
 
   &__nav
-    align-items: center
-    display: flex
     flex: 1 1
-    justify-content: space-between
 
     @media (max-width: $maxSmallDesktop)
       +cover
-      align-items: flex-start
       background: $black
       color: $white
-      flex-direction: column
       height: 100vh
-      justify-content: flex-end
       opacity: 0
-      padding: ($baseline * 5) $gutterMobile $gutterMobile
       pointer-events: none
       position: fixed
       transition: opacity .5s ease
@@ -120,6 +113,18 @@
       &:has(~ .menu-toggle[aria-expanded="true"])
         opacity: 1
         pointer-events: all
+
+  &__container
+    align-items: center
+    display: flex
+    justify-content: space-between
+
+    @media (max-width: $maxSmallDesktop)
+      +cover
+      align-items: flex-start
+      flex-direction: column
+      justify-content: flex-end
+      padding: ($baseline * 5) $gutterMobile $gutterMobile
 
   &__social
     +socialButtons
