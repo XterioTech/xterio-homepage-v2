@@ -41,8 +41,15 @@
       flex: 0 0 100%
 
     a
-      margin-left: $textSpacer / 2
-      margin-top: 0.8rem
+      margin: 0.8rem $textSpacer / 4 0
+
+      @media (min-width: $tablet)
+        margin-left: 0
+        margin-right: $textSpacer / 2
+
+      @media (min-width: $smallDesktop)
+        margin-left: $textSpacer / 2
+        margin-right: 0
 
 .news-block
   display: block
