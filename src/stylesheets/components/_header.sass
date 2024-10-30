@@ -47,6 +47,9 @@
       .nav__link
         border: $border
 
+        @media (max-width: $maxSmallDesktop)
+          border-color: $white
+
   &:not(.header--sticky).header--light,
   &.header--dark.header--sticky
     .nav--secondary, .nav--landing-page
