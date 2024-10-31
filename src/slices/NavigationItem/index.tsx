@@ -30,7 +30,7 @@ const NavigationItem = ({
   },
   context: { menuName },
 }: NavigationItemProps): JSX.Element => {
-  const { closeNav } = useNavStore()
+  const closeNav = useNavStore((state) => state.closeNav)
   const [subnavOpen, setSubnavOpen] = useState<boolean>(false)
 
   useEventListener(
