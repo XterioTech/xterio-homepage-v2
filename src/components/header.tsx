@@ -4,7 +4,7 @@ import LiveNodeList from 'live-node-list'
 import { MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react'
 import FullLogo from './full-logo'
 import {
-  useEventListener,
+  useEventListener, useIsMobile,
   useLockBodyScroll,
 } from '@superrb/react-addons/hooks'
 import { MenuToggle } from '@superrb/react-addons/components'
@@ -24,6 +24,7 @@ const Header = ({
   const sections = useRef<LiveNodeList>() as MutableRefObject<LiveNodeList>
   const navOpen = useNavStore((state) => state.navOpen)
   const pathname = usePathname()
+  const isMobile = useIsMobile(true)
 
   useLockBodyScroll(navOpen)
 
@@ -63,7 +64,7 @@ const Header = ({
         <FullLogo className="header__logo" />
       </PrismicNextLink>
 
-      <div className="header__nav" id="nav" aria-hidden={!navOpen}>
+      <div className="header__nav" id="nav" aria-hidden={isMobile && !navOpen}>
         <div className="header__container">
           {navigation}
           {socialIcons}
