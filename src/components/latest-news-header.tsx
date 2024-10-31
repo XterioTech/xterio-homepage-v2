@@ -1,3 +1,5 @@
+'use client'
+
 import { animator } from '@superrb/react-addons/utils'
 import { LegacyRef, ReactNode } from 'react'
 
@@ -15,6 +17,7 @@ const LatestNewsHeader = ({
     >
       {title}
     </h3>
+    {socialIcons}
   </header>
 )
 
