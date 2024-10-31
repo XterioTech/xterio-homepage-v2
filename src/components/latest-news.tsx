@@ -1,5 +1,4 @@
 import { createClient } from '@/prismicio'
-import dynamic from 'next/dynamic'
 import { Image, LinkBase } from '@superrb/next-addons/components'
 import Author from '@/components/author'
 import LatestNewsHeader from './latest-news-header'
