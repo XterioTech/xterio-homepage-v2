@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react'
 import { SliceZone } from '@prismicio/react'
 import { createClient } from '@/prismicio'
 import NavigationItem from '@/slices/NavigationItem'
-import { NavigationItemSlice } from '../../prismicio-types'
 
 const components = {
   navigation_item: NavigationItem,
