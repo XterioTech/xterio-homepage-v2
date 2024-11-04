@@ -478,6 +478,81 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >
 
+type HomepagetestDocumentDataSlicesSlice =
+  | StatsSlice
+  | HeroBannerSlice
+  | LogosSlice
+  | TextSlice
+  | SectionIntroSlice
+  | TwoColCtaSlice
+  | FeatureGridSlice
+  | CarouselSlice
+  | GamesFeedSlice
+  | FaqsSlice
+
+/**
+ * Content for HomepageTest documents
+ */
+interface HomepagetestDocumentData {
+  /**
+   * Slice Zone field in *HomepageTest*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepagetest.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepagetestDocumentDataSlicesSlice> /**
+   * Meta Title field in *HomepageTest*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepagetest.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+
+  /**
+   * Meta Description field in *HomepageTest*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepagetest.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *HomepageTest*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepagetest.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+}
+
+/**
+ * HomepageTest document from Prismic
+ *
+ * - **API ID**: `homepagetest`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepagetestDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomepagetestDocumentData>,
+    'homepagetest',
+    Lang
+  >
+
 /**
  * Item in *Latest News → News Item*
  */
@@ -1023,6 +1098,7 @@ export type AllDocumentTypes =
   | EcosystemPageDocument
   | ErrorPageDocument
   | HomepageDocument
+  | HomepagetestDocument
   | LatestNewsDocument
   | LegalPageDocument
   | LottieAnimationDocument
@@ -2879,6 +2955,9 @@ declare module '@prismicio/client' {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      HomepagetestDocument,
+      HomepagetestDocumentData,
+      HomepagetestDocumentDataSlicesSlice,
       LatestNewsDocument,
       LatestNewsDocumentData,
       LatestNewsDocumentDataNewsItemItem,
