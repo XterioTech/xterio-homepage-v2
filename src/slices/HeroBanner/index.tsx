@@ -81,7 +81,7 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
      <HeaderGradient />
       <div className="hero-banner__container banner__container">
         <div className="hero-banner__content banner__content">
-          <div className="her-banner__inner">
+          <div className="hero-banner__inner">
             <h1 className="hero-banner__title banner__title">{title}</h1>
             <div className="hero-banner__text banner__text">
               <PrismicRichText field={text} />
