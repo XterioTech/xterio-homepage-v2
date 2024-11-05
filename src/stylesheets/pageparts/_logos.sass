@@ -2,8 +2,11 @@
   +clamp('padding-bottom', $spacerMobile / 2, $spacerDesktop / 2, $largeMobile, $desktop)
 
 .logos
-  +spacingBottom
+  +spacingBottomHalf
   overflow: hidden
+
+  @media (max-width: $maxTablet)
+    padding-bottom: $textSpacer
 
   &__container
     display: flex
@@ -25,7 +28,7 @@
     animation: logosMarquee 30s linear infinite running
     display: flex
     flex: 0 0 auto
-    height: 7.5rem
+    height: 5.4375rem
     overflow: hidden
     width: auto
 
