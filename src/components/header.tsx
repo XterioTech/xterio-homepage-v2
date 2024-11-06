@@ -60,18 +60,20 @@ const Header = ({
     <header
       className={`header header--${theme} ${navOpen ? 'header--nav-open' : ''} ${sticky ? 'header--sticky' : ''}`}
     >
-      <PrismicNextLink href="/">
-        <FullLogo className="header__logo" />
-      </PrismicNextLink>
+      <div className="header__inner">
+        <PrismicNextLink href="/">
+          <FullLogo className="header__logo" />
+        </PrismicNextLink>
 
-      <div className="header__nav" id="nav" aria-hidden={isMobile && !navOpen}>
-        <div className="header__container">
-          {navigation}
-          {socialIcons}
+        <div className="header__nav" id="nav" aria-hidden={isMobile && !navOpen}>
+          <div className="header__container">
+            {navigation}
+            {socialIcons}
+          </div>
         </div>
-      </div>
 
-      <MenuToggle aria-controls="nav" />
+        <MenuToggle aria-controls="nav" />
+      </div>
     </header>
   )
 }

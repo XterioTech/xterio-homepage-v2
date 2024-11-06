@@ -1,9 +1,5 @@
 .header
-  +clamp('gap', $baseline, 5.8125em, $smallDesktop, $desktop)
   +gutters
-  align-items: center
-  display: flex
-  justify-content: space-between
   padding-block: $baseline * .5
   position: fixed
   transition: color .5s ease, padding .5s ease, background .5s ease, backdrop-filter .5s ease
@@ -90,6 +86,13 @@
     svg
       path
         fill: $white
+
+  &__inner
+    @extend %cappedWidth
+    +clamp('gap', $baseline, 5.8125em, $smallDesktop, $desktop)
+    align-items: center
+    display: flex
+    justify-content: space-between
 
   &__logo
     +clamp('width', 8.125em, 9.7em, $largeMobile, $desktop)
