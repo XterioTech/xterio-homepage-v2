@@ -3,6 +3,14 @@
     display: none
 
   &--navigation
+    .nav__item--has-children
+      .nav__link
+        @extend %textLinkInverted
+
+      &:hover
+        .nav__link
+          @extend %textLinkInvertedHover
+
     a.nav__link
       @extend %textLinkInverted
 
@@ -32,8 +40,10 @@
       align-items: center
       display: flex
       flex-wrap: wrap
-      gap: 0 ($baseline * .5)
       position: relative
+
+      &--has-children
+        cursor: pointer
 
     &__link
       @media (min-width: $smallDesktop)
@@ -56,6 +66,7 @@
       &__expand
         +unbutton
         cursor: pointer
+        padding-left: $baseline * .5
 
         svg
           color: inherit

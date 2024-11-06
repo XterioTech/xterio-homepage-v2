@@ -58,6 +58,9 @@ const NavigationItem = ({
       className={`nav__item ${
         items.length > 0 ? 'nav__item--has-children' : ''
       }`}
+      onClick={() => setSubnavOpen((open) => !open)}
+      aria-expanded={subnavOpen}
+      aria-controls={`sub-nav-${kebabCase(label as string)}`}
     >
       {href ? (
         <LinkComponent
@@ -74,7 +77,10 @@ const NavigationItem = ({
       {items.length > 0 && (
         <button
           className="nav__expand"
-          onClick={() => setSubnavOpen((open) => !open)}
+          onClick={(event) => {
+            event.stopPropagation()
+            setSubnavOpen((open) => !open)
+          }}
           aria-expanded={subnavOpen}
           aria-controls={`sub-nav-${kebabCase(label as string)}`}
         >
