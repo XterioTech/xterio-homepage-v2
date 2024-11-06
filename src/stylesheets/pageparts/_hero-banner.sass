@@ -7,7 +7,7 @@
   z-index: 1
   overflow: hidden
 
-  @media (min-width: $tablet)
+  @media (min-width: $smallDesktop)
     height: 100vh
     min-height: 50em
     padding-bottom: 0
@@ -33,6 +33,10 @@
     display: flex
 
     @media (min-width: $tablet)
+      +spacingTopHalf
+      +spacingBottomHalf
+
+    @media (min-width: $smallDesktop)
       padding-bottom: $headerHeight
       padding-top: $headerHeight
 
