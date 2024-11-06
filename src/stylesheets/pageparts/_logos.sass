@@ -12,16 +12,11 @@
     display: flex
 
   &__header
-    +gutters
-
     &[data-text-align="center"]
       text-align: center
 
     &[data-text-align="left"]
       text-align: left
-
-  &__title
-    @extend %h5
 
   &__marquee
     align-items: center
@@ -47,3 +42,12 @@
 
     img
       object-fit: contain
+
+.logos-header
+  +gutters
+
+  &__container
+    @extend %cappedWidth
+    
+  &__title
+    @extend %h5

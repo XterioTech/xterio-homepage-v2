@@ -76,8 +76,10 @@ const Logos = ({ slice }: LogosProps): JSX.Element => {
         .join('')}
     >
       {title && (
-        <header className="logos__header" data-text-align={title_position.toLowerCase()}>
-          <h2 className="logos__title">{title}</h2>
+        <header className="logos__header logos-header" data-text-align={title_position.toLowerCase()}>
+          <div className="logos-header__container">
+            <h2 className="logos-header__title">{title}</h2>
+          </div>
         </header>
       )}
       <div className="logos__container">
