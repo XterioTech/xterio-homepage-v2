@@ -82,8 +82,16 @@
       display: none
 
     a
-      +opacityHover
       margin-left: $textSpacer
+
+      svg
+        path
+          transition: opacity $transitionDuration $transitionTimingFunction
+
+      &:hover
+        svg
+          path
+            opacity: $opacityHover
 
 
   .nav
