@@ -8,8 +8,7 @@
   overflow: hidden
 
   @media (min-width: $smallDesktop)
-    height: 100vh
-    min-height: 50em
+    height: 43.125em
     padding-bottom: 0
 
   &[data-slice-carouseldirection="Vertical"]
@@ -37,7 +36,7 @@
       +spacingBottomHalf
 
     @media (min-width: $smallDesktop)
-      padding-bottom: $headerHeight
+      padding-bottom: $headerHeight - $textSpacer
       padding-top: $headerHeight
 
     @media (min-width: $smallDesktop)
