@@ -7,7 +7,7 @@
     cursor: pointer
     display: flex
     justify-content: space-between
-    padding: 1.8rem 2.2em 1.5rem 0
+    padding: 1.8rem 2.2em 0 0
     position: relative
     width: 100%
 
@@ -33,11 +33,11 @@
   &__content
     max-height: 0
     overflow: clip
-    transition: max-height 1.5s ease-in-out 0s
-
-    > :last-child
-      margin-bottom: 1.5rem
+    transition: max-height 1.5s ease-in-out
 
     a
       +opacityHover
       text-decoration: underline
+
+    p
+      margin-bottom: 0

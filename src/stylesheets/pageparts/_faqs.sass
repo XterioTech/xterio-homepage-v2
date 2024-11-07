@@ -33,7 +33,7 @@
       border-color: $white
       border-radius: $buttonBorderRadius
       margin-bottom: $textSpacer
-      padding: $textSpacer 4.8rem 0 $textSpacer
+      padding: $textSpacer 4.8rem $textSpacer $textSpacer
 
     &__trigger
       @extend %h5
@@ -41,7 +41,7 @@
       padding-top: 0
 
       &:after
-        +clamp('bottom', 1.8em, 1.3em, $largeMobile, $desktop)
+        bottom: 0
         margin: auto
         top: 0
 
@@ -50,4 +50,5 @@
 
       p
         @extend %mediumFontSize
-        margin-bottom: $textSpacer
+        margin-bottom: 0
+        padding-top: 1em
