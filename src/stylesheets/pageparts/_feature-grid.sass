@@ -7,14 +7,11 @@
     +clamp('column-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
     +clamp('row-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
     display: grid
-    grid-template-columns: repeat(5, minmax(0, 1fr))
+    grid-template-columns: repeat(6, minmax(0, 1fr))
     grid-template-rows: auto
     grid-auto-flow: row dense
     width: 100%
     min-width: 0
-
-    &:has([data-block-width="halfwidth"])
-      grid-template-columns: repeat(6, minmax(0, 1fr))
 
     @media (min-width: $smallDesktop)
       column-gap: $gap * 2
