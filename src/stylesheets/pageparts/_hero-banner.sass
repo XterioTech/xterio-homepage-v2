@@ -11,17 +11,21 @@
     height: 43.125em
     padding-bottom: 0
 
+  @media (min-width: $largeDesktop)
+    height: 53.125em
+
   &[data-slice-carouseldirection="Vertical"]
     @media (min-width: $smallDesktop)
       padding-bottom: 0
+
+    .hero-banner__content
+      @media (min-width: $smallDesktop)
+        padding-top: $headerHeight + calc($textSpacer *2)
 
   &[data-slice-carouseldirection="Horizontal"]
     @media (min-width: $smallDesktop)
       padding-top: 8em
       
-    @media (min-width: $largeDesktop)
-      height: 63.125em
-
     .game-block
       @media (min-width: $largeDesktop)
         height: 38.75rem
