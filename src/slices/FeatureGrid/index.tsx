@@ -72,7 +72,7 @@ const FeatureGrid = ({ slice }: FeatureGridProps): JSX.Element => {
               )}
               </div>
 
-              {lottie_animation && (
+              {(lottie_animation as FilledContentRelationshipField<'lottie_animation'>)?.uid && (
                 <Animation
                   animation={
                     lottie_animation as FilledContentRelationshipField<'lottie_animation'>
