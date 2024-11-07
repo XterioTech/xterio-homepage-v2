@@ -8,6 +8,7 @@
   overflow: hidden
 
   @media (min-width: $smallDesktop)
+    display: flex
     height: 43.125em
     padding-bottom: 0
 
@@ -39,6 +40,9 @@
   &__container
     height: 100%
 
+    @media (min-width: $smallDesktop)
+      display: flex
+
     [data-slice-carouseldirection="Vertical"] &
       @media (min-width: $smallDesktop)
         align-items: stretch
@@ -58,17 +62,15 @@
     @media (min-width: $smallDesktop)
       flex: 0 0 62%
 
+    @media (max-width: $maxSmallDesktop)
+      padding-top: $headerHeight
+
   &__media
-    +clamp('left', -$gutterMobile, -$gutterDesktop, $largeMobile, $desktop)
     position: relative
 
     @media (min-width: $smallDesktop)
       flex: 0 0 36%
       left: 0
-
-    @media (max-width: $maxSmallDesktop)
-      padding-bottom: $textSpacer
-      padding-top: $headerHeight
 
     &:after
       +pseudoBasics
@@ -89,6 +91,10 @@
       .hero-banner[data-slice-backgroundcolour="dark"] &
         background: linear-gradient(to top, $black 6.22%, rgba($white, 0.00) 100%)
 
+  .flickity
+    @media (min-width: $smallDesktop)
+      display: none
+
   &__swiper
     display: flex
     gap: 1em 1.75em
@@ -101,6 +107,9 @@
 
     @media (min-width: $desktop)
       padding-left: 3em
+
+    @media (max-width: $maxSmallDesktop)
+      display: none
 
   .swiper
     height: 100%
@@ -152,6 +161,6 @@
     .swiper-slide
       height: auto
 
-  .game-block
-    height: 28.75rem
-    width: 20.5625rem
+    .game-block
+      height: 28.75rem
+      width: 20.5625rem

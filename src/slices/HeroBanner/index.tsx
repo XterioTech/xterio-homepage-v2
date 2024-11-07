@@ -11,6 +11,7 @@ import { Autoplay } from 'swiper/modules'
 import {Image} from "@superrb/next-addons/components";
 import GameBlock from "@/components/game-block";
 import HeaderGradient from "@/components/header-gradient";
+import Flickity from "react-flickity-component";
 
 /**
  * Props for `HeroBanner`.
@@ -67,6 +68,13 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
   const leftSide = slice.primary.block.slice(0,gamesCountHalf)
   const rightSide = slice.primary.block.slice(gamesCountHalf,gamesCount)
 
+  const flickityOptions = {
+    initialIndex: 2,
+    wrapAround: true,
+    prevNextButtons: false,
+    adaptiveHeight: true
+  }
+
   return (
     <section
       className="hero-banner banner"
@@ -105,6 +113,27 @@ const HeroBanner = ({ slice }: HeroBannerProps): JSX.Element => {
           </div>
         </div>
         <div className="hero-banner__media banner__media">
+
+          <Flickity
+            className={'hero-banner-flickity flickity'} // default ''
+            elementType={'div'} // default 'div'
+            options={flickityOptions} // takes flickity options {}
+            disableImagesLoaded={false} // default false
+            reloadOnUpdate // default false
+            static // default false
+          >
+            {slice.primary.block.map(({ image, type, url }, index) => (
+              <div className="hero-banner-flickity__block carousel-block" key={index}>
+                <GameBlock
+                  image={image}
+                  blockType={type}
+                  buttonText={game_block_button_text}
+                  buttonUrl={url}
+                />
+              </div>
+            ))}
+          </Flickity>
+
           <div className="hero-banner__swiper" ref={setRef}>
             <>
               {imagesReady ?
