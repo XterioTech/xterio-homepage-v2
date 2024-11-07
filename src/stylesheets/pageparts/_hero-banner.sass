@@ -15,6 +15,15 @@
     @media (min-width: $smallDesktop)
       padding-bottom: 0
 
+  &[data-slice-carouseldirection="Horizontal"]
+    @media (min-width: $largeDesktop)
+      height: 63.125em
+
+    .game-block
+      @media (min-width: $largeDesktop)
+        height: 38.75rem
+        width: 30.5625rem
+
   &[data-slice-backgroundcolour="light"]
     .swiper
       &:before
