@@ -60,6 +60,16 @@
             "allowTargetBlank": false,
             "select": null
           }
+        },
+        "lottie_animation": {
+          "type": "Link",
+          "config": {
+            "label": "Lottie Animation",
+            "select": "document",
+            "customtypes": [
+              "lottie_animation"
+            ]
+          }
         }
       },
       "items": {}

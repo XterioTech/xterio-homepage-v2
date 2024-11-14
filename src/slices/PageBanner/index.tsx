@@ -1,8 +1,11 @@
-import {asLink, Content} from '@prismicio/client'
+import {asLink, Content, FilledContentRelationshipField} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import {Image} from "@superrb/next-addons/components";
 import HeaderGradient from "@/components/header-gradient";
+import Animation from "@/components/animation";
+import React, {useEffect, useState} from "react";
+import ReactPlayer from "react-player/lazy";
 
 /**
  * Props for `PageBanner`.
@@ -20,8 +23,25 @@ const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: s
     button_1_text,
     button_2_url,
     button_2_text,
-    image
+    image,
+    lottie_animation
   } = slice.primary
+
+  const [ready, setReady] = useState<boolean>(false)
+
+  let media = "image"
+  if ((lottie_animation as FilledContentRelationshipField<"lottie_animation">)?.uid) {
+    media = "lottie"
+  }
+
+  useEffect(() => {
+    setReady(true)
+
+    return () => {
+      setReady(false)
+    }
+  }, [])
+
   return (
     <section
       className="page-banner banner"
@@ -54,11 +74,23 @@ const PageBanner = ({ slice, className = '' }: PageBannerProps & { className?: s
           )}
         </div>
         <div className="page-banner__media banner__media">
-          <Image
-            image={image}
-            className="page-banner__image objFit"
-            sizes=""
-          />
+          {ready && (
+            <>
+              {media === "lottie" ? (
+                <Animation
+                  animation={
+                    lottie_animation as FilledContentRelationshipField<'lottie_animation'>
+                  }
+                />
+              ) : (
+                <Image
+                  image={image}
+                  className="page-banner__image objFit"
+                  sizes=""
+                />
+              )}
+            </>
+          )}
         </div>
       </div>
 

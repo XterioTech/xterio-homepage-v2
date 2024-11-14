@@ -67,6 +67,16 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "lottie_animation": {
+          "type": "Link",
+          "config": {
+            "label": "Lottie Animation",
+            "select": "document",
+            "customtypes": [
+              "lottie_animation"
+            ]
+          }
         }
       },
       "items": {}
@@ -133,6 +143,16 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "lottie_animation": {
+          "type": "Link",
+          "config": {
+            "label": "Lottie Animation",
+            "select": "document",
+            "customtypes": [
+              "lottie_animation"
+            ]
           }
         }
       },

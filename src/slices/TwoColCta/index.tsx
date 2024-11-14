@@ -1,6 +1,6 @@
 'use client'
 
-import {asLink, Content} from '@prismicio/client'
+import {asLink, Content, FilledContentRelationshipField} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
 import {Image} from "@superrb/next-addons/components";
@@ -13,6 +13,8 @@ import {
   useMotionAllowed,
   useIsInViewport,
 } from '@superrb/react-addons/hooks'
+import Animation from "@/components/animation";
+import {FilledLinkToWebField} from "@prismicio/client";
 
 /**
  * Props for `TwoColCta`.
@@ -29,7 +31,8 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
     button_url,
     button_text,
     image,
-    video
+    video,
+    lottie_animation
   } = slice.primary
 
   const isMobile = useIsMobile(true)
@@ -39,6 +42,14 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
   const [playButton, setPlayButton] = useState<boolean>(true)
   const { isInViewport, setRef } = useIsInViewport(true)
   const pathname = usePathname()
+
+  let media = "image"
+  if (!isMobile && (video as FilledLinkToWebField)?.url) {
+    media = "video"
+  }
+  if ((lottie_animation as FilledContentRelationshipField<"lottie_animation">)?.uid) {
+    media = "lottie"
+  }
 
   useEffect(() => {
     setReady(true)
@@ -69,33 +80,46 @@ const TwoColCta = ({ slice }: TwoColCtaProps): JSX.Element => {
           )}
         </div>
         <div className="two-col-cta__col two-col-cta-col--image">
-          {ready && !isMobile && video && (
-            <ReactPlayer
-              url={asLink(video) as string}
-              muted={true}
-              playsinline={true}
-              playing={isMotionAllowed && playButton}
-              autoPlay={true}
-              loop={true}
-              className="two-col-cta__video"
-              light={false}
-              height={'100%'}
-              width={'100%'}
-              onPlay={() => setVideoPlaying(true)}
-              config={{
-                vimeo: {
-                  playerOptions: {
-                    responsive: true,
-                  },
-                },
-              }}
-            />
+
+          {ready && (
+            <>
+              {media === "lottie" ? (
+                <Animation
+                  animation={
+                    lottie_animation as FilledContentRelationshipField<'lottie_animation'>
+                  }
+                />
+              ) : media === "video" ? (
+                <ReactPlayer
+                  url={asLink(video) as string}
+                  muted={true}
+                  playsinline={true}
+                  playing={isMotionAllowed && playButton}
+                  autoPlay={true}
+                  loop={true}
+                  className="two-col-cta__video"
+                  light={false}
+                  height={'100%'}
+                  width={'100%'}
+                  onPlay={() => setVideoPlaying(true)}
+                  config={{
+                    vimeo: {
+                      playerOptions: {
+                        responsive: true,
+                      },
+                    },
+                  }}
+                />
+              ) : (
+                <Image
+                  image={image}
+                  className="two-col-cta__image objFit"
+                  sizes=""
+                />
+              )}
+            </>
           )}
-          <Image
-            image={image}
-            className="two-col-cta__image objFit"
-            sizes=""
-          />
+
         </div>
       </div>
     </section>

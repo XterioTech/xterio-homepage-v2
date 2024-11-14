@@ -2330,6 +2330,16 @@ export interface PageBannerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>
+
+  /**
+   * Lottie Animation field in *PageBanner → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.default.primary.lottie_animation
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lottie_animation: prismic.ContentRelationshipField<'lottie_animation'>
 }
 
 /**
@@ -2418,6 +2428,16 @@ export interface PageBannerSliceImageLeftPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>
+
+  /**
+   * Lottie Animation field in *PageBanner → Image Left → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_banner.imageLeft.primary.lottie_animation
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lottie_animation: prismic.ContentRelationshipField<'lottie_animation'>
 }
 
 /**
@@ -2883,6 +2903,16 @@ export interface TwoColCtaSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   video: prismic.LinkField
+
+  /**
+   * Lottie Animation field in *TwoColCta → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_col_cta.default.primary.lottie_animation
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lottie_animation: prismic.ContentRelationshipField<'lottie_animation'>
 }
 
 /**

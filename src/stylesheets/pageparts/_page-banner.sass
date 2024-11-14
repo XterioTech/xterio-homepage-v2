@@ -4,6 +4,13 @@
   padding-top: max(9em, 12.5vw)
   position: relative
 
+  @media (max-width: $maxTablet)
+    padding-top: $headerHeight
+
+  .four-oh-four-page &
+    @media (max-width: $maxTablet)
+      padding-top: max(9em, 12.5vw)
+
   &:after
     +pseudoBasics
     background: linear-gradient(0deg, rgba($blue, 0.02) 85%, rgba($white, 0) 100%)
@@ -24,5 +31,19 @@
   &__container
     display: flex
 
-    @media (max-width: $maxSmallDesktop)
+    @media (max-width: $maxTablet)
       flex-wrap: wrap
+
+  &__content
+    @media (min-width: $smallDesktop)
+      flex: 0 0 60%
+
+  &__media
+    @media (min-width: $smallDesktop)
+      flex: 0 0 40%
+      margin-left: 0
+
+  .lottie-animation
+    @media (max-width: $maxTablet)
+      width: 70%
+      margin-left: auto
