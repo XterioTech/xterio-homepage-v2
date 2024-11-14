@@ -1,3 +1,5 @@
+$columnCount: 12
+
 .feature-grid
   +spacingBottom
   +gutters
@@ -7,7 +9,7 @@
     +clamp('column-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
     +clamp('row-gap', $gutterMobile, $gutterDesktop /2, $largeMobile, $desktop)
     display: grid
-    grid-template-columns: repeat(6, minmax(0, 1fr))
+    grid-template-columns: repeat($columnCount, minmax(0, 1fr))
     grid-template-rows: auto
     grid-auto-flow: row dense
     width: 100%
@@ -24,7 +26,7 @@
     border-radius: $borderRadius
     display: flex
     flex-direction: column
-    grid-column-end: span 6
+    grid-column-end: span $columnCount
     justify-content: space-between
     min-width: 0
 
@@ -34,19 +36,19 @@
     &[data-block-width="fullwidth"]
       @media (min-width: $smallDesktop)
         flex-direction: row
-        grid-column-end: span 6
+        grid-column-end: span $columnCount
 
     &[data-block-width="halfwidth"]
       @media (min-width: $smallDesktop)
-        grid-column-end: span 3
+        grid-column-end: span ($columnCount /2)
 
     &[data-block-width="onethird"]
       @media (min-width: $smallDesktop)
-        grid-column-end: span 2
+        grid-column-end: span round($columnCount * 0.4)
 
     &[data-block-width="twothirds"]
       @media (min-width: $smallDesktop)
-        grid-column-end: span 4
+        grid-column-end: span round($columnCount * 0.6)
 
     &-content
       display: flex
