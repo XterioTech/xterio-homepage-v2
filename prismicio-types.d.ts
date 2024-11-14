@@ -44,7 +44,7 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, 'author', Lang>
 
 type BuildPageDocumentDataSlicesSlice =
-  | PageBannerSlice
+  | HeroBannerSlice
   | LogosSlice
   | MeetTheTeamSlice
   | TestimonialsSlice

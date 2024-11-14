@@ -11,7 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "page_banner": {
+            "hero_banner": {
               "type": "SharedSlice"
             },
             "logos": {
