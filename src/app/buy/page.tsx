@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: { lang: string } }) {
     return (
       <section className="buy-page">
         <SliceZone slices={page.data?.slices} components={components} />
-        <SocialShare />
+        {/*<SocialShare />*/}
       </section>
     )
   } catch (error) {
