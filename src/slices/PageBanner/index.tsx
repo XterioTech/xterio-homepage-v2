@@ -1,3 +1,5 @@
+'use client'
+
 import {asLink, Content, FilledContentRelationshipField} from '@prismicio/client'
 import {PrismicRichText, SliceComponentProps} from '@prismicio/react'
 import Button, {ButtonVariant} from "@/components/button";
