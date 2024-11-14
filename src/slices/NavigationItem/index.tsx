@@ -46,7 +46,7 @@ const NavigationItem = ({
     setSubnavOpen(false)
   }
 
-  const href = asLink(link) as string
+  const href = link
 
   let LinkComponent: typeof LinkBase | typeof Button = LinkBase
   if (menuName === 'secondary' || menuName === 'landing-page') {
