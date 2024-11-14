@@ -28,12 +28,13 @@
         transform: rotate(0deg)
 
       & + .accordion__content
-        max-height: 100vh
+        max-height: 15em
+        overflow-y: scroll
 
   &__content
     max-height: 0
     overflow: clip
-    transition: max-height 1.5s ease-in-out
+    transition: max-height 1s ease-in-out
 
     a
       +opacityHover
