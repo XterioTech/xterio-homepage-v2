@@ -8,7 +8,7 @@ export default async function Page() {
   const page = await client.getByUID('error_page', '404')
 
   return (
-    <section className="homepage">
+    <section className="four-oh-four-page">
       <SliceZone slices={page.data.slices} components={components} />
     </section>
   )
