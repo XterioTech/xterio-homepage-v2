@@ -48,7 +48,13 @@
     &__content
       word-wrap: break-word
 
-      p
+      > *
+        padding-top: 1em
+
+        &:last-of-type
+          margin-bottom: 0
+
+      p, li
+        @extend %pStyles
         @extend %mediumFontSize
         margin-bottom: 0
-        padding-top: 1em
