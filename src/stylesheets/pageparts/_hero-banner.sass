@@ -10,14 +10,14 @@
   @media (min-width: $smallDesktop)
     display: flex
     height: 43.125em
-    padding-bottom: 0
 
   @media (min-width: $largeDesktop)
     height: 53.125em
 
   &[data-slice-carouseldirection="Vertical"]
-    @media (min-width: $smallDesktop)
-      padding-bottom: 0
+    &:has(+ .logos)
+      @media (min-width: $smallDesktop)
+        padding-bottom: 0
 
     .hero-banner__content
       @media (min-width: $smallDesktop)
