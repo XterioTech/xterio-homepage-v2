@@ -12,7 +12,7 @@ export async function generateMetadata({
   const client = createClient()
 
   try {
-    const page = await client.getSingle('homepage', {
+    const page = await client.getSingle('home_page', {
       lang: params.lang,
     })
 
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { lang: string } }) {
   const client = createClient()
 
   try {
-    const page = await client.getSingle('homepage', {
+    const page = await client.getSingle('home_page', {
       lang: params.lang,
     })
 
