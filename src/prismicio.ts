@@ -36,6 +36,10 @@ const routes: prismic.ClientConfig["routes"] = [
     path: '/homepagetest',
   },
   {
+    type: 'home_page',
+    path: '/home',
+  },
+  {
     type: 'ecosystem_page',
     path: '/ecosystem',
   }

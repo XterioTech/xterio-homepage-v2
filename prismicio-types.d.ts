@@ -372,6 +372,81 @@ export type ErrorPageDocument<Lang extends string = string> =
     Lang
   >
 
+type HomePageDocumentDataSlicesSlice =
+  | GamesFeedSlice
+  | FaqsSlice
+  | FeatureGridSlice
+  | CarouselSlice
+  | SectionIntroSlice
+  | TwoColCtaSlice
+  | TextSlice
+  | StatsSlice
+  | LogosSlice
+  | HeroBannerSlice
+
+/**
+ * Content for Home Page documents
+ */
+interface HomePageDocumentData {
+  /**
+   * Slice Zone field in *Home Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+
+  /**
+   * Meta Description field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *Home Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+}
+
+/**
+ * Home Page document from Prismic
+ *
+ * - **API ID**: `home_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomePageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomePageDocumentData>,
+    'home_page',
+    Lang
+  >
+
 type HomepageDocumentDataSlicesSlice =
   | FaqsSlice
   | GamesFeedSlice
@@ -1097,6 +1172,7 @@ export type AllDocumentTypes =
   | ContactCtaDocument
   | EcosystemPageDocument
   | ErrorPageDocument
+  | HomePageDocument
   | HomepageDocument
   | HomepagetestDocument
   | LatestNewsDocument
@@ -2982,6 +3058,9 @@ declare module '@prismicio/client' {
       ErrorPageDocument,
       ErrorPageDocumentData,
       ErrorPageDocumentDataSlicesSlice,
+      HomePageDocument,
+      HomePageDocumentData,
+      HomePageDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
