@@ -4,6 +4,7 @@ import { NotFoundError } from '@prismicio/client'
 import { PrismicRichText, SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
 import HeaderGradient from "@/components/header-gradient";
+import { getMetadata } from '@/utils/metadata'
 
 export async function generateMetadata({
   params,
@@ -17,11 +18,7 @@ export async function generateMetadata({
       lang: params.lang,
     })
 
-    return {
-      title: page.data.meta_title,
-      description: page.data.meta_description,
-      image: page.data.meta_image,
-    }
+    return getMetadata(page)
   } catch (error) {
     if (error instanceof NotFoundError) {
       notFound()

@@ -1147,6 +1147,17 @@ interface SiteConfigDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   medium_profile_url: prismic.LinkField
+
+  /**
+   * Title Template field in *Site Config*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.title_template
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_template: prismic.KeyTextField
 }
 
 /**
@@ -1162,6 +1173,63 @@ export type SiteConfigDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
     Simplify<SiteConfigDocumentData>,
     'site_config',
+    Lang
+  >
+
+/**
+ * Item in *Translations → Items*
+ */
+export interface TranslationsDocumentDataItemsItem {
+  /**
+   * key field in *Translations → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: translations.items[].key
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  key: prismic.KeyTextField
+
+  /**
+   * value field in *Translations → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: translations.items[].value
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  value: prismic.KeyTextField
+}
+
+/**
+ * Content for Translations documents
+ */
+interface TranslationsDocumentData {
+  /**
+   * Items field in *Translations*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: translations.items[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<TranslationsDocumentDataItemsItem>>
+}
+
+/**
+ * Translations document from Prismic
+ *
+ * - **API ID**: `translations`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TranslationsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TranslationsDocumentData>,
+    'translations',
     Lang
   >
 
@@ -1181,6 +1249,7 @@ export type AllDocumentTypes =
   | NavigationDocument
   | SchemaOrganisationDocument
   | SiteConfigDocument
+  | TranslationsDocument
 
 /**
  * Item in *Carousel → Default → Primary → Block*
@@ -3082,6 +3151,9 @@ declare module '@prismicio/client' {
       SchemaOrganisationDocumentData,
       SiteConfigDocument,
       SiteConfigDocumentData,
+      TranslationsDocument,
+      TranslationsDocumentData,
+      TranslationsDocumentDataItemsItem,
       AllDocumentTypes,
       CarouselSlice,
       CarouselSliceDefaultPrimaryBlockItem,

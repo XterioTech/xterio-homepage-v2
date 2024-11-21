@@ -1,53 +1,7 @@
-import type { Metadata } from 'next'
-import '@/stylesheets/style.sass'
-import Navigation from '@/components/navigation'
-import { CookieBanner } from '@superrb/react-addons/components'
-import Scripts from '@/components/scripts'
-import {
-  GtAmericaExBlack,
-  GtAmericaExBold,
-  GtAmericaExRegular,
-  GtAmericaStRegular,
-  PPMonumentExHeavy,
-} from '@/fonts'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import SocialIcons from '@/components/social-icons'
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const navigation = (
-    <>
-      <Navigation name={'navigation'} />
-      <Navigation name={'secondary'} />
-    </>
-  )
-
-  const socialIcons = <SocialIcons className="header__social" />
-
-  return (
-    <html lang="en">
-      <body
-        className={`${GtAmericaExBlack.variable} ${GtAmericaExBold.variable} ${GtAmericaExRegular.variable} ${GtAmericaStRegular.variable} ${PPMonumentExHeavy.variable}`}
-      >
-        <Header navigation={navigation} socialIcons={socialIcons} />
-        {children}
-        <Footer />
-        <CookieBanner
-          customiseLabel="Customize"
-          policyLink='/legal/privacy-policy'
-          policyLabel="Privacy Policy"
-          tracking={{
-            title: 'Optional Cookies',
-            description:
-              'These cookies are set by third-parties to track browsing habits in order to personalize your experience.',
-          }}
-        />
-        <Scripts />
-      </body>
-    </html>
-  )
+  return children
 }

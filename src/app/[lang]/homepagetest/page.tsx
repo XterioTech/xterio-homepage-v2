@@ -3,14 +3,14 @@ import { components } from '@/slices'
 import { NotFoundError } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
-import {HomepagetestDocument} from "../../../prismicio-types";
+import {HomepagetestDocument} from "../../../../prismicio-types";
+import { getMetadata } from '@/utils/metadata'
 
 export async function generateMetadata({
- params,
+  params,
 }: {
   params: { lang: string }
 }) {
-
   const client = createClient()
 
   try {
@@ -18,9 +18,7 @@ export async function generateMetadata({
       lang: params.lang,
     })
 
-    return {
-
-    }
+    return getMetadata(page)
   } catch (error) {
     if (error instanceof NotFoundError) {
       notFound()
@@ -29,6 +27,7 @@ export async function generateMetadata({
     throw error
   }
 }
+
 export default async function Page({ params }: { params: { lang: string } }) {
   const client = createClient()
 

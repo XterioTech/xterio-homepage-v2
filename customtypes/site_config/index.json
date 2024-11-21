@@ -73,6 +73,13 @@
           "allowTargetBlank": false,
           "select": null
         }
+      },
+      "title_template": {
+        "type": "Text",
+        "config": {
+          "label": "Title Template",
+          "placeholder": ""
+        }
       }
     }
   }

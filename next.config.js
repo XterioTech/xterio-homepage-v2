@@ -9,7 +9,6 @@ const cspHeader = `
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'self' https://xterio.prismic.io;
-    upgrade-insecure-requests;
 `
 
 /** @type {import('next').NextConfig} */
