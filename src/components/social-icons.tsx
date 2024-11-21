@@ -34,7 +34,7 @@ const SocialIcons = async ({ className = '' }: { className?: string }) => {
           ]
 
         return (
-          <LinkBase href={url} key={name}>
+          <LinkBase href={url as string} key={name}>
             <Icon />
           </LinkBase>
         )
