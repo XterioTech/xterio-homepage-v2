@@ -1,5 +1,31 @@
+const cspHeader = `
+    default-src 'self';
+    connect-src 'self' https://xterio.cdn.prismic.io;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' blob: data: https://images.prismic.io https://superrbimages-1fd4f.kxcdn.com;
+    font-src 'self' data:;
+    object-src data: 'unsafe-eval';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'self' https://xterio.prismic.io;
+`
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: cspHeader.replace(/\n/g, ''),
+          },
+        ],
+      },
+    ]
+  },
   async redirects() {
     return [
       // Basic redirect
