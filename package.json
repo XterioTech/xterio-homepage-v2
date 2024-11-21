@@ -14,15 +14,15 @@
     "node": "^20"
   },
   "dependencies": {
-    "@prismicio/client": "^7.8.1",
-    "@prismicio/next": "^1.6.0",
-    "@prismicio/react": "^2.8.0",
-    "@superrb/next-addons": "^4.0.0-11",
-    "@superrb/react-addons": "^3.0.0-18",
+    "@prismicio/client": "^7.3.1",
+    "@prismicio/next": "^1.5.0",
+    "@prismicio/react": "^2.7.3",
+    "@superrb/next-addons": "^4.0.0-6",
+    "@superrb/react-addons": "^3.0.0-19",
     "change-case": "^5.4.2",
     "flickity": "^3.0.0",
     "live-node-list": "^2.1.1",
-    "next": "^14.0.4",
+    "next": "^14.2.18",
     "prettier": "^3.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,7 +35,7 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.49",
+    "@slicemachine/adapter-next": "^0.3.32",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
