@@ -6,6 +6,8 @@ const cspHeader = `
     img-src 'self' blob: data: https://images.prismic.io https://superrbimages-1fd4f.kxcdn.com;
     font-src 'self' data:;
     object-src data: 'unsafe-eval';
+    media-src 'self' blob: data:;
+    frame-src 'self' app.netlify.com;
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'self' https://xterio.prismic.io;
