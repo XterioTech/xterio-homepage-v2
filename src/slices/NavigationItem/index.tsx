@@ -59,7 +59,6 @@ const NavigationItem = ({
         items.length > 0 ? 'nav__item--has-children' : ''
       }`}
       onClick={() => setSubnavOpen((open) => !open)}
-      aria-expanded={subnavOpen}
       aria-controls={`sub-nav-${kebabCase(label as string)}`}
     >
       {href ? (
@@ -71,7 +70,7 @@ const NavigationItem = ({
           {label}
         </LinkComponent>
       ) : (
-        <span className="nav__link">{label}</span>
+        <button aria-expanded={subnavOpen} className="nav__link">{label}</button>
       )}
 
       {items.length > 0 && (
