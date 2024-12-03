@@ -3,7 +3,7 @@ const cspHeader = `
     connect-src 'self' https://xterio.cdn.prismic.io;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' netlify-rum.netlify.app;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https://images.prismic.io https://superrbimages-1fd4f.kxcdn.com;
+    img-src 'self' blob: data: https://images.prismic.io https://superrbimages-1fd4f.kxcdn.com https://xterio.cdn.prismic.io;
     font-src 'self' data:;
     object-src none;
     media-src 'self' blob: data:;
