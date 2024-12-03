@@ -1,11 +1,10 @@
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Navigation from '@/components/navigation'
+import NotFoundContent from '@/components/not-found-content'
 import Scripts from '@/components/scripts'
 import SocialIcons from '@/components/social-icons'
 import { createClient } from '@/prismicio'
-import { components } from '@/slices'
-import { SliceZone } from '@prismicio/react'
 import { CookieBanner } from '@superrb/react-addons/components'
 
 export default async function Page() {
@@ -24,9 +23,7 @@ export default async function Page() {
   return (
     <>
       <Header navigation={navigation} socialIcons={socialIcons} />
-      <section className="four-oh-four-page">
-        <SliceZone slices={page.data.slices} components={components} />
-      </section>
+      <NotFoundContent page={page} />
       <Footer />
       <CookieBanner
         customiseLabel="Customize"
