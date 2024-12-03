@@ -5,7 +5,7 @@ const cspHeader = `
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https://images.prismic.io https://superrbimages-1fd4f.kxcdn.com;
     font-src 'self' data:;
-    object-src data: 'unsafe-eval';
+    object-src none;
     media-src 'self' blob: data:;
     frame-src 'self' app.netlify.com;
     base-uri 'self';
