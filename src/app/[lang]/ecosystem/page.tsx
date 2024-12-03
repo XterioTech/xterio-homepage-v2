@@ -28,6 +28,21 @@ export async function generateMetadata({
   }
 }
 
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  const client = createClient()
+  const docs = await client.getAllByType('ecosystem_page', {
+    lang: '*',
+  })
+
+  return docs.map((page) => ({
+    uid: page.uid,
+    lang: page.lang,
+  }))
+}
+
 export default async function Page({ params }: { params: { lang: string } }) {
   const client = createClient()
 
