@@ -42,7 +42,7 @@ export default async function Page() {
     </>
   )
 
-  setTranslationLanguage('en-gb')
+  setTranslationLanguage(locale)
   const socialIcons = <SocialIcons className="header__social" />
 
   return (
