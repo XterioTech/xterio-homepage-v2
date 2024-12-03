@@ -1,3 +1,5 @@
+'use client'
+
 import {
   FilledContentRelationshipField,
   FilledLinkToMediaField,
@@ -6,32 +8,43 @@ import { LottieAnimationDocumentData } from '../../prismicio-types'
 import { LottieAnimationDocument } from '../../prismicio-types'
 import { createClient } from '@/prismicio'
 import LottieAnimationWrapper from './lottie-animation-wrapper'
+import { useEffect, useState } from 'react'
 
-const Animation = async ({
+const Animation = ({
   animation,
 }: {
   animation:
     | LottieAnimationDocument
     | FilledContentRelationshipField<'lottie_animation'>
 }) => {
-  if (!(animation?.data || animation?.uid)) {
-    return null
-  }
+  const [animationData, setAnimationData] =
+    useState<LottieAnimationDocument | null>(null)
 
-  if (!animation?.data && animation?.uid) {
-    const client = createClient()
-    animation = await client.getByUID('lottie_animation', animation.uid)
-  }
+  useEffect(() => {
+    ;(async () => {
+      if (!(animation?.data || animation?.uid)) {
+        return null
+      }
 
-  const jsonUrl: string = (
-    (animation?.data as LottieAnimationDocumentData)
-      ?.animation_json as FilledLinkToMediaField
-  )?.url
+      const client = createClient()
+      const animationDocument = await client.getByUID(
+        'lottie_animation',
+        animation?.uid as string,
+      )
 
-  if (!jsonUrl) return null
+      const jsonUrl: string = (
+        (animationDocument?.data as LottieAnimationDocumentData)
+          ?.animation_json as FilledLinkToMediaField
+      )?.url
 
-  const response = await fetch(jsonUrl)
-  const animationData = await response.json()
+      if (!jsonUrl) return null
+
+      const response = await fetch(jsonUrl)
+      const animationData = await response.json()
+
+      setAnimationData(animationData)
+    })()
+  }, [animation])
 
   if (!animationData) return null
 
