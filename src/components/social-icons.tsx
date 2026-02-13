@@ -9,6 +9,7 @@ import Discord from '@/components/icons/discord'
 import Youtube from '@/components/icons/youtube'
 import Reddit from '@/components/icons/reddit'
 import Medium from '@/components/icons/medium'
+import Telegram from '@/components/icons/telegram'
 import { LinkBase } from '@superrb/next-addons/components'
 
 const icons = {
@@ -18,7 +19,8 @@ const icons = {
   instagram: Instagram,
   linkedin: Linkedin,
   youtube: Youtube,
-  medium: Medium
+  medium: Medium,
+  telegram: Telegram
 }
 
 const SocialIcons = async ({ className = '' }: { className?: string }) => {
