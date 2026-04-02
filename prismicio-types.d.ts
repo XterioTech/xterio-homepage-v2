@@ -982,6 +982,17 @@ interface SiteConfigDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   medium_profile_url: prismic.LinkField
+
+  /**
+   * Email Link URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.email_link_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  email_link_url: prismic.LinkField
 }
 
 /**

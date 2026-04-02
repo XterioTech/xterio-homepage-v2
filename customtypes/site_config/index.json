@@ -73,6 +73,15 @@
           "allowTargetBlank": false,
           "select": null
         }
+      },
+      "email_link_url": {
+        "type": "Link",
+        "config": {
+          "label": "Email Link URL",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
       }
     }
   }
