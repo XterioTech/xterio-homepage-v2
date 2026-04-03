@@ -984,6 +984,17 @@ interface SiteConfigDocumentData {
   medium_profile_url: prismic.LinkField
 
   /**
+   * Telegram Profile URL field in *Site Config*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_config.telegram_profile_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  telegram_profile_url: prismic.LinkField
+
+  /**
    * Email Link URL field in *Site Config*
    *
    * - **Field Type**: Link
